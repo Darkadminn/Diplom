@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplication.TypeWingPage"
+             Title="TypeWingPage">
+    <ScrollView>
+        <StackLayout Background="White">
+
+            <Label Text="Выберите тип медицинского учреждения" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36" Margin="0,20,0,0"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10,50,10,0">
+                <Button Text="Амбулатория" WidthRequest="300" BackgroundColor="Red" Clicked="ButtonClickedPolyclinic"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10,50,10,0">
+                <Button Text="Стационар" WidthRequest="300" BackgroundColor="Red" Clicked="ButtonClickedHospital"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

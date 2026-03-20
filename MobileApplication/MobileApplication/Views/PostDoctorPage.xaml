@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplication.PostDoctorPage"
+             >
+    <ScrollView>
+        <StackLayout Background="White">
+
+            <Label Text="Выбор специальности" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36" Margin="0,20,0,0"/>
+
+            <ScrollView HeightRequest="400" Margin="0,40,0,0">
+                <ListView x:Name="ListPosts" ItemSelected="ListPostsItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding name}" TextColor="Black"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10,30,10,0">
+                <Button x:Name="ButtonForward" Text="Далее" WidthRequest="300" BackgroundColor="Red" Clicked="ButtonForwardClickedDoctors"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

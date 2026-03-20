@@ -1,0 +1,114 @@
+﻿<Window x:Class="EmployeeApplication.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeApplication"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800"
+        FontFamily="Arial"
+        Icon="/Images/icons.ico"
+        SizeChanged="WindowSizeChanged">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="115"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="PaleGreen">
+            <Image Source="/Images/logo.png" Width="80" Height="80" Margin="0,0,0,20"/>
+            <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Пациенты" FontWeight="Bold" Click="ButtonClickPatients"/>
+            <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Сотрудники" FontWeight="Bold" Click="ButtonClickEmployees"/>
+            <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Назначения" FontWeight="Bold" Click="ButtonClickEmployeeAssignments"/>
+            <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Пользователи" FontWeight="Bold" Click="ButtonClickUsers"/>
+            <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Отчеты" FontWeight="Bold" Click="ButtonClickReports"/>
+            <StackPanel Name="StackPanelExit" Orientation="Horizontal">
+                <Button Background="Transparent" Height="30" BorderBrush="Transparent" Width="115" FontSize="15" VerticalAlignment="Bottom" Click="ButtonClickExit">
+                    <Bold>Выйти</Bold>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="5">
+            <TextBlock Name="TextBlockUser" FontSize="12" HorizontalAlignment="Right"/>
+            <TextBlock Name="TextBlockPostUser" FontSize="12" HorizontalAlignment="Right"/>
+            <TextBlock Name="TextBlockHeader" FontSize="32" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <ScrollViewer Name="ScrollViewerWindow">
+                <StackPanel>
+                    <StackPanel Name="StackPanelPatients" Visibility="Collapsed">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                            <StackPanel Name="StackPanelSearchPatient" Width="150">
+                                <TextBlock FontSize="16" Text="Поиск"/>
+                                <TextBox Name="SearchPatient" FontSize="16" Background="#bef574"/>
+                            </StackPanel>
+                            <StackPanel Name="StackPanelFilterPatient" Width="200">
+                                <TextBlock FontSize="16" Text="Фильтрация"/>
+                                <ComboBox Name="FilterPatient" FontSize="16" Background="#bef574" DisplayMemberPath="info"/>
+                            </StackPanel>
+                            <Button Content="+" FontSize = "16" Background="Red" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddPatient"/>
+                        </StackPanel>
+                        <DataGrid Name="DataGridPatients" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridPatientsMouseDoubleClick">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ФИО" Width="auto" Binding="{Binding fio}"/>
+                                <DataGridTextColumn Header="Дата рождения" Width="auto" Binding="{Binding birthday, StringFormat= 'dd:MM:yyyy'}"/>
+                                <DataGridTextColumn Header="Поликлиника" Width="auto" Binding="{Binding wing}"/>
+                                <DataGridTextColumn Header="Номер телефона" Width="auto" Binding="{Binding phone}"/>
+                                <DataGridTextColumn Header="СНИЛС" Width="auto" Binding="{Binding snils}"/>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="-" FontSize = "16" Background="Red" Width="40" Height="20" Click="ButtonClickDeletePatient"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                    <StackPanel Name="StackPanelEmployees">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                            <StackPanel Name="StackPanelSearchEmployee" Width="150">
+                                <TextBlock FontSize="16" Text="Поиск"/>
+                                <TextBox Name="SearchEmployee" FontSize="16" Background="#bef574"/>
+                            </StackPanel>
+                            <StackPanel Name="StackPanelFilterEmployee" Width="200">
+                                <TextBlock FontSize="16" Text="Фильтрация"/>
+                                <ComboBox Name="FilterEmployee" FontSize="16" Background="#bef574">
+                                    <ComboBoxItem Content="Все"/>
+                                    <ComboBoxItem Content="Обслуживающий"/>
+                                    <ComboBoxItem Content="Врачебный"/>
+                                </ComboBox>
+                            </StackPanel>
+                            <Button Content="+" FontSize = "16" Background="Red" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddEmployee"/>
+                        </StackPanel>
+                        <DataGrid Name="DataGridEmployees" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridEmployeesMouseDoubleClick">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ФИО" Width="auto" Binding="{Binding fio}"/>
+                                <DataGridTextColumn Header="Дата рождения" Width="auto" Binding="{Binding birthday, StringFormat= 'dd:MM:yyyy'}"/>
+                                <DataGridTextColumn Header="Должность" Width="auto" Binding="{Binding post}"/>
+                                <DataGridTextColumn Header="Тип должности" Width="auto" Binding="{Binding postType}"/>
+                                <DataGridTextColumn Header="Дата приема" Width="auto" Binding="{Binding dateAdmission, StringFormat= 'dd:MM:yyyy'}"/>
+                                <DataGridTextColumn Header="Дата увольнения" Width="auto" Binding="{Binding dateDismissal, StringFormat= 'dd:MM:yyyy'}"/>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="-" FontSize = "16" Background="Red" Width="40" Height="20" Click="ButtonClickDeleteEmployee"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                    <StackPanel Name="StackPanelEmployeeAssignments">
+
+                    </StackPanel>
+                    <StackPanel Name="StackPanelUsers">
+
+                    </StackPanel>
+                    <StackPanel Name="StackPanelReports">
+
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>

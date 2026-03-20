@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplication.DoctorsPage"
+             >
+    <ScrollView>
+        <StackLayout Background="#f0f0f0">
+
+            <!-- Заголовок -->
+            <Label Text="Выберите дату и врача"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="Black"
+               HorizontalOptions="Center" Margin="0,20,0,0"/>
+
+            <!-- Информация о записи -->
+            <StackLayout Margin="10,0,10,0" Background="White">
+                <StackLayout Spacing="5" HorizontalOptions="Center" Margin="0,20,0,0">
+                    <Label  x:Name="MonthYear" FontSize="18" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+                    <Label Text="Доступна запись на 2 недели вперёд" FontSize="14" TextColor="Black" Margin="0,20,0,0" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+
+
+
+                <StackLayout Spacing="0" x:Name="CalendarLayout" Margin="0,10,0,0">
+
+                </StackLayout>
+
+
+
+                <!-- Поиск -->
+                <StackLayout Spacing="15" Margin="10,20,0,0">
+                    <Label Text="Поиск по врачу или медицинскому учреждению" FontSize="16" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Start"/>
+
+                    <Border  BackgroundColor="#bef574" WidthRequest="350" StrokeShape="RoundRectangle 5" HeightRequest="40">
+                        <Entry x:Name="EntryFilter" TextChanged="EntryFilterChanged" Placeholder="ФИО врача, населённый пункт, или название медицинского учреждения" BackgroundColor="Transparent" TextColor="Black" FontSize="16"/>
+                    </Border>
+
+                    <ScrollView HeightRequest="100" Margin="0,0,0,0">
+                        <ListView x:Name="ListViewFilter" ItemSelected="ListViewFilterItemSelected" IsVisible="False">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding info}" TextColor="Black"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </ScrollView>
+
+
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout x:Name="ListDoctorsLayout" Margin="10,0,10,0">
+
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

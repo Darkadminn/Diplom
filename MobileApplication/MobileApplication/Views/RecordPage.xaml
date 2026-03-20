@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplication.RecordPage"
+             Title="RecordPage">
+    <ScrollView>
+        <StackLayout Background="White">
+
+            <Label Text="Кого хотите записать на прием?" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36" Margin="0,20,0,0"/>
+
+
+            <Button Text="Себя" Margin="10,50,10,0" WidthRequest="300" BackgroundColor="Red" Clicked="ButtonClickedI"/>
+            <Button Text="Ребёнка" Margin="10,50,10,0" WidthRequest="300" BackgroundColor="Red" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
