@@ -12,5 +12,6 @@ namespace EmployeeApplication
         public TimeSpan timeStart { get; set; }
         public TimeSpan timeEnd { get; set; }
         public string[] weekDays { get; set; }
+        public string weekDaysString => string.Join(",", weekDays);
     }
 }

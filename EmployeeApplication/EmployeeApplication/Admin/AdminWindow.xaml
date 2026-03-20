@@ -47,7 +47,7 @@
                             </StackPanel>
                             <Button Content="+" FontSize = "16" Background="Red" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddPatient"/>
                         </StackPanel>
-                        <DataGrid Name="DataGridPatients" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridPatientsMouseDoubleClick">
+                        <DataGrid Name="DataGridPatients" FontSize="16" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridPatientsMouseDoubleClick">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="ФИО" Width="auto" Binding="{Binding fio}"/>
                                 <DataGridTextColumn Header="Дата рождения" Width="auto" Binding="{Binding birthday, StringFormat= 'dd:MM:yyyy'}"/>
@@ -80,7 +80,7 @@
                             </StackPanel>
                             <Button Content="+" FontSize = "16" Background="Red" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddEmployee"/>
                         </StackPanel>
-                        <DataGrid Name="DataGridEmployees" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridEmployeesMouseDoubleClick">
+                        <DataGrid Name="DataGridEmployees" FontSize="16" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridEmployeesMouseDoubleClick">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="ФИО" Width="auto" Binding="{Binding fio}"/>
                                 <DataGridTextColumn Header="Дата рождения" Width="auto" Binding="{Binding birthday, StringFormat= 'dd:MM:yyyy'}"/>

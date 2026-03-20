@@ -85,12 +85,7 @@ namespace EmployeeApplication
         {
             using(var connection = new NpgsqlConnection(connectionString))
             {
-                string sql = @"select p.id as id, p.individual_id as individualId, ind.last_name as lastName, ind.first_name as firstName, 
-                                coalesce(ind.middle_name) as middleName, p.wing_id as wingId, w.name as wing, ind.birthday as birthday,
-                                ind.phone as phone, ind.snils as snils from wings w inner join patients p
-                                on w.id = p.wing_id
-                                inner join individuals ind
-                                on ind.id = p.individual_id";
+                string sql = @"select * from patients_view;";
 
                 return connection.Query<Patient>(sql).ToList();
             }
@@ -124,14 +119,29 @@ namespace EmployeeApplication
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string sql = @"select e.id as id, e.individual_id as individualId, ind.last_name as lastName, ind.first_name as firstName, 
-                                coalesce(ind.middle_name) as middleName, p.id as postId, p.name as post, ind.birthday as birthday,
-                                p.type as postType, e.date_admission as dateAdmission, e.date_dismissal as dateDismissal from posts p inner join employees e
-                                on p.id = e.post_id
-                                inner join individuals ind
-                                on ind.id = e.individual_id";
+                string sql = @"select * from employees_view;";
 
                 return connection.Query<Employee>(sql).ToList();
+            }
+        }
+
+        public List<EmployeeAssignment> GetEmployeeAssignments()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"select * from employee_assignments_view";
+
+                return connection.Query<EmployeeAssignment>(sql).ToList();
+            }
+        }
+
+        public List<User> GetUsers()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"select * from users_view;";
+
+                return connection.Query<User>(sql).ToList();
             }
         }
     }
