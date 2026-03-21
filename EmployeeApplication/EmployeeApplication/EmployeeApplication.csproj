@@ -107,7 +107,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Admin\AdminEmployees\AdminAddUpdateEmployee.xaml.cs">
+    <Compile Include="Admin\AdminAddUpdateEmployeeAssignment.xaml.cs">
+      <DependentUpon>AdminAddUpdateEmployeeAssignment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminAddUpdateUser.xaml.cs">
+      <DependentUpon>AdminAddUpdateUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminAddUpdateEmployee.xaml.cs">
       <DependentUpon>AdminAddUpdateEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\EmployeeAssignment.cs" />
@@ -115,11 +121,19 @@
     <Compile Include="Models\Wing.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\WorkSchedule.cs" />
-    <Page Include="Admin\AdminEmployees\AdminAddUpdateEmployee.xaml">
+    <Page Include="Admin\AdminAddUpdateEmployeeAssignment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Admin\AdminPatients\AdminAddUpdatePatient.xaml">
+    <Page Include="Admin\AdminAddUpdateUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\AdminAddUpdateEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\AdminAddUpdatePatient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,7 +145,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Admin\AdminPatients\AdminAddUpdatePatient.xaml.cs">
+    <Compile Include="Admin\AdminAddUpdatePatient.xaml.cs">
       <DependentUpon>AdminAddUpdatePatient.xaml</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminWindow.xaml.cs">
@@ -181,7 +195,6 @@
     <Resource Include="Images\icons.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\AdminUsers\" />
     <Folder Include="Doctor\" />
   </ItemGroup>
   <ItemGroup>

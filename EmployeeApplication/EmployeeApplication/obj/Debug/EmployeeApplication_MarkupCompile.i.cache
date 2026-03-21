@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\burul\source\repos\EmployeeApplication\EmployeeApplication\obj\Debug\
+C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\obj\Debug\
 EmployeeApplication
 none
 false
 DEBUG;TRACE
-C:\Users\burul\source\repos\EmployeeApplication\EmployeeApplication\App.xaml
-41428810268
+C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\App.xaml
+6376531297
 
-18-785143137
-3286386094
-Admin\AdminEmployees\AdminAddUpdateEmployee.xaml;Admin\AdminPatients\AdminAddUpdatePatient.xaml;Admin\AdminWindow.xaml;Authorization\MainWindow.xaml;
+20171775694
+32941206401
+Admin\AdminAddUpdateEmployeeAssignment.xaml;Admin\AdminAddUpdateUser.xaml;Admin\AdminAddUpdateEmployee.xaml;Admin\AdminAddUpdatePatient.xaml;Admin\AdminWindow.xaml;Authorization\MainWindow.xaml;
 
 False
 

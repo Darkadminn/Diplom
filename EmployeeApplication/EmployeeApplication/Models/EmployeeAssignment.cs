@@ -16,6 +16,7 @@ namespace EmployeeApplication
         public string type { get; set; }
         public int postId { get; set; }
         public string post { get; set; }
+        public string postType { get; set; }
         public DateTime dateFrom { get; set; }
         public DateTime? dateTo { get; set; }
         public int wingId { get; set; }

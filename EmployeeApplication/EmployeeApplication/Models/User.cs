@@ -22,5 +22,6 @@ namespace EmployeeApplication
         public string wing { get; set; }
         public string fio => $"{lastName} {firstName} {middleName}".Trim();
         public string info => $"{fio} {post} {assignment} ";
+        public string passwordSecurity => password.Replace(password, "************");
     }
 }

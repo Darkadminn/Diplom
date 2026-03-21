@@ -24,6 +24,10 @@ namespace EmployeeApplication
         List<Patient> filterPacients = new List<Patient>();
         List<Employee> employees = new List<Employee>();
         List<Employee> filterEmployees = new List<Employee>();
+        List<EmployeeAssignment> employeeAssignments = new List<EmployeeAssignment>();
+        List<EmployeeAssignment> filterEmployeeAssignments = new List<EmployeeAssignment>();
+        List<User> users = new List<User>();
+        List<User> filterUsers = new List<User>();
         List<Wing> wings = new List<Wing>();
         List<Wing> wingsAll = new List<Wing>();
         public AdminWindow()
@@ -54,6 +58,7 @@ namespace EmployeeApplication
             });
 
             FilterPatient.ItemsSource = wings;
+            FilterUser.ItemsSource = wingsAll;
 
             SearchPatient.TextChanged += (a, args) =>
             {
@@ -75,6 +80,28 @@ namespace EmployeeApplication
             {
                 FilterEmployees();
             };
+
+            SearchEmployeeAssignment.TextChanged += (a, args) =>
+            {
+                FilterEmployeeAssignments();
+            };
+
+            FilterEmployeeAssignment.SelectionChanged += (a, args) =>
+            {
+                FilterEmployeeAssignments();
+            };
+
+            SearchUser.TextChanged += (a, args) =>
+            {
+                FilterUsers();
+            };
+
+            FilterUser.SelectionChanged += (a, args) =>
+            {
+                FilterUsers();
+            };
+
+
         }
 
         /// <summary>
@@ -103,12 +130,22 @@ namespace EmployeeApplication
                 StackPanelSearchEmployee.Margin = new Thickness(0, 0, margin, 0);
                 StackPanelFilterEmployee.Margin = new Thickness(0, 0, margin, 0);
                 DataGridEmployees.Width = this.Width - 155;
+
+                StackPanelSearchEmployeeAssignment.Margin = new Thickness(0, 0, margin, 0);
+                StackPanelFilterEmployeeAssignment.Margin = new Thickness(0, 0, margin, 0);
+                DataGridEmployeeAssignments.Width = this.Width - 155;
+
+                StackPanelSearchUser.Margin = new Thickness(0, 0, margin, 0);
+                StackPanelFilterUser.Margin = new Thickness(0, 0, margin, 0);
+                DataGridUsers.Width = this.Width - 155;
             }
 
             if (ScrollViewerWindow.Height > 100)
             {
                 DataGridPatients.Height = ScrollViewerWindow.Height - 58;
                 DataGridEmployees.Height = ScrollViewerWindow.Height - 58;
+                DataGridEmployeeAssignments.Height = ScrollViewerWindow.Height - 58;
+                DataGridUsers.Height = ScrollViewerWindow.Height - 58;
             }
         }
 
@@ -153,6 +190,8 @@ namespace EmployeeApplication
 
             TextBlockHeader.Text = "Назначения сотрудников";
             TextBlockHeader.FontWeight = FontWeights.Bold;
+
+            LoadEmployeeAssignments();
         }
 
         private void ButtonClickUsers(object sender, RoutedEventArgs e)
@@ -165,6 +204,8 @@ namespace EmployeeApplication
 
             TextBlockHeader.Text = "Пользователи";
             TextBlockHeader.FontWeight = FontWeights.Bold;
+
+            LoadUsers();
         }
 
         private void ButtonClickReports(object sender, RoutedEventArgs e)
@@ -275,7 +316,7 @@ namespace EmployeeApplication
 
             DataGridEmployees.ItemsSource = employees;
 
-            FilterPatients();
+            FilterEmployees();
         }
 
         private void FilterEmployees()
@@ -313,5 +354,125 @@ namespace EmployeeApplication
         {
 
         }
+
+        private void ButtonClickAddEmployeeAssignment(object sender, RoutedEventArgs e)
+        {
+            var window = new AdminAddUpdateEmployeeAssignment();
+            window.ShowDialog();
+        }
+
+        private void DataGridEmployeeAssignmentsMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DataGridEmployeeAssignments.SelectedItem != null)
+            {
+                var employeeAssignment = DataGridEmployeeAssignments.SelectedItem as EmployeeAssignment;
+
+                var window = new AdminAddUpdateEmployeeAssignment(employeeAssignment);
+                window.ShowDialog();
+            }
+        }
+
+        private void LoadEmployeeAssignments()
+        {
+            employeeAssignments = dB.GetEmployeeAssignments();
+
+            DataGridEmployeeAssignments.ItemsSource = employeeAssignments;
+
+            FilterEmployeeAssignments();
+        }
+
+        private void FilterEmployeeAssignments()
+        {
+            filterEmployeeAssignments = employeeAssignments;
+
+            if (!string.IsNullOrEmpty(SearchEmployeeAssignment.Text))
+            {
+                filterEmployeeAssignments = filterEmployeeAssignments.Where(p => p.lastName.ToLower().Contains(SearchEmployeeAssignment.Text.ToLower()) || p.firstName.ToLower().Contains(SearchEmployeeAssignment.Text.ToLower())
+                                                || p.middleName.ToLower().Contains(SearchEmployeeAssignment.Text.ToLower()) || p.post.ToLower().Contains(SearchEmployeeAssignment.Text.ToLower())
+                                                || p.cabinet.ToLower().Contains(SearchEmployeeAssignment.Text.ToLower()) || p.wing.ToLower().Contains(SearchEmployeeAssignment.Text.ToLower())).ToList();
+            }
+
+            if (FilterEmployeeAssignment.SelectedItem != null && FilterEmployeeAssignment.SelectedIndex != 0)
+            {
+                if (FilterEmployeeAssignment.SelectedIndex == 1)
+                {
+                    filterEmployeeAssignments = filterEmployeeAssignments.Where(p => p.postType == "Обслуживающий").ToList();
+                }
+                else
+                {
+                    filterEmployeeAssignments = filterEmployeeAssignments.Where(p => p.postType == "Врачебный").ToList();
+                }
+
+
+            }
+
+            DataGridEmployeeAssignments.ItemsSource = filterEmployeeAssignments;
+            DataGridEmployeeAssignments.Items.Refresh();
+
+
+        }
+
+        private void ButtonClickDeleteEmployeeAssignment(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonClickAddUser(object sender, RoutedEventArgs e)
+        {
+            var window = new AdminAddUpdateUser();
+            window.ShowDialog();
+        }
+
+        private void DataGridUsersMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DataGridUsers.SelectedItem != null)
+            {
+                var user = DataGridUsers.SelectedItem as User;
+
+                var window = new AdminAddUpdateUser(user);
+                window.ShowDialog();
+            }
+        }
+
+        private void LoadUsers()
+        {
+            users = dB.GetUsers();
+
+            DataGridUsers.ItemsSource = users;
+
+            FilterUsers();
+        }
+
+        private void FilterUsers()
+        {
+            filterUsers = users;
+
+            if (!string.IsNullOrEmpty(SearchUser.Text))
+            {
+                filterUsers = filterUsers.Where(p => p.lastName.ToLower().Contains(SearchUser.Text.ToLower()) || p.firstName.ToLower().Contains(SearchUser.Text.ToLower())
+                                                || p.middleName.ToLower().Contains(SearchUser.Text.ToLower()) || p.wing.ToLower().Contains(SearchUser.Text.ToLower())
+                                                || p.post.ToLower().Contains(SearchUser.Text.ToLower()) || p.role.ToLower().Contains(SearchUser.Text.ToLower())
+                                                || p.login.ToLower().Contains(SearchUser.Text.ToLower())).ToList();
+            }
+
+            if (FilterUser.SelectedItem != null && FilterUser.SelectedIndex != 0)
+            {
+                var filter = FilterUser.SelectedItem as Wing;
+
+                filterUsers = filterUsers.Where(p => p.wingId == filter.id).ToList();
+            }
+
+            DataGridUsers.ItemsSource = filterUsers;
+            DataGridUsers.Items.Refresh();
+
+
+        }
+
+        private void ButtonClickDeleteUser(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -1,7 +1,9 @@
 ﻿
 FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\App.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminEmployees\AdminAddUpdateEmployee.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminPatients\AdminAddUpdatePatient.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminAddUpdateEmployeeAssignment.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminAddUpdateUser.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminAddUpdateEmployee.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminAddUpdatePatient.xaml;;
 FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminWindow.xaml;;
 FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Authorization\MainWindow.xaml;;
 

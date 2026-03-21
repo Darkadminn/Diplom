@@ -144,5 +144,60 @@ namespace EmployeeApplication
                 return connection.Query<User>(sql).ToList();
             }
         }
+
+        public void DeletePatient(int id)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"update patients
+                               set is_deleted = true
+                               where id = @ID";
+
+                connection.Execute(sql, new {ID = id});
+            }
+        }
+
+        public void DeleteEmployee(int id)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"update employees
+                               set is_deleted = true
+                               where id = @ID";
+
+                connection.Execute(sql, new { ID = id });
+            }
+        }
+
+        public void DeleteEmployeeAssignment(int id)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"update employee_assignments
+                               set is_deleted = true
+                               where id = @ID";
+
+                connection.Execute(sql, new { ID = id });
+            }
+        }
+
+        public void DeleteUser(int id, string role)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"";
+
+                if(role == "Пациент")
+                {
+                    sql = @"delete from user_patients where id = @ID";
+                }
+                else
+                {
+                    sql = @"delete from user_employees where id = @ID";
+                }
+
+                connection.Execute(sql, new { ID = id });
+            }
+        }
     }
 }
