@@ -4,9 +4,124 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmployeeApplication"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="AdminAddUpdatePatient" Height="450" Width="800">
+        Title="AdminAddUpdatePatient" Height="1270" Width="1000"
+        FontFamily="Arial">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+            
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Name="TextBlockHeader" Text="Редактирование пациента" FontSize="32"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" Margin="25,0,10,0">
+            <StackPanel>
+                <TextBlock Text="Данные о пациенте:" FontSize="24" Margin="0,10,0,20"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Поликлиника" FontSize="18"/>
+                        <ComboBox Name="WingPolyclinic" Width="300" Height="30" FontSize="18" Background="#bef574" DisplayMemberPath="name" IsEnabled="False" Margin="0,0,0,10"/>
+                        <CheckBox Name="NewIndividualCheckBox" Content="Новое физическое лицо" Width="300" Height="30" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Margin="150,0,0,0">
+                        <TextBlock Text="Физическое лицо" FontSize="18"/>
+                        <ComboBox Name="Individuals" Width="300" Height="30" FontSize="18" Background="#bef574" DisplayMemberPath="fio" IsEnabled="False"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Name="IndividualStackPanel" Visibility="Visible">
+                    <TextBlock Text="Данные о физическом лице:" FontSize="24" Margin="0,10,0,20"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+
+                        <StackPanel>
+                            <TextBlock Text="Фамилия*" FontSize="18"/>
+                            <TextBox Name="LastName" PreviewTextInput="LastName_PreviewTextInput" MaxLength="50" Width="300" Height="30" FontSize="18" Background="#bef574" Margin="0,0,0,10"/>
+                            <TextBlock Text="Имя*" FontSize="18"/>
+                            <TextBox Name="FirstName" PreviewTextInput="FirstName_PreviewTextInput" MaxLength="50" Width="300" Height="30" FontSize="18" Background="#bef574" Margin="0,0,0,10"/>
+                            <TextBlock Text="Отчество" FontSize="18"/>
+                            <TextBox Name="MiddleName" PreviewTextInput="MiddleName_PreviewTextInput" MaxLength="50" Width="300" Height="30" FontSize="18" Background="#bef574" Margin="0,0,0,10"/>
+                            <TextBlock Text="Полис ОМС" FontSize="18"/>
+                            <xctk:MaskedTextBox Name="InsurancePolicy" Mask="0000 0000 0000 0000" Width="300" Height="30" FontSize="18" Background="#bef574" Margin="0,0,0,10"/>
+                            <TextBlock Text="Пол*" FontSize="18"/>
+                            <ComboBox Name="Gender"  Width="300" Height="30" FontSize="18" Background="#bef574">
+                                <ComboBoxItem Content="Мужской"/>
+                                <ComboBoxItem Content="Женский"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Margin="150,0,0,0">
+                            <TextBlock Text="Дата рождения*" FontSize="18"/>
+                            <DatePicker Name="Birthday" Width="300" Height="30" FontSize="18" Background="#bef574" Margin="0,0,0,10"/>
+                            <TextBlock Text="Телефон" FontSize="18"/>
+                            <xctk:MaskedTextBox Name="Phone" Mask="+0(000)000-00-00" Width="300" Height="30" FontSize="18" Background="#bef574" Margin="0,0,0,10"/>
+                            <TextBlock Text="СНИЛС" FontSize="18"/>
+                            <xctk:MaskedTextBox Name="Snils" Mask="000-000-000 00" Width="300" Height="30" FontSize="18" Background="#bef574" Margin="0,0,0,10"/>
+                            <TextBlock Text="Страховая компания" FontSize="18"/>
+                            <TextBox Name="InsuranceCompany" MaxLength="100" Width="300" Height="30" FontSize="18" Background="#bef574" Margin="0,0,0,10"/>
+                            <TextBlock Text="Свидетельство о рождении*" FontSize="18"/>
+                            <xctk:MaskedTextBox Name="birthCertificate" Mask="00 0000000000" Width="300" Height="30" FontSize="18" Background="#bef574"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock Text="Данные паспорта:" FontSize="24" Margin="0,10,0,20"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                        <StackPanel>
+                            <TextBlock Text="Серия" FontSize="18"/>
+                            <xctk:MaskedTextBox Name="Series" Mask="0000"  Width="300" Height="30" FontSize="18" Background="#bef574" Margin="0,0,0,10"/>
+                            <TextBlock Text="Дата выдачи" FontSize="18"/>
+                            <DatePicker Name="DateIssue"  Width="300" Height="30" FontSize="18" Background="#bef574"/>
+                        </StackPanel>
+                        <StackPanel Margin="150,0,0,0">
+                            <TextBlock Text="Номер" FontSize="18"/>
+                            <xctk:MaskedTextBox Name="Number" Mask="000000" Width="300" Height="30" FontSize="18" Background="#bef574" Margin="0,0,0,10"/>
+                            <TextBlock Text="Кем выдан" FontSize="18"/>
+                            <TextBox Name="IssuedWhom" Width="300" Height="30" FontSize="18" Background="#bef574"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock Text="Дети:" FontSize="24" Margin="0,10,0,20"/>
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <StackPanel>
+                            <TextBlock Text="Ребенок" FontSize="18"/>
+                            <ComboBox Name="Childrens" Width="300" Height="30" FontSize="18" Background="#bef574" DisplayMemberPath="info" Margin="0,0,0,10"/>
+                            <Button Content="Добавить" Width="300" Height="30" Background="Red" FontSize="16" Click="ButtonClickAddChildren" Margin="0,0,0,10"/>
+                            <Button Content="Изменить" Width="300" Height="30" Background="Red" FontSize="16" Click="ButtonClickUpdateChildren"/>
+                        </StackPanel>
+                        <StackPanel Margin="150,0,0,0">
+                            <DataGrid Name="DataGridChildrens" FontSize="16" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ФИО" Width="auto" Binding="{Binding fio}"/>
+                                    <DataGridTextColumn Header="Свидетельство о рождении" Width="auto" Binding="{Binding birthday, StringFormat= 'dd:MM:yyyy'}"/>
+                                    <DataGridTextColumn Header="Дата рождения" Width="auto" Binding="{Binding birthday, StringFormat= 'dd:MM:yyyy'}"/>
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Content="-" FontSize = "16" Background="Red" Width="40" Height="20" Click="ButtonClickDeleteChildren"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
         
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Button Name="ButtonOperation" Width="200" Height="30" Background="Red" FontSize="16"/>
+            <Button Content="Назад" Width="200" Height="30" Background="Red" FontSize="16" Click="ButtonClickBack"/>
+        </StackPanel>
     </Grid>
+
 </Window>

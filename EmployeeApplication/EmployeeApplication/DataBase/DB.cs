@@ -91,6 +91,37 @@ namespace EmployeeApplication
             }
         }
 
+        public List<Individual> GetIndividuals()
+        {
+
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"select id, last_name as lastName, first_name as firstName, coalesce(middle_name, '') as middleName, coalesce(phone, '') as phone, birthday, 
+                                coalesce(snils, '') as snils, coalesce(data_passport->>'series', '') as passportSeries, coalesce(data_passport->>'number', '') as passportNumber, 
+                                data_passport->>'issue_date' as passportIssuedDate, coalesce(data_passport->>'issued_by', '') as passportIssuedBy, gender, 
+                                coalesce(insurance_policy, '') as insurancePolicy, coalesce(insurance_company, '') as insuranceCompany,
+                                birth_certificate as birthCertificate from individuals;";
+
+
+
+                return connection.Query<Individual>(sql).ToList();
+            }
+        }
+
+        public List<Children> GetChildrens()
+        {
+
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"select id, last_name as lastName, first_name as firstName, coalesce(middle_name, '') as middleName, birthday,
+                                birth_certificate as birthCertificate from individuals where extract(year from age(current_date, birthday)) < 14;";
+
+
+
+                return connection.Query<Children>(sql).ToList();
+            }
+        }
+
         public List<Wing> GetPoliclinicWings()
         {
             using (var connection = new NpgsqlConnection(connectionString))

@@ -22,5 +22,7 @@ namespace EmployeeApplication
         public string gender { get; set; }
         public string insurancePolicy { get; set; }
         public string insuranceCompany { get; set; }
+        public string birthCertificate { get; set; }
+        public string info => $"{lastName} {firstName} {middleName} {snils}".Trim();
     }
 }
