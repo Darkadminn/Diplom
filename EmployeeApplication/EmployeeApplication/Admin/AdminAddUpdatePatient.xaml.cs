@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,15 +22,19 @@ namespace EmployeeApplication
     {
         DB dB = new DB();
         Patient patient0 = new Patient();
+        Individual individual0 = new Individual();
         List<Wing> wings = new List<Wing>();
         List<Individual> individuals = new List<Individual>();
         List<Children> childrens = new List<Children>();
+        List<Children> childrensIndividual = new List<Children>();
         public AdminAddUpdatePatient()
         {
             InitializeComponent();
 
             ButtonOperation.Content = "Добавить";
             ButtonOperation.Click += ButtonClickAdd;
+
+            TextBlockHeader.Text = "Добавление пациента";
 
             NewIndividualCheckBox.Visibility = Visibility.Visible;
             NewIndividualCheckBox.Checked += NewIndividualCheckBox_Checked;
@@ -45,6 +50,8 @@ namespace EmployeeApplication
 
             childrens = dB.GetChildrens();
             Childrens.ItemsSource = childrens;
+
+            DataGridChildrens.ItemsSource = childrensIndividual;
         }
 
         public AdminAddUpdatePatient(Patient patient)
@@ -54,7 +61,10 @@ namespace EmployeeApplication
             ButtonOperation.Content = "Сохранить";
             ButtonOperation.Click += ButtonClickUpdate;
 
+            TextBlockHeader.Text = "Редактирование пациента";
+
             NewIndividualCheckBox.Visibility = Visibility.Collapsed;
+            Individuals.Visibility = Visibility.Collapsed;
 
             IndividualStackPanel.Visibility = Visibility.Visible;
 
@@ -62,12 +72,42 @@ namespace EmployeeApplication
 
             wings = dB.GetPoliclinicWings();
             WingPolyclinic.ItemsSource = wings;
+            WingPolyclinic.SelectedItem = wings.FirstOrDefault(w => w.id == patient.wingId);
 
             individuals = dB.GetIndividuals();
             Individuals.ItemsSource = individuals;
+            Individuals.SelectedItem = individuals.FirstOrDefault(ind => ind.id == patient.individualId);
 
             childrens = dB.GetChildrens();
             Childrens.ItemsSource = childrens;
+
+            childrensIndividual = dB.GetChildrensIndividual(patient.individualId);
+            DataGridChildrens.ItemsSource = childrensIndividual;
+
+            individual0 = Individuals.SelectedItem as Individual;
+
+            LastName.Text = individual0.lastName;
+            FirstName.Text = individual0.firstName;
+            MiddleName.Text = individual0.middleName;
+            InsurancePolicy.Text = individual0.insurancePolicy;
+            InsuranceCompany.Text = individual0.insuranceCompany;
+            Birthday.SelectedDate = individual0.birthday;
+            Phone.Text = individual0.phone;
+            birthCertificate.Text = individual0.birthCertificate;
+            Snils.Text = individual0.snils;
+            Series.Text = individual0.passportSeries;
+            Number.Text = individual0.passportNumber;
+            IssuedBy.Text = individual0.passportIssuedBy;
+            DateIssue.SelectedDate = individual0.passportIssuedDate;
+
+            if(individual0.gender == "Мужской")
+            {
+                Gender.SelectedIndex = 0;
+            }
+            else if (individual0.gender == "Женский")
+            {
+                Gender.SelectedIndex = 1;
+            }
         }
 
         private void ButtonClickBack(object sender, RoutedEventArgs e)
@@ -108,12 +148,167 @@ namespace EmployeeApplication
 
         private void ButtonClickAdd(object sender, RoutedEventArgs e)
         {
-           
+            if(NewIndividualCheckBox.IsChecked == true)
+            {
+                if (WingPolyclinic.SelectedItem == null || string.IsNullOrWhiteSpace(LastName.Text) || string.IsNullOrWhiteSpace(FirstName.Text)
+                    || Birthday.SelectedDate == null || Gender.SelectedIndex == -1 || birthCertificate.Text.Contains(birthCertificate.PromptChar.ToString()))
+                {
+                    MessageBox.Show("Заполните все обязательные поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    if (Birthday.SelectedDate > DateTime.Now || DateIssue.SelectedDate > DateTime.Now)
+                    {
+                        MessageBox.Show("Дата не может быть больше текущей", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+
+                    string middleName0;
+                    string gender0;
+                    var wing = WingPolyclinic.SelectedItem as Wing;
+
+                    if (string.IsNullOrWhiteSpace(MiddleName.Text)) middleName0 = null;
+                    else middleName0 = MiddleName.Text;
+
+                    if (Gender.SelectedIndex == 0) gender0 = "Мужской";
+                    else gender0 = "Женский";
+
+                    Individual individual = new Individual
+                    {
+                        lastName = LastName.Text,
+                        firstName = FirstName.Text,
+                        middleName = middleName0,
+                        phone = Phone.Text == "" ? null : Phone.Text,
+                        birthday = (DateTime)Birthday.SelectedDate,
+                        snils = Snils.Text.Replace("-", "").Replace(" ", "") == "" ? null : Snils.Text,
+                        insurancePolicy = InsurancePolicy.Text.Replace(" ", "") == "" ? null : InsurancePolicy.Text.Replace(" ", ""),
+                        insuranceCompany = InsuranceCompany.Text == "" ? null : InsuranceCompany.Text,
+                        birthCertificate = birthCertificate.Text.Replace(" ",""),
+                        gender = gender0
+                    };
+
+                    Patient pacient = new Patient
+                    {
+                        wingId = wing.id
+                    };
+
+                    if (!Series.Text.Contains(birthCertificate.PromptChar.ToString()) && !Number.Text.Contains(birthCertificate.PromptChar.ToString())
+                        && !string.IsNullOrWhiteSpace(IssuedBy.Text) && Birthday.SelectedDate != null)
+                    {
+                        individual.passportSeries = Series.Text;
+                        individual.passportNumber = Number.Text;
+                        individual.passportIssuedDate = (DateTime)DateIssue.SelectedDate;
+                        individual.passportIssuedBy = IssuedBy.Text;
+                    }
+                    else
+                    {
+                        individual.passportSeries = null;
+                        individual.passportNumber = null;
+                        individual.passportIssuedDate = DateTime.Now;
+                        individual.passportIssuedBy = null;
+                    }
+
+
+
+                        bool result = dB.AddPatient(pacient, individual, childrensIndividual, true);
+
+                    if (result == true)
+                    {
+                        MessageBox.Show("Пациент успешно добавлен", "Успех", MessageBoxButton.OK);
+                        this.DialogResult = true;
+                        this.Close();
+                    }
+                }
+            }
+            else
+            {
+                if (WingPolyclinic.SelectedItem == null || Individuals.SelectedItem == null)
+                {
+                    MessageBox.Show("Заполните все обязательные поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+
+                    var individual = Individuals.SelectedItem as Individual;
+                    var wing = WingPolyclinic.SelectedItem as Wing;
+
+
+                    Patient pacient = new Patient
+                    {
+                        wingId = wing.id,
+                        individualId = individual.id,
+                    };
+
+                    bool result = dB.AddPatient(pacient, null, childrensIndividual, false);
+
+                    if (result == true)
+                    {
+                        MessageBox.Show("Пациент успешно добавлен", "Успех", MessageBoxButton.OK);
+                        this.DialogResult = true;
+                        this.Close();
+                    }
+                }
+            }
         }
 
         private void ButtonClickUpdate(object sender, RoutedEventArgs e)
         {
-            
+            if (InsurancePolicy.Text.Contains(InsurancePolicy.PromptChar.ToString()) || WingPolyclinic.SelectedItem == null || string.IsNullOrWhiteSpace(LastName.Text) || string.IsNullOrWhiteSpace(FirstName.Text)
+                    || Birthday.SelectedDate == null || Phone.Text.Contains(Phone.PromptChar.ToString()) || Snils.Text.Contains(Snils.PromptChar.ToString()) || Gender.SelectedIndex == -1
+                    || Series.Text.Contains(Series.PromptChar.ToString()) || Number.Text.Contains(Number.PromptChar.ToString()) || DateIssue.SelectedDate == null
+                    || string.IsNullOrWhiteSpace(IssuedBy.Text) || birthCertificate.Text.Contains(birthCertificate.PromptChar.ToString()) || Individuals.SelectedItem == null)
+            {
+                MessageBox.Show("Заполните все обязательные поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                if (Birthday.SelectedDate > DateTime.Now || DateIssue.SelectedDate > DateTime.Now)
+                {
+                    MessageBox.Show("Дата не может быть больше текущей", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                string middleName0;
+                string gender0;
+                var wing = WingPolyclinic.SelectedItem as Wing;
+                var individualObject = Individuals.SelectedItem as Individual;
+
+                if (string.IsNullOrWhiteSpace(MiddleName.Text)) middleName0 = null;
+                else middleName0 = MiddleName.Text;
+
+                if (Gender.SelectedIndex == 0) gender0 = "Мужской";
+                else gender0 = "Женский";
+
+                Individual individual = new Individual
+                {
+                    lastName = LastName.Text,
+                    firstName = FirstName.Text,
+                    middleName = middleName0,
+                    phone = Phone.Text,
+                    birthday = (DateTime)Birthday.SelectedDate,
+                    snils = Snils.Text,
+                    passportNumber = Number.Text,
+                    passportSeries = Series.Text,
+                    passportIssuedDate = (DateTime)DateIssue.SelectedDate,
+                    passportIssuedBy = IssuedBy.Text,
+                    gender = gender0
+                };
+
+                Patient pacient = new Patient
+                {
+                    wingId = wing.id,
+                    individualId = individualObject.id,
+                };
+
+                bool result = dB.UpdatePatient(pacient, individual, childrensIndividual);
+
+                if (result == true)
+                {
+                    MessageBox.Show("Данные о пациенте успешно обновлены", "Успех", MessageBoxButton.OK);
+                    this.DialogResult = true;
+                    this.Close();
+                }
+            }
         }
 
         private void NewIndividualCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -128,26 +323,61 @@ namespace EmployeeApplication
         {
             IndividualStackPanel.Visibility = Visibility.Collapsed;
 
-            if (WingPolyclinic.SelectedItem != null) Individuals.IsEnabled = true;
-            else
-            {
-                Individuals.IsEnabled = false;
-                Individuals.SelectedIndex = -1;
-            }
+            Individuals.IsEnabled = true;
+
         }
 
         private void ButtonClickAddChildren(object sender, RoutedEventArgs e)
         {
-
+            if(Childrens.SelectedItem != null)
+            {
+                var children = Childrens.SelectedItem as Children;
+                childrensIndividual.Add(children);
+                DataGridChildrens.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Выберите запись", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void ButtonClickUpdateChildren(object sender, RoutedEventArgs e)
         {
-
+            if (Childrens.SelectedItem != null && DataGridChildrens.SelectedItem != null)
+            {
+                var children = Childrens.SelectedItem as Children;
+                var childrenDelete = DataGridChildrens.SelectedItem as Children;
+                childrensIndividual.Remove(childrenDelete);
+                childrensIndividual.Add(children);
+                DataGridChildrens.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Выберите запись", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void ButtonClickDeleteChildren(object sender, RoutedEventArgs e)
         {
+            if (DataGridChildrens.SelectedItem != null)
+            {
+                var children = DataGridChildrens.SelectedItem as Children;
+                childrensIndividual.Remove(children);
+                DataGridChildrens.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Выберите запись", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void DataGridChildrensSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataGridChildrens.SelectedItem != null)
+            {
+                var children = DataGridChildrens.SelectedItem as Children;
+                Childrens.SelectedItem = childrens.FirstOrDefault(c => c.id == children.id);
+            }
 
         }
     }

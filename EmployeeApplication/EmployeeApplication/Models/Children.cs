@@ -15,6 +15,7 @@ namespace EmployeeApplication
         public string middleName { get; set; }
         public DateTime birthday { get; set; }
         public string birthCertificate { get; set; }
+        public string fio => $"{lastName} {firstName} {middleName}".Trim();
         public string info => $"{lastName} {firstName} {middleName} {birthCertificate}".Trim();
     }
 }

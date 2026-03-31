@@ -8,8 +8,10 @@
         Icon="/images/icons.ico"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="ИС «МедСервис» - Окно авторизации" Height="360" Width="400"
-        FontFamily="Arial">
+        Title="ИС «МедСервис» - Окно авторизации" 
+        Height="360" 
+        Width="400"
+        >
     <Window.Resources>
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
@@ -71,11 +73,11 @@
 
         <StackPanel HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1">
             <TextBlock Text="Логин" FontSize="16"/>
-            <TextBox Name="Login" FontSize="16" FontFamily="Arial" Width="200" Margin="0,0,0,20" Background="#bef574"/>
-            <TextBlock Text="Пароль" FontSize="16"/>
-            <PasswordBox Style="{DynamicResource PasswordBoxStyle1}" Name="Password" FontSize="16" FontFamily="Arial" Width="200" Height="24" Margin="0,0,0,40" PasswordChar="*" Background="#bef574"/>
-            <Button Content="Войти" Height="30" FontSize="16" Background="Red" Click="ButtonClickAuthorization" Margin="0,0,0,20"/>
-            <Button Content="Выйти" Height="30" FontSize="16" Background="Red" Click="ButtonClickExit"/>
+            <TextBox Name="Login" Width="200" Margin="0,0,0,20"/>
+            <TextBlock Text="Пароль"/>
+            <PasswordBox Style="{DynamicResource PasswordBoxStyle1}" Name="Password" Width="200" Height="24" Margin="0,0,0,40" PasswordChar="*" Background="#bef574"/>
+            <Button Content="Войти" Height="30" Click="ButtonClickAuthorization" Margin="0,0,0,20"/>
+            <Button Content="Выйти" Height="30" Click="ButtonClickExit"/>
         </StackPanel>
     </Grid>
 </Window>

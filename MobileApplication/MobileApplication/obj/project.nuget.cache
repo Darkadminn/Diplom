@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yBh2bElwAhM=",
+  "dgSpecHash": "0U26ik2EPQw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\burul\\source\\repos\\MobileApplication\\MobileApplication\\MobileApplication.csproj",
+  "projectFilePath": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\MobileApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\burul\\.nuget\\packages\\communitytoolkit.maui\\12.0.0\\communitytoolkit.maui.12.0.0.nupkg.sha512",
     "C:\\Users\\burul\\.nuget\\packages\\communitytoolkit.maui.core\\12.0.0\\communitytoolkit.maui.core.12.0.0.nupkg.sha512",

@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\visitspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\visitspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\visitspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\visitspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\typewingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -133,7 +133,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 31,
           "Children": [
             {
               "$type": "Bookmark",
@@ -141,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "VisitsPage.xaml",
               "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\VisitsPage.xaml",
               "RelativeDocumentMoniker": "MobileApplication\\Views\\VisitsPage.xaml",
@@ -321,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "VisitsPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\VisitsPage.xaml.cs",
               "RelativeDocumentMoniker": "MobileApplication\\Views\\VisitsPage.xaml.cs",
@@ -329,8 +329,7 @@
               "RelativeToolTip": "MobileApplication\\Views\\VisitsPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T19:00:47.819Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T19:00:47.819Z"
             },
             {
               "$type": "Document",
@@ -502,15 +501,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "DB.cs",
               "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\DataBase\\DB.cs",
               "RelativeDocumentMoniker": "MobileApplication\\DataBase\\DB.cs",
               "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\DataBase\\DB.cs",
               "RelativeToolTip": "MobileApplication\\DataBase\\DB.cs",
-              "ViewState": "AgIAAEYBAAAAAAAAAAAswFkBAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAACMBAAAAAAAAAAAkwDkBAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T17:37:42.2Z"
+              "WhenOpened": "2026-02-14T17:37:42.2Z",
+              "EditorCaption": ""
             }
           ]
         }

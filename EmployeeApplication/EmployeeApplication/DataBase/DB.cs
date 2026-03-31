@@ -1,10 +1,13 @@
 ﻿using Dapper;
 using Npgsql;
+using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace EmployeeApplication
 {
@@ -122,6 +125,22 @@ namespace EmployeeApplication
             }
         }
 
+        public List<Children> GetChildrensIndividual(int id)
+        {
+
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"select ind.id as id, ind.last_name as lastName, ind.first_name as firstName, coalesce(ind.middle_name, '') as middleName, 
+                                ind.birthday as birthday, ind.birth_certificate as birthCertificate from individuals ind inner join parent_childrens pc
+                                on ind.id = pc.children_id
+                                where pc.parent_id = @ID;";
+
+
+
+                return connection.Query<Children>(sql, new {ID = id}).ToList();
+            }
+        }
+
         public List<Wing> GetPoliclinicWings()
         {
             using (var connection = new NpgsqlConnection(connectionString))
@@ -180,11 +199,21 @@ namespace EmployeeApplication
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string sql = @"update patients
+                try
+                {
+                    string sql = @"update patients
                                set is_deleted = true
                                where id = @ID";
 
-                connection.Execute(sql, new {ID = id});
+                    connection.Execute(sql, new { ID = id });
+
+                    MessageBox.Show($"Пациент успешно удален", "Успех", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
             }
         }
 
@@ -228,6 +257,190 @@ namespace EmployeeApplication
                 }
 
                 connection.Execute(sql, new { ID = id });
+            }
+        }
+
+        public bool AddPatient(Patient patient, Individual individual, List<Children> childrens, bool full)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                try
+                {
+                    var childrensId = childrens.Select(c => c.id).Distinct().ToArray();
+
+                    string sql = "";
+                    string result = "";
+
+                    if (full)
+                    {
+                        sql = @"call insert_patient_full(@LastName, @FirstName, @MiddleName, @Phone, @Birthday::date,
+                                                        @Snils, @Series, @Number, @IssuedBy, @IssueDate::date,
+                                                        @Gender, @InsurancePolicy, @InsuranceCompany, @BirthCertificate,
+                                                        @WingId, @Childrens, '0')";
+
+                        result = connection.QueryFirstOrDefault<string>(sql, new
+                        {
+                            LastName = individual.lastName,
+                            FirstName = individual.firstName,
+                            MiddleName = individual.middleName,
+                            Phone = individual.phone,
+                            Birthday = individual.birthday.Date,
+                            Snils = individual.snils,
+                            Series = individual.passportSeries,
+                            Number = individual.passportNumber,
+                            IssuedBy = individual.passportIssuedBy,
+                            IssueDate = individual.passportIssuedDate.Date,
+                            Gender = individual.gender,
+                            InsurancePolicy = individual.insurancePolicy,
+                            InsuranceCompany = individual.insuranceCompany,
+                            BirthCertificate = individual.birthCertificate,
+                            WingId = patient.wingId,
+                            Childrens = childrensId,
+                        });
+
+                        
+                    }
+                    else
+                    {
+                        sql = @"call insert_patient(@IndividualId, @WingId, '0')";
+
+                        result = connection.QueryFirstOrDefault<string>(sql, new
+                        {
+                            IndividualId = patient.individualId,
+                            WingId = patient.wingId
+                        });
+                    }
+
+                    if (result == "1")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        switch (result)
+                        {
+                            case "-1": 
+
+                                MessageBox.Show("Значение поля телефон неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-2":
+
+                                MessageBox.Show("Значение поля СНИЛС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-3":
+
+                                MessageBox.Show("Значение полей серия и номер паспорта неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-4":
+
+                                MessageBox.Show("Значение поля полис ОМС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-5":
+
+                                MessageBox.Show("Значение поля свидетельство о рождении неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-11":
+
+                                MessageBox.Show("Уже существует такой пациент", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+                        }
+                            
+                        return false;
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+                
+            }
+        }
+
+        public bool UpdatePatient(Patient patient, Individual individual, List<Children> childrens)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                int[] childrensId = new int[childrens.Count];
+
+                foreach (var child in childrens)
+                {
+                    if (!childrensId.Contains(child.id))
+                    {
+                        childrensId.Append(child.id);
+                    }
+                }
+
+                
+                string sql = @"call update_patient(@LastName, @FirstName, @MiddleName, @Phone, @Birthday,
+                                                    @Snils, @Series, @Number, @IssuedBy, @IssueDate,
+                                                    @Gender, @InsurancePolicy, @InsuranceCompany, @BirthCertificate,
+                                                    @PatientId, @WingId, @IndividualId @Childrens, '0')";
+
+                string result = connection.QueryFirstOrDefault<string>(sql, new
+                {
+                    LastName = individual.lastName,
+                    FirstName = individual.firstName,
+                    MiddleName = individual.middleName,
+                    Phone = individual.phone,
+                    Birthday = individual.birthday,
+                    Snils = individual.snils,
+                    Series = individual.passportSeries,
+                    Number = individual.passportNumber,
+                    IssuedBy = individual.passportIssuedBy,
+                    IssueDate = individual.passportIssuedDate,
+                    Gender = individual.gender,
+                    InsurancePolicy = individual.insurancePolicy,
+                    InsuranceCompany = individual.insuranceCompany,
+                    BirthCertificate = individual.birthCertificate,
+                    PatientId = patient.id,
+                    WingId = patient.wingId,
+                    IndividualId = patient.id,
+                    Childrens = childrensId,
+                });
+
+                if (result == "1")
+                {
+                    return true;
+                }
+                else
+                {
+                    switch (result)
+                    {
+                        case "-1":
+
+                            MessageBox.Show("Значение поля телефон неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                            break;
+
+                        case "-2":
+
+                            MessageBox.Show("Значение поля СНИЛС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                            break;
+
+                        case "-3":
+
+                            MessageBox.Show("Значение полей серия и номер паспорта неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                            break;
+
+                        case "-4":
+
+                            MessageBox.Show("Значение поля полис ОМС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                            break;
+
+                        case "-5":
+
+                            MessageBox.Show("Значение поля свидетельство о рождении неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                            break;
+
+                    }
+
+                    return false;
+                }
             }
         }
     }

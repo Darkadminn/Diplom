@@ -27896,11 +27896,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\burul\\source\\repos\\MobileApplication\\MobileApplication\\MobileApplication.csproj",
+      "projectUniqueName": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\MobileApplication.csproj",
       "projectName": "MobileApplication",
-      "projectPath": "C:\\Users\\burul\\source\\repos\\MobileApplication\\MobileApplication\\MobileApplication.csproj",
+      "projectPath": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\MobileApplication.csproj",
       "packagesPath": "C:\\Users\\burul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\burul\\source\\repos\\MobileApplication\\MobileApplication\\obj\\",
+      "outputPath": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

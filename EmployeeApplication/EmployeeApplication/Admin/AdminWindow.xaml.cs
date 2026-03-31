@@ -290,7 +290,16 @@ namespace EmployeeApplication
 
         private void ButtonClickDeletePatient(object sender, RoutedEventArgs e)
         {
+            var result = MessageBox.Show("Вы точно хотите удалить пациента?", "Предупреждение", MessageBoxButton.YesNo);
 
+            if(result == MessageBoxResult.Yes)
+            {
+                var patient = DataGridPatients.SelectedItem as Patient;
+
+                dB.DeletePatient(patient.id);
+
+                LoadPatients();
+            }
         }
 
         private void ButtonClickAddEmployee(object sender, RoutedEventArgs e)

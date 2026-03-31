@@ -38,16 +38,16 @@
                     <StackPanel Name="StackPanelPatients" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
                             <StackPanel Name="StackPanelSearchPatient" Width="150">
-                                <TextBlock FontSize="16" Text="Поиск"/>
-                                <TextBox Name="SearchPatient" FontSize="16" Background="#bef574"/>
+                                <TextBlock Text="Поиск"/>
+                                <TextBox Name="SearchPatient"/>
                             </StackPanel>
                             <StackPanel Name="StackPanelFilterPatient" Width="200">
-                                <TextBlock FontSize="16" Text="Фильтрация"/>
-                                <ComboBox Name="FilterPatient" FontSize="16" Background="#bef574" DisplayMemberPath="info"/>
+                                <TextBlock Text="Фильтрация"/>
+                                <ComboBox Name="FilterPatient" DisplayMemberPath="info"/>
                             </StackPanel>
-                            <Button Content="+" FontSize = "16" Background="Red" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddPatient"/>
+                            <Button Content="+" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddPatient"/>
                         </StackPanel>
-                        <DataGrid Name="DataGridPatients" FontSize="16" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridPatientsMouseDoubleClick">
+                        <DataGrid Name="DataGridPatients" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridPatientsMouseDoubleClick">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="ФИО" Width="auto" Binding="{Binding fio}"/>
                                 <DataGridTextColumn Header="Дата рождения" Width="auto" Binding="{Binding birthday, StringFormat= 'dd:MM:yyyy'}"/>
@@ -57,7 +57,7 @@
                                 <DataGridTemplateColumn>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Content="-" FontSize = "16" Background="Red" Width="40" Height="20" Click="ButtonClickDeletePatient"/>
+                                            <Button Content="-" Width="40" Height="20" Click="ButtonClickDeletePatient"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -67,20 +67,20 @@
                     <StackPanel Name="StackPanelEmployees" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
                             <StackPanel Name="StackPanelSearchEmployee" Width="150">
-                                <TextBlock FontSize="16" Text="Поиск"/>
-                                <TextBox Name="SearchEmployee" FontSize="16" Background="#bef574"/>
+                                <TextBlock Text="Поиск"/>
+                                <TextBox Name="SearchEmployee"/>
                             </StackPanel>
                             <StackPanel Name="StackPanelFilterEmployee" Width="200">
-                                <TextBlock FontSize="16" Text="Фильтрация"/>
-                                <ComboBox Name="FilterEmployee" FontSize="16" Background="#bef574">
+                                <TextBlock Text="Фильтрация"/>
+                                <ComboBox Name="FilterEmployee">
                                     <ComboBoxItem Content="Все"/>
                                     <ComboBoxItem Content="Обслуживающий"/>
                                     <ComboBoxItem Content="Врачебный"/>
                                 </ComboBox>
                             </StackPanel>
-                            <Button Content="+" FontSize = "16" Background="Red" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddEmployee"/>
+                            <Button Content="+" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddEmployee"/>
                         </StackPanel>
-                        <DataGrid Name="DataGridEmployees" FontSize="16" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridEmployeesMouseDoubleClick">
+                        <DataGrid Name="DataGridEmployees" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridEmployeesMouseDoubleClick">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="ФИО" Width="auto" Binding="{Binding fio}"/>
                                 <DataGridTextColumn Header="Дата рождения" Width="auto" Binding="{Binding birthday, StringFormat= 'dd:MM:yyyy'}"/>
@@ -91,7 +91,7 @@
                                 <DataGridTemplateColumn>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Content="-" FontSize = "16" Background="Red" Width="40" Height="20" Click="ButtonClickDeleteEmployee"/>
+                                            <Button Content="-" Background="Red" Width="40" Height="20" Click="ButtonClickDeleteEmployee"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -101,20 +101,20 @@
                     <StackPanel Name="StackPanelEmployeeAssignments" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
                             <StackPanel Name="StackPanelSearchEmployeeAssignment" Width="150">
-                                <TextBlock FontSize="16" Text="Поиск"/>
-                                <TextBox Name="SearchEmployeeAssignment" FontSize="16" Background="#bef574"/>
+                                <TextBlock Text="Поиск"/>
+                                <TextBox Name="SearchEmployeeAssignment"/>
                             </StackPanel>
                             <StackPanel Name="StackPanelFilterEmployeeAssignment" Width="200">
-                                <TextBlock FontSize="16" Text="Фильтрация"/>
-                                <ComboBox Name="FilterEmployeeAssignment" FontSize="16" Background="#bef574">
+                                <TextBlock Text="Фильтрация"/>
+                                <ComboBox Name="FilterEmployeeAssignment">
                                     <ComboBoxItem Content="Все"/>
                                     <ComboBoxItem Content="Обслуживающий"/>
                                     <ComboBoxItem Content="Врачебный"/>
                                 </ComboBox>
                             </StackPanel>
-                            <Button Content="+" FontSize = "16" Background="Red" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddEmployeeAssignment"/>
+                            <Button Content="+" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddEmployeeAssignment"/>
                         </StackPanel>
-                        <DataGrid Name="DataGridEmployeeAssignments" FontSize="16" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridEmployeeAssignmentsMouseDoubleClick">
+                        <DataGrid Name="DataGridEmployeeAssignments" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridEmployeeAssignmentsMouseDoubleClick">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="ФИО" Width="auto" Binding="{Binding fio}"/>
                                 <DataGridTextColumn Header="Должность" Width="auto" Binding="{Binding post}"/>
@@ -127,7 +127,7 @@
                                 <DataGridTemplateColumn>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Content="-" FontSize = "16" Background="Red" Width="40" Height="20" Click="ButtonClickDeleteEmployeeAssignment"/>
+                                            <Button Content="-" Width="40" Height="20" Click="ButtonClickDeleteEmployeeAssignment"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -137,16 +137,16 @@
                     <StackPanel Name="StackPanelUsers" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
                             <StackPanel Name="StackPanelSearchUser" Width="150">
-                                <TextBlock FontSize="16" Text="Поиск"/>
-                                <TextBox Name="SearchUser" FontSize="16" Background="#bef574"/>
+                                <TextBlock Text="Поиск"/>
+                                <TextBox Name="SearchUser"/>
                             </StackPanel>
                             <StackPanel Name="StackPanelFilterUser" Width="200">
-                                <TextBlock FontSize="16" Text="Фильтрация"/>
-                                <ComboBox Name="FilterUser" FontSize="16" Background="#bef574" DisplayMemberPath="info"/>
+                                <TextBlock Text="Фильтрация"/>
+                                <ComboBox Name="FilterUser" DisplayMemberPath="info"/>
                             </StackPanel>
-                            <Button Content="+" FontSize = "16" Background="Red" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddUser"/>
+                            <Button Content="+" Width="35" Height="35" VerticalAlignment="Bottom" Click="ButtonClickAddUser"/>
                         </StackPanel>
-                        <DataGrid Name="DataGridUsers" FontSize="16" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridUsersMouseDoubleClick">
+                        <DataGrid Name="DataGridUsers" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridUsersMouseDoubleClick">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="ФИО" Width="auto" Binding="{Binding fio}"/>
                                 <DataGridTextColumn Header="Должность" Width="auto" Binding="{Binding post}"/>
@@ -157,7 +157,7 @@
                                 <DataGridTemplateColumn>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Content="-" FontSize = "16" Background="Red" Width="40" Height="20" Click="ButtonClickDeleteUser"/>
+                                            <Button Content="-" Width="40" Height="20" Click="ButtonClickDeleteUser"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
