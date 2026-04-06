@@ -5,7 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -165,6 +169,26 @@ namespace EmployeeApplication
             }
         }
 
+        public List<Department> GetDepartments()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"select id, name, wing_id as wingId from departments";
+
+                return connection.Query<Department>(sql).ToList();
+            }
+        }
+
+        public List<Cabinet> GetCabinets()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"select id, name, department_id as departmentId from cabinets";
+
+                return connection.Query<Cabinet>(sql).ToList();
+            }
+        }
+
         public List<Employee> GetEmployees()
         {
             using (var connection = new NpgsqlConnection(connectionString))
@@ -185,6 +209,119 @@ namespace EmployeeApplication
             }
         }
 
+        public List<WorkSchedule> GetWorkSchedules(int employeeAssignmentId)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                
+                string sql = @"select id, time_start as timeStart, time_end as timeEnd, week_days as weekDays
+                            from work_schedules
+                            where employee_assignment_id = @ID";
+
+                return connection.Query<WorkSchedule>(sql, new { ID = employeeAssignmentId }).ToList();
+                
+
+            }
+        }
+
+        public List<Visit> GetVisits()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+
+                string sql = @"select v.id as id, v.date as date, v.patient_condition->>'diagnosis' as diagnosis, 
+                                        v.patient_condition->>'objective' as objective, v.status as status,
+                                        v.patient_condition->>'subjective' as subjective, v.recommendation as recommendation, 
+                                        v.employee_assignment_id as employeeAssignmentId, v.patient_id as patientId,
+                                        concat(ind.last_name, ' ', ind.first_name, coalesce(' ' || ind.middle_name, '')) as patient
+                                        from visits v inner join patients p
+                                        on p.id = v.patient_id
+                                        inner join individuals ind
+                                        on ind.id = p.individual_id
+                                        where v.employee_assignment_id = @ID";
+
+                return connection.Query<Visit>(sql, new { ID = UserAuthorization.id }).ToList();
+
+
+            }
+        }
+
+        public List<Treatment> GetTreatments()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+
+                string sql = @"select t.id as id, t.date_start as dateStart, t.date_end as dateEnd, v.id as visitId, v.patient_id as patientId,
+                                        concat(ind.last_name, ' ', ind.first_name, coalesce(' ' || ind.middle_name, '')) as patient
+                                        from hospital_treatments t inner join visits v 
+                                        on v.id = t.visit_id
+                                        inner join patients p
+                                        on p.id = v.patient_id
+                                        inner join individuals ind
+                                        on ind.id = p.individual_id
+                                        where v.employee_assignment_id = @ID";
+
+                return connection.Query<Treatment>(sql, new { ID = UserAuthorization.id }).ToList();
+
+
+            }
+        }
+
+        public List<VisitProcedure> GetVisitProcedures()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+
+                string sql = @"select vp.id as id, mp.name as medicalProcedure, mp.id as medicalProcedureId, 
+                                        vp.comment as comment, vp.visit_id as visitId, vp.count as count,
+                                        concat(ind.last_name, ' ', ind.first_name, coalesce(' ' || ind.middle_name, '')) as patient,
+                                        (select count(*) from visit_procedures_histories where visit_procedure_id = vp.id) as countСompleted
+                                        from medical_procedures mp inner join visit_procedures vp
+                                        on mp.id = vp.medical_procedure_id
+                                        inner join visits v
+                                        on v.id = vp.visit_id
+                                        inner join patients p
+                                        on p.id = v.patient_id
+                                        inner join individuals ind
+                                        on ind.id = p.individual_id
+                                        where v.employee_assignment_id = @ID";
+
+                return connection.Query<VisitProcedure>(sql, new { ID = UserAuthorization.id }).ToList();
+
+
+            }
+        }
+
+        public List<VisitProcedure> GetCurrentVisitProcedures(int visitId)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+
+                string sql = @"select vp.id as id, mp.name as medicalProcedure, mp.id as medicalProcedureId, 
+                                        vp.comment as comment, vp.visit_id as visitId, vp.count as count
+                                        from medical_procedures mp inner join visit_procedures vp
+                                        on mp.id = vp.medical_procedure_id
+                                        where vp.visit_id = @VisitId";
+
+                return connection.Query<VisitProcedure>(sql, new { VisitId = visitId }).ToList();
+
+
+            }
+        }
+
+        public List<MedicalProcedure> GetMedicalProcedures()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+
+                string sql = @"select id, name, code, description from medical_procedures;";
+
+                return connection.Query<MedicalProcedure>(sql).ToList();
+
+
+            }
+        }
+
         public List<User> GetUsers()
         {
             using (var connection = new NpgsqlConnection(connectionString))
@@ -192,6 +329,26 @@ namespace EmployeeApplication
                 string sql = @"select * from users_view;";
 
                 return connection.Query<User>(sql).ToList();
+            }
+        }
+
+        public List<User> GetNoUsers()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"select * from no_users_view;";
+
+                return connection.Query<User>(sql).ToList();
+            }
+        }
+
+        public List<Post> GetPosts()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"select id, name, type from posts;";
+
+                return connection.Query<Post>(sql).ToList();
             }
         }
 
@@ -207,7 +364,7 @@ namespace EmployeeApplication
 
                     connection.Execute(sql, new { ID = id });
 
-                    MessageBox.Show($"Пациент успешно удален", "Успех", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Пациент успешно удален", "Успех", MessageBoxButton.OK);
                 }
                 catch (Exception ex)
                 {
@@ -221,11 +378,19 @@ namespace EmployeeApplication
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string sql = @"update employees
-                               set is_deleted = true
-                               where id = @ID";
+                try
+                {
+                    string sql = @"call delete_employee(@ID);";
 
-                connection.Execute(sql, new { ID = id });
+                    connection.Execute(sql, new { ID = id });
+
+                    MessageBox.Show($"Сотрудник успешно удален", "Успех", MessageBoxButton.OK);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                
             }
         }
 
@@ -233,11 +398,21 @@ namespace EmployeeApplication
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string sql = @"update employee_assignments
+                try
+                {
+                    string sql = @"update employee_assignments
                                set is_deleted = true
                                where id = @ID";
 
-                connection.Execute(sql, new { ID = id });
+                    connection.Execute(sql, new { ID = id });
+
+                    MessageBox.Show($"Назначение успешно удалено", "Успех", MessageBoxButton.OK);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                
             }
         }
 
@@ -245,18 +420,28 @@ namespace EmployeeApplication
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string sql = @"";
-
-                if(role == "Пациент")
+                try
                 {
-                    sql = @"delete from user_patients where id = @ID";
-                }
-                else
-                {
-                    sql = @"delete from user_employees where id = @ID";
-                }
+                    string sql = @"";
 
-                connection.Execute(sql, new { ID = id });
+                    if (role == "Пациент")
+                    {
+                        sql = @"delete from user_patients where id = @ID";
+                    }
+                    else
+                    {
+                        sql = @"delete from user_employees where id = @ID";
+                    }
+
+                    connection.Execute(sql, new { ID = id });
+
+                    MessageBox.Show($"Пользователь успешно удален", "Успех", MessageBoxButton.OK);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                                
             }
         }
 
@@ -366,82 +551,485 @@ namespace EmployeeApplication
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                int[] childrensId = new int[childrens.Count];
-
-                foreach (var child in childrens)
+                try
                 {
-                    if (!childrensId.Contains(child.id))
-                    {
-                        childrensId.Append(child.id);
-                    }
-                }
+                    var childrensId = childrens.Select(c => c.id).Distinct().ToArray();
 
-                
-                string sql = @"call update_patient(@LastName, @FirstName, @MiddleName, @Phone, @Birthday,
-                                                    @Snils, @Series, @Number, @IssuedBy, @IssueDate,
+
+                    string sql = @"call update_patient(@LastName, @FirstName, @MiddleName, @Phone, @Birthday::date,
+                                                    @Snils, @Series, @Number, @IssuedBy, @IssueDate::date,
                                                     @Gender, @InsurancePolicy, @InsuranceCompany, @BirthCertificate,
-                                                    @PatientId, @WingId, @IndividualId @Childrens, '0')";
+                                                    @PatientId, @WingId, @IndividualId, @Childrens, '0')";
 
-                string result = connection.QueryFirstOrDefault<string>(sql, new
-                {
-                    LastName = individual.lastName,
-                    FirstName = individual.firstName,
-                    MiddleName = individual.middleName,
-                    Phone = individual.phone,
-                    Birthday = individual.birthday,
-                    Snils = individual.snils,
-                    Series = individual.passportSeries,
-                    Number = individual.passportNumber,
-                    IssuedBy = individual.passportIssuedBy,
-                    IssueDate = individual.passportIssuedDate,
-                    Gender = individual.gender,
-                    InsurancePolicy = individual.insurancePolicy,
-                    InsuranceCompany = individual.insuranceCompany,
-                    BirthCertificate = individual.birthCertificate,
-                    PatientId = patient.id,
-                    WingId = patient.wingId,
-                    IndividualId = patient.id,
-                    Childrens = childrensId,
-                });
-
-                if (result == "1")
-                {
-                    return true;
-                }
-                else
-                {
-                    switch (result)
+                    string result = connection.QueryFirstOrDefault<string>(sql, new
                     {
-                        case "-1":
+                        LastName = individual.lastName,
+                        FirstName = individual.firstName,
+                        MiddleName = individual.middleName,
+                        Phone = individual.phone,
+                        Birthday = individual.birthday,
+                        Snils = individual.snils,
+                        Series = individual.passportSeries,
+                        Number = individual.passportNumber,
+                        IssuedBy = individual.passportIssuedBy,
+                        IssueDate = individual.passportIssuedDate,
+                        Gender = individual.gender,
+                        InsurancePolicy = individual.insurancePolicy,
+                        InsuranceCompany = individual.insuranceCompany,
+                        BirthCertificate = individual.birthCertificate,
+                        PatientId = patient.id,
+                        WingId = patient.wingId,
+                        IndividualId = patient.individualId,
+                        Childrens = childrensId,
+                    });
 
-                            MessageBox.Show("Значение поля телефон неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                            break;
+                    if (result == "1")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        switch (result)
+                        {
+                            case "-1":
 
-                        case "-2":
+                                MessageBox.Show("Значение поля телефон неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
 
-                            MessageBox.Show("Значение поля СНИЛС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                            break;
+                            case "-2":
 
-                        case "-3":
+                                MessageBox.Show("Значение поля СНИЛС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
 
-                            MessageBox.Show("Значение полей серия и номер паспорта неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                            break;
+                            case "-3":
 
-                        case "-4":
+                                MessageBox.Show("Значение полей серия и номер паспорта неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
 
-                            MessageBox.Show("Значение поля полис ОМС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                            break;
+                            case "-4":
 
-                        case "-5":
+                                MessageBox.Show("Значение поля полис ОМС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
 
-                            MessageBox.Show("Значение поля свидетельство о рождении неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                            break;
+                            case "-5":
+
+                                MessageBox.Show("Значение поля свидетельство о рождении неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                        }
+
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+                
+            }
+        }
+
+        public bool AddEmployee(Employee employee, Individual individual, List<Children> childrens, bool full)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                try
+                {
+                    var childrensId = childrens.Select(c => c.id).Distinct().ToArray();
+
+                    string sql = "";
+                    string result = "";
+
+                    if (full)
+                    {
+                        sql = @"call insert_employee_full(@LastName, @FirstName, @MiddleName, @Phone, @Birthday::date,
+                                                        @Snils, @Series, @Number, @IssuedBy, @IssueDate::date,
+                                                        @Gender, @InsurancePolicy, @InsuranceCompany, @BirthCertificate,
+                                                        @PostId, @DateAdmission::date, @DateDismissal::date, @Childrens, '0')";
+
+                        result = connection.QueryFirstOrDefault<string>(sql, new
+                        {
+                            LastName = individual.lastName,
+                            FirstName = individual.firstName,
+                            MiddleName = individual.middleName,
+                            Phone = individual.phone,
+                            Birthday = individual.birthday.Date,
+                            Snils = individual.snils,
+                            Series = individual.passportSeries,
+                            Number = individual.passportNumber,
+                            IssuedBy = individual.passportIssuedBy,
+                            IssueDate = individual.passportIssuedDate.Date,
+                            Gender = individual.gender,
+                            InsurancePolicy = individual.insurancePolicy,
+                            InsuranceCompany = individual.insuranceCompany,
+                            BirthCertificate = individual.birthCertificate,
+                            PostId = employee.postId,
+                            DateAdmission = employee.dateAdmission.Date,
+                            DateDismissal = employee.dateDismissal?.Date,
+                            Childrens = childrensId,
+                        });
+
 
                     }
+                    else
+                    {
+                        sql = @"call insert_employee(@IndividualId, @PostId, @DateAdmission::date, @DateDismissal::date, '0')";
 
+                        result = connection.QueryFirstOrDefault<string>(sql, new
+                        {
+                            IndividualId = employee.individualId,
+                            PostId = employee.postId,
+                            DateAdmission = employee.dateAdmission.Date,
+                            DateDismissal = employee.dateDismissal?.Date
+                        });
+                    }
+
+                    if (result == "1")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        switch (result)
+                        {
+                            case "-1":
+
+                                MessageBox.Show("Значение поля телефон неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-2":
+
+                                MessageBox.Show("Значение поля СНИЛС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-3":
+
+                                MessageBox.Show("Значение полей серия и номер паспорта неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-4":
+
+                                MessageBox.Show("Значение поля полис ОМС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-5":
+
+                                MessageBox.Show("Значение поля свидетельство о рождении неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-11":
+
+                                MessageBox.Show("Уже существует такой сотрудник", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+                        }
+
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+
+            }
+        }
+
+        public bool UpdateEmployee(Employee employee, Individual individual, List<Children> childrens)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                try
+                {
+                    var childrensId = childrens.Select(c => c.id).Distinct().ToArray();
+
+
+                    string sql = @"call update_employee(@LastName, @FirstName, @MiddleName, @Phone, @Birthday::date,
+                                                    @Snils, @Series, @Number, @IssuedBy, @IssueDate::date,
+                                                    @Gender, @InsurancePolicy, @InsuranceCompany, @BirthCertificate,
+                                                    @EmployeeId, @PostId, @DateAdmission::date, @DateDismissal::date, @IndividualId, @Childrens, '0')";
+
+                    string result = connection.QueryFirstOrDefault<string>(sql, new
+                    {
+                        LastName = individual.lastName,
+                        FirstName = individual.firstName,
+                        MiddleName = individual.middleName,
+                        Phone = individual.phone,
+                        Birthday = individual.birthday,
+                        Snils = individual.snils,
+                        Series = individual.passportSeries,
+                        Number = individual.passportNumber,
+                        IssuedBy = individual.passportIssuedBy,
+                        IssueDate = individual.passportIssuedDate,
+                        Gender = individual.gender,
+                        InsurancePolicy = individual.insurancePolicy,
+                        InsuranceCompany = individual.insuranceCompany,
+                        BirthCertificate = individual.birthCertificate,
+                        EmployeeId = employee.id,
+                        PostId = employee.postId,
+                        DateAdmission = employee.dateAdmission.Date,
+                        DateDismissal = employee.dateDismissal?.Date,
+                        IndividualId = employee.individualId,
+                        Childrens = childrensId,
+                    });
+
+                    if (result == "1")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        switch (result)
+                        {
+                            case "-1":
+
+                                MessageBox.Show("Значение поля телефон неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-2":
+
+                                MessageBox.Show("Значение поля СНИЛС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-3":
+
+                                MessageBox.Show("Значение полей серия и номер паспорта неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-4":
+
+                                MessageBox.Show("Значение поля полис ОМС неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-5":
+
+                                MessageBox.Show("Значение поля свидетельство о рождении неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                        }
+
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+
+            }
+        }
+
+        public bool AddUser(User user)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                try
+                {
+                    string sql = @"call insert_user(@Login, @Password, @Role, @UserId, '0')";
+
+                    string result = connection.QueryFirstOrDefault<string>(sql, new
+                    {
+                        Login = user.login,
+                        Password = user.password,
+                        Role = user.role,
+                        UserId = user.id,
+                    });
+
+                    if (result == "1")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        switch (result)
+                        {
+                            case "-1":
+
+                                MessageBox.Show("У этого пользователя уже есть учетная запись", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                            case "-2":
+
+                                MessageBox.Show("Значение поля логин неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                break;
+
+                        }
+
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+
+            }
+        }
+
+        public bool UpdateUser(User user)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                try
+                {
+                    string sql = @"call update_user(@Login, @Password, @Role, @ID, '0')";
+
+                    string result = connection.QueryFirstOrDefault<string>(sql, new
+                    {
+                        Login = user.login,
+                        Password = user.password,
+                        Role = user.role,
+                        ID = user.userId,
+                    });
+
+                    if (result == "1")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        if(result == "-1")
+                        {
+                            MessageBox.Show("Значение поля логин неуникально", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+
+            }
+        }
+
+        public bool AddEmployeeAssignment(EmployeeAssignment employeeAssignment, List<WorkSchedule> workSchedules)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                try
+                {
+                    string[] jsonWorkSchedules = workSchedules.Select(ws =>
+                    {
+                        var jsonObject = new
+                        {
+                            timeStart = ws.timeStart,
+                            timeEnd = ws.timeEnd,
+                            weekDays = ws.weekDays
+                        };
+                        return JsonSerializer.Serialize(jsonObject);
+                    }).ToArray();
+
+                    string sql = @"call insert_employee_assignment(@EmployeeId, @EmploymentType, @DateFrom::date, @DateTo::date, @CabinetId, 
+                                                                @WorkSchedules::jsonb[], '0')";
+
+                    string result = connection.QueryFirstOrDefault<string>(sql, new
+                    {
+                        EmployeeId = employeeAssignment.employeeId,
+                        EmploymentType = employeeAssignment.type,
+                        DateFrom = employeeAssignment.dateFrom,
+                        DateTo = employeeAssignment.dateTo,
+                        CabinetId = employeeAssignment.cabinetId,
+                        WorkSchedules = jsonWorkSchedules
+                    });
+
+                    if (result == "1")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        switch (result)
+                        {
+                            case "-1":
+                                {
+                                    MessageBox.Show($"У этого сотрудника уже есть основное назначение", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                    break;
+                                }
+
+                            case "-2":
+                                {
+                                    MessageBox.Show($"У этого сотрудника нету основного назначения", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                    break;
+                                }
+
+                            case "-3":
+                                {
+                                    MessageBox.Show($"Расписания этого сотрудника пересекаюся", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                                    break;
+                                }
+                        }
+
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
             }
         }
+
+        public bool UpdateEmployeeAssignment(EmployeeAssignment employeeAssignment, List<WorkSchedule> workSchedules)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                try
+                {
+                    string[] jsonWorkSchedules = workSchedules.Select(ws =>
+                    {
+                        var jsonObject = new
+                        {
+                            timeStart = ws.timeStart,
+                            timeEnd = ws.timeEnd,
+                            weekDays = ws.weekDays
+                        };
+                        return JsonSerializer.Serialize(jsonObject);
+                    }).ToArray();
+
+                    string sql = @"call update_employee_assignment(@ID, @EmployeeId, @DateFrom::date, @DateTo::date, @CabinetId, 
+                                                                @WorkSchedules::jsonb[], '0')";
+
+                    string result = connection.QueryFirstOrDefault<string>(sql, new
+                    {
+                        ID = employeeAssignment.id,
+                        EmployeeId = employeeAssignment.employeeId,
+                        DateFrom = employeeAssignment.dateFrom,
+                        DateTo = employeeAssignment.dateTo,
+                        CabinetId = employeeAssignment.cabinetId,
+                        WorkSchedules = jsonWorkSchedules
+                    });
+
+                    if (result == "1")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+
+                        if(result == "-1")
+                        {
+                            MessageBox.Show($"Расписания этого сотрудника пересекаюся", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+                
+            }
+        }
+
+        
     }
 }

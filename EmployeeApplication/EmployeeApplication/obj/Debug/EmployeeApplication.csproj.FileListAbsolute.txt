@@ -135,4 +135,10 @@ C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\bin\D
 C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\obj\Debug\Doctor\DoctorWindow.g.cs
+C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\obj\Debug\Doctor\DoctorWindow.baml
 C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\obj\Debug\EmployeeApplication.exe.config
+C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\obj\Debug\Doctor\DoctorAddUpdateTreatment.g.cs
+C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\obj\Debug\Doctor\DoctorAddUpdateVisit.g.cs
+C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\obj\Debug\Doctor\DoctorAddUpdateTreatment.baml
+C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\obj\Debug\Doctor\DoctorAddUpdateVisit.baml

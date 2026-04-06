@@ -1,0 +1,145 @@
+﻿<Window x:Class="EmployeeApplication.DoctorAddUpdateVisit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeApplication"
+        mc:Ignorable="d"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Icon="/Images/icons.ico"
+        Title="DoctorAddUpdateVisit" Height="1250" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Прием пациента" FontSize="32"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <ScrollViewer Margin="25,0,10,0" Height="1000">
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Данные о приеме:" FontSize="24" Margin="0,10,0,20" Grid.Column="0" HorizontalAlignment="Left"/>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Формат"/>
+                                <ComboBox Width="150" Height="20" Margin="0,0,20,0">
+                                    <ComboBoxItem Content="Excel"/>
+                                    <ComboBoxItem Content="PDF"/>
+                                </ComboBox>
+                            </StackPanel>
+                            
+                            <Button Width="50" Height="50" Background="Transparent" Click="ButtonClickPrint">
+                                <Image Source="/Images/printer.png"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                        <StackPanel>
+                            <TextBlock Text="Дата"/>
+                            <DatePicker Name="DateVisit" Width="300" Height="30" Margin="0,0,0,10"/>
+                            <TextBlock Text="Пациент"/>
+                            <TextBox Name="Patient"  Width="300" Height="30" Margin="0,0,0,10"/>
+                        </StackPanel>
+                        <Separator Name="SeparatorIndividual" Width="150" Opacity="0"/>
+                        <StackPanel>
+                            <TextBlock Text="Время"/>
+                            <TextBox Name="TimeVisit"  Width="300" Height="30" Margin="0,0,0,10"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock Text="Состояние пациента:" FontSize="24" Margin="0,10,0,20"/>
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <StackPanel>
+                            <TextBlock Text="Жалобы" FontSize="18"/>
+                            <TextBox Name="Subjective" Width="300" Height="120" TextWrapping="Wrap" Margin="0,0,0,10"/>
+                            <TextBlock Text="Диагноз" FontSize="18"/>
+                            <TextBox Name="Diagnosis" Width="300" Height="30" Margin="0,0,0,10"/>
+                        </StackPanel>
+                        <Separator Name="SeparatorPatientCondition" Width="150" Opacity="0"/>
+                        <StackPanel>
+                            <TextBlock Text="Симптомы" FontSize="18"/>
+                            <TextBox Name="Objective" Width="300" Height="120" TextWrapping="Wrap" Margin="0,0,0,10"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock Text="Дополнительно:" FontSize="24" Margin="0,10,0,20"/>
+                    
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <StackPanel>
+                            <TextBlock Text="Рекоммендации" FontSize="18"/>
+                            <TextBox Name="Recommendation" Width="300" Height="120" TextWrapping="Wrap" Margin="0,0,0,10"/>
+                        </StackPanel>
+                        <Separator Name="SeparatorOptional" Width="150" Opacity="0"/>
+                        <StackPanel>
+                            <TextBlock Text="Необходимо стационарное лечение"/>
+                            <CheckBox Name="DirectionBool"  Width="300" Height="30" FontSize="18" Background="#bef574">
+                                <CheckBox.RenderTransform>
+                                    <ScaleTransform>
+                                        <ScaleTransform.ScaleX>1.5</ScaleTransform.ScaleX>
+                                        <ScaleTransform.ScaleY>1.5</ScaleTransform.ScaleY>
+                                    </ScaleTransform>
+                                </CheckBox.RenderTransform>
+                            </CheckBox>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock Text="Процедуры:" FontSize="24" Margin="0,10,0,20"/>
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <StackPanel>
+                            <TextBlock Text="Процедура"/>
+                            <ComboBox Name="Procedure" Width="300" Height="30" Margin="0,0,0,10" DisplayMemberPath="info"/>
+                            <TextBlock Text="Количество"/>
+                            <xctk:DoubleUpDown Name="Count" Width="300" Height="30" Margin="0,0,0,10"/>
+                            <TextBlock Text="Комментарий" FontSize="18"/>
+                            <TextBox Name="Comment" Width="300" Height="30" Margin="0,0,0,10"/>
+                            <Button Name="ButtonAdd" Content="Добавить" Click="ButtonClickAddProcedure" Width="300" Height="30" FontSize="16"  Margin="0,0,0,10"/>
+                            <Button Name="ButtonUpdate" Content="Изменить" Click="ButtonClickUpdateProcedure" Width="300" Height="30" FontSize="16" />
+                        </StackPanel>
+                        <Separator Name="SeparatorProcedures" Width="150" Opacity="0"/>
+                        <StackPanel>
+                            <DataGrid Name="DataGridProcedures" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DataGridProcedures_SelectionChanged">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Процедура" Width="auto" Binding="{Binding timeStart}"/>
+                                    <DataGridTextColumn Header="Количество" Width="auto" Binding="{Binding timeEnd}"/>
+                                    <DataGridTextColumn Header="Комментарий" Width="150" Binding="{Binding weekDaysString}"/>
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Content="-" FontSize = "16" Width="40" Height="20" Click="ButtonClickDeleteProcedure"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+
+        <Grid Grid.Row="2" VerticalAlignment="Center" Margin="25,0,10,0">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="ButtonSave" Content="Сохранить" Click="ButtonClickSave" Width="200" Height="30" FontSize="16" Grid.Column="0" HorizontalAlignment="Left"/>
+            <Button Content="Назад" Width="200" Height="30" FontSize="16" Click="ButtonClickBack" Grid.Column="1" HorizontalAlignment="Right"/>
+
+        </Grid>
+    </Grid>
+</Window>

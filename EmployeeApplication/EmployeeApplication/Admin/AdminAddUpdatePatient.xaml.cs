@@ -35,6 +35,7 @@ namespace EmployeeApplication
             ButtonOperation.Click += ButtonClickAdd;
 
             TextBlockHeader.Text = "Добавление пациента";
+            this.Title = "ИС «МедСервис» - Добавление пациента";
 
             NewIndividualCheckBox.Visibility = Visibility.Visible;
             NewIndividualCheckBox.Checked += NewIndividualCheckBox_Checked;
@@ -62,9 +63,11 @@ namespace EmployeeApplication
             ButtonOperation.Click += ButtonClickUpdate;
 
             TextBlockHeader.Text = "Редактирование пациента";
+            this.Title = "ИС «МедСервис» - Редактирование пациента";
 
             NewIndividualCheckBox.Visibility = Visibility.Collapsed;
             Individuals.Visibility = Visibility.Collapsed;
+            IndividualsHeader.Visibility = Visibility.Collapsed;
 
             IndividualStackPanel.Visibility = Visibility.Visible;
 
@@ -157,7 +160,7 @@ namespace EmployeeApplication
                 }
                 else
                 {
-                    if (Birthday.SelectedDate > DateTime.Now || DateIssue.SelectedDate > DateTime.Now)
+                    if (Birthday.SelectedDate > DateTime.Now || (DateIssue.SelectedDate > DateTime.Now && DateIssue.SelectedDate != null))
                     {
                         MessageBox.Show("Дата не может быть больше текущей", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                         return;
@@ -192,7 +195,7 @@ namespace EmployeeApplication
                         wingId = wing.id
                     };
 
-                    if (!Series.Text.Contains(birthCertificate.PromptChar.ToString()) && !Number.Text.Contains(birthCertificate.PromptChar.ToString())
+                    if (!Series.Text.Contains(Series.PromptChar.ToString()) && !Number.Text.Contains(Number.PromptChar.ToString())
                         && !string.IsNullOrWhiteSpace(IssuedBy.Text) && Birthday.SelectedDate != null)
                     {
                         individual.passportSeries = Series.Text;
@@ -253,16 +256,14 @@ namespace EmployeeApplication
 
         private void ButtonClickUpdate(object sender, RoutedEventArgs e)
         {
-            if (InsurancePolicy.Text.Contains(InsurancePolicy.PromptChar.ToString()) || WingPolyclinic.SelectedItem == null || string.IsNullOrWhiteSpace(LastName.Text) || string.IsNullOrWhiteSpace(FirstName.Text)
-                    || Birthday.SelectedDate == null || Phone.Text.Contains(Phone.PromptChar.ToString()) || Snils.Text.Contains(Snils.PromptChar.ToString()) || Gender.SelectedIndex == -1
-                    || Series.Text.Contains(Series.PromptChar.ToString()) || Number.Text.Contains(Number.PromptChar.ToString()) || DateIssue.SelectedDate == null
-                    || string.IsNullOrWhiteSpace(IssuedBy.Text) || birthCertificate.Text.Contains(birthCertificate.PromptChar.ToString()) || Individuals.SelectedItem == null)
+            if (WingPolyclinic.SelectedItem == null || string.IsNullOrWhiteSpace(LastName.Text) || string.IsNullOrWhiteSpace(FirstName.Text)
+                    || Birthday.SelectedDate == null || Gender.SelectedIndex == -1 || birthCertificate.Text.Contains(birthCertificate.PromptChar.ToString()))
             {
                 MessageBox.Show("Заполните все обязательные поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
-                if (Birthday.SelectedDate > DateTime.Now || DateIssue.SelectedDate > DateTime.Now)
+                if (Birthday.SelectedDate > DateTime.Now || (DateIssue.SelectedDate > DateTime.Now && DateIssue.SelectedDate != null))
                 {
                     MessageBox.Show("Дата не может быть больше текущей", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
@@ -271,7 +272,6 @@ namespace EmployeeApplication
                 string middleName0;
                 string gender0;
                 var wing = WingPolyclinic.SelectedItem as Wing;
-                var individualObject = Individuals.SelectedItem as Individual;
 
                 if (string.IsNullOrWhiteSpace(MiddleName.Text)) middleName0 = null;
                 else middleName0 = MiddleName.Text;
@@ -284,21 +284,37 @@ namespace EmployeeApplication
                     lastName = LastName.Text,
                     firstName = FirstName.Text,
                     middleName = middleName0,
-                    phone = Phone.Text,
+                    phone = Phone.Text == "" ? null : Phone.Text,
                     birthday = (DateTime)Birthday.SelectedDate,
-                    snils = Snils.Text,
-                    passportNumber = Number.Text,
-                    passportSeries = Series.Text,
-                    passportIssuedDate = (DateTime)DateIssue.SelectedDate,
-                    passportIssuedBy = IssuedBy.Text,
+                    snils = Snils.Text.Replace("-", "").Replace(" ", "") == "" ? null : Snils.Text,
+                    insurancePolicy = InsurancePolicy.Text.Replace(" ", "") == "" ? null : InsurancePolicy.Text.Replace(" ", ""),
+                    insuranceCompany = InsuranceCompany.Text == "" ? null : InsuranceCompany.Text,
+                    birthCertificate = birthCertificate.Text.Replace(" ", ""),
                     gender = gender0
                 };
 
                 Patient pacient = new Patient
                 {
                     wingId = wing.id,
-                    individualId = individualObject.id,
+                    individualId = individual0.id,
+                    id = patient0.id
                 };
+
+                if (!Series.Text.Contains(Series.PromptChar.ToString()) && !Number.Text.Contains(Number.PromptChar.ToString())
+                        && !string.IsNullOrWhiteSpace(IssuedBy.Text) && Birthday.SelectedDate != null)
+                {
+                    individual.passportSeries = Series.Text;
+                    individual.passportNumber = Number.Text;
+                    individual.passportIssuedDate = (DateTime)DateIssue.SelectedDate;
+                    individual.passportIssuedBy = IssuedBy.Text;
+                }
+                else
+                {
+                    individual.passportSeries = null;
+                    individual.passportNumber = null;
+                    individual.passportIssuedDate = DateTime.Now;
+                    individual.passportIssuedBy = null;
+                }
 
                 bool result = dB.UpdatePatient(pacient, individual, childrensIndividual);
 
@@ -306,7 +322,6 @@ namespace EmployeeApplication
                 {
                     MessageBox.Show("Данные о пациенте успешно обновлены", "Успех", MessageBoxButton.OK);
                     this.DialogResult = true;
-                    this.Close();
                 }
             }
         }
@@ -347,8 +362,9 @@ namespace EmployeeApplication
             {
                 var children = Childrens.SelectedItem as Children;
                 var childrenDelete = DataGridChildrens.SelectedItem as Children;
+                int index = DataGridChildrens.SelectedIndex;
                 childrensIndividual.Remove(childrenDelete);
-                childrensIndividual.Add(children);
+                childrensIndividual.Insert(index, children);
                 DataGridChildrens.Items.Refresh();
             }
             else

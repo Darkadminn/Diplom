@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\App.xaml
-6376531297
+9-215237138
 
-20302197150
+311421319618
 3732742783
-Admin\AdminAddUpdateEmployeeAssignment.xaml;Admin\AdminAddUpdateUser.xaml;Admin\AdminAddUpdateEmployee.xaml;Admin\AdminAddUpdatePatient.xaml;Admin\AdminWindow.xaml;Authorization\MainWindow.xaml;
+Admin\AdminAddUpdateEmployeeAssignment.xaml;Admin\AdminAddUpdateUser.xaml;Admin\AdminAddUpdateEmployee.xaml;Admin\AdminAddUpdatePatient.xaml;Admin\AdminWindow.xaml;Authorization\MainWindow.xaml;Doctor\DoctorAddUpdateTreatment.xaml;Doctor\DoctorAddUpdateVisit.xaml;Doctor\DoctorWindow.xaml;
 
 False
 

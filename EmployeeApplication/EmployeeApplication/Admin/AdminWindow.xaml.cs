@@ -242,6 +242,11 @@ namespace EmployeeApplication
         {
             var window = new AdminAddUpdatePatient();
             window.ShowDialog();
+
+            if(window.DialogResult == true)
+            {
+                LoadPatients();
+            }
         }
 
         private void DataGridPatientsMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -252,6 +257,11 @@ namespace EmployeeApplication
 
                 var window = new AdminAddUpdatePatient(patient);
                 window.ShowDialog();
+
+                if (window.DialogResult == true)
+                {
+                    LoadPatients();
+                }
             }
         }
 
@@ -290,7 +300,7 @@ namespace EmployeeApplication
 
         private void ButtonClickDeletePatient(object sender, RoutedEventArgs e)
         {
-            var result = MessageBox.Show("Вы точно хотите удалить пациента?", "Предупреждение", MessageBoxButton.YesNo);
+            var result = MessageBox.Show("Вы точно хотите удалить пациента?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if(result == MessageBoxResult.Yes)
             {
@@ -306,6 +316,11 @@ namespace EmployeeApplication
         {
             var window = new AdminAddUpdateEmployee();
             window.ShowDialog();
+
+            if (window.DialogResult == true)
+            {
+                LoadEmployees();
+            }
         }
 
         private void DataGridEmployeesMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -316,6 +331,11 @@ namespace EmployeeApplication
 
                 var window = new AdminAddUpdateEmployee(employee);
                 window.ShowDialog();
+
+                if (window.DialogResult == true)
+                {
+                    LoadEmployees();
+                }
             }
         }
 
@@ -361,13 +381,27 @@ namespace EmployeeApplication
 
         private void ButtonClickDeleteEmployee(object sender, RoutedEventArgs e)
         {
+            var result = MessageBox.Show("Вы точно хотите удалить сотрудника?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
+            if (result == MessageBoxResult.Yes)
+            {
+                var employee = DataGridEmployees.SelectedItem as Employee;
+
+                dB.DeleteEmployee(employee.id);
+
+                LoadEmployees();
+            }
         }
 
         private void ButtonClickAddEmployeeAssignment(object sender, RoutedEventArgs e)
         {
             var window = new AdminAddUpdateEmployeeAssignment();
             window.ShowDialog();
+
+            if (window.DialogResult == true)
+            {
+                LoadEmployeeAssignments();
+            }
         }
 
         private void DataGridEmployeeAssignmentsMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -378,6 +412,11 @@ namespace EmployeeApplication
 
                 var window = new AdminAddUpdateEmployeeAssignment(employeeAssignment);
                 window.ShowDialog();
+
+                if (window.DialogResult == true)
+                {
+                    LoadEmployeeAssignments();
+                }
             }
         }
 
@@ -423,13 +462,27 @@ namespace EmployeeApplication
 
         private void ButtonClickDeleteEmployeeAssignment(object sender, RoutedEventArgs e)
         {
+            var result = MessageBox.Show("Вы точно хотите удалить назначение?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
+            if (result == MessageBoxResult.Yes)
+            {
+                var employeeAssignment = DataGridEmployeeAssignments.SelectedItem as EmployeeAssignment;
+
+                dB.DeleteEmployeeAssignment(employeeAssignment.id);
+
+                LoadEmployeeAssignments();
+            }
         }
 
         private void ButtonClickAddUser(object sender, RoutedEventArgs e)
         {
             var window = new AdminAddUpdateUser();
             window.ShowDialog();
+
+            if (window.DialogResult == true)
+            {
+                LoadUsers();
+            }
         }
 
         private void DataGridUsersMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -440,6 +493,11 @@ namespace EmployeeApplication
 
                 var window = new AdminAddUpdateUser(user);
                 window.ShowDialog();
+
+                if (window.DialogResult == true)
+                {
+                    LoadUsers();
+                }
             }
         }
 
@@ -479,7 +537,16 @@ namespace EmployeeApplication
 
         private void ButtonClickDeleteUser(object sender, RoutedEventArgs e)
         {
+            var result = MessageBox.Show("Вы точно хотите удалить пользователя?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
+            if (result == MessageBoxResult.Yes)
+            {
+                var user = DataGridUsers.SelectedItem as User;
+
+                dB.DeleteUser(user.userId, user.role);
+
+                LoadUsers();
+            }
         }
 
 

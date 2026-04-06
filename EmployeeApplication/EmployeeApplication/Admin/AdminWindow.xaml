@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmployeeApplication"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800"
-        FontFamily="Arial"
+        Title="ИС «МедСервис» - Главное меню администратора" 
         Icon="/Images/icons.ico"
+        Height="450" 
+        Width="800"
         SizeChanged="WindowSizeChanged">
     <Grid>
         <Grid.ColumnDefinitions>

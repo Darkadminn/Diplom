@@ -20,8 +20,9 @@ namespace EmployeeApplication
         public int wingId { get; set; }
         public string post { get; set; }
         public string wing { get; set; }
+        public string postType { get; set; }
         public string fio => $"{lastName} {firstName} {middleName}".Trim();
-        public string info => $"{fio} {post} {assignment} ";
+        public string info => $"{fio} {post} {wing} {assignment} ";
         public string passwordSecurity => password.Replace(password, "************");
     }
 }

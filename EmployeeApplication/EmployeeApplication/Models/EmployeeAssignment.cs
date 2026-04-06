@@ -19,10 +19,13 @@ namespace EmployeeApplication
         public string postType { get; set; }
         public DateTime dateFrom { get; set; }
         public DateTime? dateTo { get; set; }
+        public DateTime? dateDismissal { get; set; }
         public int wingId { get; set; }
         public string wing {  get; set; }
         public int cabinetId { get; set; }
         public string cabinet { get; set; }
+        public int departmentId { get; set; }
+        public string department { get; set; }
         public string fio => $"{lastName} {firstName} {middleName}".Trim();
     }
 }

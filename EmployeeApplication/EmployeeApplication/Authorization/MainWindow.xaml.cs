@@ -39,11 +39,12 @@ namespace EmployeeApplication
             if (UserAuthorization.id != -1)
             {
                 MessageBox.Show($"Добро пожаловать {UserAuthorization.fio}", "Успех", MessageBoxButton.OK);
+
                 if (UserAuthorization.role == "Специалист")
                 {
-                    /*var window = new MainMenuDoctor();
+                    var window = new DoctorWindow();
                     window.Show();
-                    this.Close();*/
+                    this.Close();
                 }
                 else if (UserAuthorization.role == "Администратор")
                 {

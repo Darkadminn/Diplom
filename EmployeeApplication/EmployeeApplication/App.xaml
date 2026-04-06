@@ -8,7 +8,8 @@
 
         <Style TargetType="Window">
             <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Icon" Value="/Images/icons.ico"/>
         </Style>
 
         <Style TargetType="ComboBox">
@@ -19,7 +20,15 @@
             <Setter Property="Background" Value="#bef574"/>
         </Style>
 
+        <Style TargetType="ListBox">
+            <Setter Property="Background" Value="#bef574"/>
+        </Style>
+
         <Style TargetType="xctk:MaskedTextBox">
+            <Setter Property="Background" Value="#bef574"/>
+        </Style>
+
+        <Style TargetType="xctk:DoubleUpDown">
             <Setter Property="Background" Value="#bef574"/>
         </Style>
 

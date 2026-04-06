@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmployeeApplication"
         mc:Ignorable="d"
-        Icon="/images/icons.ico"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="ИС «МедСервис» - Окно авторизации" 
+        Title="ИС «МедСервис» - Авторизации"
+        Icon="/Images/icons.ico"
         Height="360" 
-        Width="400"
-        >
+        Width="400">
+    
     <Window.Resources>
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>

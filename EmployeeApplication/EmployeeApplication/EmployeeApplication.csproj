@@ -131,12 +131,28 @@
     <Compile Include="Admin\AdminAddUpdateEmployee.xaml.cs">
       <DependentUpon>AdminAddUpdateEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Doctor\DoctorAddUpdateTreatment.xaml.cs">
+      <DependentUpon>DoctorAddUpdateTreatment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\DoctorAddUpdateVisit.xaml.cs">
+      <DependentUpon>DoctorAddUpdateVisit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\DoctorWindow.xaml.cs">
+      <DependentUpon>DoctorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MedicalProcedure.cs" />
+    <Compile Include="Models\Cabinet.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Children.cs" />
     <Compile Include="Models\EmployeeAssignment.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Wing.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\WorkSchedule.cs" />
+    <Compile Include="Models\Visit.cs" />
+    <Compile Include="Models\VisitProcedure.cs" />
+    <Compile Include="Models\VisitProcedureHistory.cs" />
+    <Compile Include="Treatment.cs" />
     <Page Include="Admin\AdminAddUpdateEmployeeAssignment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,11 +192,24 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Doctor\DoctorAddUpdateTreatment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Doctor\DoctorAddUpdateVisit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Doctor\DoctorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Individual.cs" />
     <Compile Include="Models\UserAuthorization.cs" />
     <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -211,10 +240,10 @@
     <Resource Include="Images\icons.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Doctor\" />
+    <Resource Include="Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\printer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
