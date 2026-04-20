@@ -2,11 +2,35 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileApplication.Views.RegistrationPage"
-             Title="RegistrationPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <ScrollView>
+        <StackLayout Background="White" HorizontalOptions="Center">
+
+            <Label Text="Регистрация" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36" Margin="0,10,0,20"/>
+
+            <Label Text="Номер телефона" TextColor="Black"/>
+            <Entry x:Name="Phone" Margin="0,0,0,10" Placeholder="+7(000)000-00-00" Keyboard="Numeric">
+                <Entry.Behaviors>
+                    <toolkit:MaskedBehavior Mask="+7(000)000-00-00" UnmaskedCharacter="0"/>
+                </Entry.Behaviors>
+            </Entry>
+            
+            
+            <Label Text="Логин" TextColor="Black"/>
+            <Entry x:Name="Login" Margin="0,0,0,10"/>
+            <Label Text="Пароль" TextColor="Black"/>
+            <Entry x:Name="Password" Margin="0,0,0,10" IsPassword="True" TextChanged="OnPasswordTextChanged"/>
+            <Label Text="Повторите пароль" TextColor="Black"/>
+            <Border Stroke="Red" x:Name="BorderRepeatPassword" StrokeShape="RoundRectangle 5" Margin="0,0,0,10">
+                <Entry x:Name="RepeatPassword" IsPassword="True" TextChanged="OnRepeatPasswordTextChanged"/>
+            </Border>
+            
+            <Button Text="Далее" Margin="0,20,0,0" WidthRequest="300" HorizontalOptions="Center"
+                BackgroundColor="Red" Clicked="ButtonClickedAddUser"/>
+
+
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

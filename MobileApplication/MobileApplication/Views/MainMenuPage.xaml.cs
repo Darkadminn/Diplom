@@ -5,6 +5,8 @@ public partial class MainMenuPage : ContentPage
 	public MainMenuPage()
 	{
 		InitializeComponent();
+
+        this.Title = UserAuthorization.fio;
 	}
 
     private void ButtonClickedRecord(object sender, EventArgs e)

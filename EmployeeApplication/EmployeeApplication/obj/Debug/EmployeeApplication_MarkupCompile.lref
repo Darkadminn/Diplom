@@ -1,12 +1,15 @@
 ﻿
 FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\App.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminAddUpdateEmployeeAssignment.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminAddUpdateUser.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminAddUpdateEmployee.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminAddUpdatePatient.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Admin\AdminWindow.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Authorization\MainWindow.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Doctor\DoctorAddUpdateTreatment.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Doctor\DoctorAddUpdateVisit.xaml;;
-FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Doctor\DoctorWindow.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Views\Admin\AdminAddUpdateEmployeeAssignment.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Views\Admin\AdminAddUpdateUser.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Views\Admin\AdminAddUpdateEmployee.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Views\Admin\AdminAddUpdatePatient.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Views\Admin\AdminWindow.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Views\Authorization\MainWindow.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Views\Doctor\DoctorAddUpdateTreatment.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Views\Doctor\DoctorAddUpdateVisit.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Views\Doctor\DoctorWindow.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Nurse\DoctorNurseProcedureHistories.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Nurse\NurseWindow.xaml;;
+FC:\Users\burul\source\repos\Diplom\EmployeeApplication\EmployeeApplication\Views\Doctor\DoctorTreatmentProcedureHistories.xaml;;
 

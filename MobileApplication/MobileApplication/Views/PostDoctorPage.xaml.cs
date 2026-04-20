@@ -7,7 +7,9 @@ public partial class PostDoctorPage : ContentPage
 	{
 		InitializeComponent();
 
-		ButtonForward.IsEnabled = false;
+        this.Title = UserAuthorization.fio;
+
+        ButtonForward.IsEnabled = false;
 		ListPosts.ItemsSource = dB.GetPosts();
 	}
 

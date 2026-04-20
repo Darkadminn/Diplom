@@ -5,7 +5,9 @@ public partial class TypeWingPage : ContentPage
 	public TypeWingPage()
 	{
 		InitializeComponent();
-	}
+
+        this.Title = UserAuthorization.fio;
+    }
 
     private void ButtonClickedPolyclinic(object sender, EventArgs e)
     {

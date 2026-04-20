@@ -2,24 +2,37 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileApplication.MainPage"
-             NavigationPage.HasNavigationBar="False"
-            Title="">
+             NavigationPage.HasNavigationBar="False">
 
     <ScrollView>
         <StackLayout Background="White" Margin="10">
 
             <Label Text="Авторизация" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36" Margin="0,20,0,0"/>
 
-            <Label Text="Логин" FontSize="Title" Padding="10,100,20,0" TextColor="Black" HorizontalOptions="Center"/>
-            <Border BackgroundColor="#bef574" Stroke="Black" StrokeThickness="1" StrokeShape="RoundRectangle 5" WidthRequest="200" HeightRequest="40"  Margin="0,0,0,20" HorizontalOptions="Center">
-                <Entry x:Name="Login" Text="{Binding Login}" HorizontalTextAlignment="Start" TextColor="Black" BackgroundColor="Transparent"/>
-            </Border>
-            <Label Text="Пароль" FontSize="Title" Padding="10,20,20,0" TextColor="Black" HorizontalOptions="Center"/>
-            <Border BackgroundColor="#bef574" WidthRequest="200" Stroke="Black" StrokeShape="RoundRectangle 5" StrokeThickness="1" HeightRequest="40" Margin="0,0,0,20" HorizontalOptions="Center">
-                <Entry x:Name="Password" Text="{Binding Password}" HorizontalTextAlignment="Start" TextColor="Black" IsPassword="True"/>
-            </Border>
-            <Button x:Name="ButtonLogin" Text="Войти" WidthRequest="300" Margin="0,50,0,0" BackgroundColor="Red" Clicked="ButtonClickedAuthorization"/>
-            <Button Text="Регистрация" WidthRequest="300" Margin="0,50,0,0" BackgroundColor="Red" Clicked="ButtonClickedRegistration"/>
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Логин" FontSize="Title" Padding="10,100,20,0" TextColor="Black"/>
+                <Border BackgroundColor="#bef574" Stroke="Black" StrokeThickness="1" StrokeShape="RoundRectangle 5" WidthRequest="300" HeightRequest="40"  Margin="0,0,0,20">
+                    <Entry x:Name="Login" HorizontalTextAlignment="Start" TextColor="Black" BackgroundColor="Transparent"/>
+                </Border>
+                <Label Text="Пароль" FontSize="Title" Padding="10,20,20,0" TextColor="Black"/>
+                <Border BackgroundColor="#bef574" WidthRequest="300" Stroke="Black" StrokeShape="RoundRectangle 5" StrokeThickness="1" HeightRequest="40" Margin="0,0,0,5">
+                    <Entry x:Name="Password" HorizontalTextAlignment="Start" TextColor="Black" IsPassword="True"/>
+                </Border>
+                <Label HorizontalOptions="End">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Забыли пароль" FontSize="12" TextColor="Blue" TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="RecoveryPasswordTapped"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button x:Name="ButtonLogin" Text="Войти" WidthRequest="300" Margin="0,50,0,0" BackgroundColor="Red" Clicked="ButtonClickedAuthorization"/>
+                <Button Text="Регистрация" WidthRequest="300" Margin="0,50,0,0" BackgroundColor="Red" Clicked="ButtonClickedRegistration"/>
+            </StackLayout>
+            
 
         </StackLayout>
     </ScrollView>

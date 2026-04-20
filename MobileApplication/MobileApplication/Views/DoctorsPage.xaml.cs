@@ -17,6 +17,8 @@ public partial class DoctorsPage : ContentPage
 	{
 		InitializeComponent();
 
+        this.Title = UserAuthorization.fio;
+
         userFilter = new Filter
         {
             name = "000",

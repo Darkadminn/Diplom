@@ -9,6 +9,8 @@ public partial class VisitsPage : ContentPage
 	{
 		InitializeComponent();
 
+        this.Title = UserAuthorization.fio;
+
         LoadVisits();
 	}
 
@@ -50,6 +52,14 @@ public partial class VisitsPage : ContentPage
             var cabinetLabel = new Label
             {
                 Text = $"Кабинет: {visit.cabinet}",
+                TextColor = Colors.Black,
+                Margin = new Thickness(10, 5, 0, 0),
+                FontSize = 12
+            };
+
+            var fioPatient = new Label
+            {
+                Text = $"ФИО пациента: {visit.patient}",
                 TextColor = Colors.Black,
                 Margin = new Thickness(10, 5, 0, 0),
                 FontSize = 12
@@ -121,6 +131,7 @@ public partial class VisitsPage : ContentPage
 
             mainStackLayet.Children.Add(wingLabel);
             mainStackLayet.Children.Add(cabinetLabel);
+            mainStackLayet.Children.Add(fioPatient);
             mainStackLayet.Children.Add(fioLabel);
             mainStackLayet.Children.Add(postLabel);
             mainStackLayet.Children.Add(dateLabel);
@@ -161,6 +172,14 @@ public partial class VisitsPage : ContentPage
             var cabinetLabel = new Label
             {
                 Text = $"Кабинет: {visit.cabinet}",
+                TextColor = Colors.Black,
+                Margin = new Thickness(10, 5, 0, 0),
+                FontSize = 12
+            };
+
+            var fioPatient = new Label
+            {
+                Text = $"ФИО пациента: {visit.patient}",
                 TextColor = Colors.Black,
                 Margin = new Thickness(10, 5, 0, 0),
                 FontSize = 12
@@ -208,6 +227,7 @@ public partial class VisitsPage : ContentPage
 
             mainStackLayet.Children.Add(wingLabel);
             mainStackLayet.Children.Add(cabinetLabel);
+            mainStackLayet.Children.Add(fioPatient);
             mainStackLayet.Children.Add(fioLabel);
             mainStackLayet.Children.Add(postLabel);
             mainStackLayet.Children.Add(dateLabel);

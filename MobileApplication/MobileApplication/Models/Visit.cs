@@ -15,5 +15,6 @@ namespace MobileApplication
         public string cabinet { get; set; }
         public string status { get; set; }
         public string postName { get; set; }
+        public string patient {  get; set; }
     }
 }

@@ -3,124 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\doctor\\doctorwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\doctor\\doctorwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\employeeapplication\\employeeapplication\\views\\admin\\adminaddupdateemployeeassignment.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\views\\admin\\adminaddupdateemployeeassignment.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\doctor\\doctorwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\doctor\\doctorwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\employeeapplication\\employeeapplication\\views\\nurse\\nursewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\views\\nurse\\nursewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\employeeapplication\\employeeapplication\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\employeeapplication\\employeeapplication\\views\\nurse\\nursewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\views\\nurse\\nursewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\employeeapplication\\employeeapplication\\doctor\\doctoraddupdatevisit.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\doctor\\doctoraddupdatevisit.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\employeeapplication\\employeeapplication\\views\\doctor\\doctorwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\views\\doctor\\doctorwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\employeeapplication\\employeeapplication\\doctor\\doctoraddupdatevisit.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\doctor\\doctoraddupdatevisit.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\employeeapplication\\employeeapplication\\views\\doctor\\doctorwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\views\\doctor\\doctorwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\models\\medicalprocedure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\models\\medicalprocedure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\admin\\adminaddupdateemployeeassignment.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\admin\\adminaddupdateemployeeassignment.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\admin\\adminaddupdateemployeeassignment.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\admin\\adminaddupdateemployeeassignment.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\admin\\adminaddupdatepatient.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\admin\\adminaddupdatepatient.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\models\\visit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\models\\visit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\models\\visitprocedure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\models\\visitprocedure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\admin\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\admin\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\employeeapplication\\employeeapplication\\treatment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\treatment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\admin\\adminaddupdateemployee.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\admin\\adminaddupdateemployee.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\admin\\adminwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\admin\\adminwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\models\\visitprocedurehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\models\\visitprocedurehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\authorization\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\authorization\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\admin\\adminaddupdateuser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\admin\\adminaddupdateuser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\models\\workschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\models\\workschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\admin\\adminaddupdateuser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\admin\\adminaddupdateuser.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\admin\\adminaddupdatepatient.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\admin\\adminaddupdatepatient.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\admin\\adminaddupdateemployee.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\admin\\adminaddupdateemployee.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\authorization\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\authorization\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\models\\employeeassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\models\\employeeassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\models\\cabinet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\models\\cabinet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\employeeapplication\\classes\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E15D2245-0D59-4C17-A488-A062680D84F6}|EmployeeApplication\\EmployeeApplication.csproj|solutionrelative:employeeapplication\\classes\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -130,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -138,374 +42,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DoctorAddUpdateVisit.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Doctor\\DoctorAddUpdateVisit.xaml",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Doctor\\DoctorAddUpdateVisit.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Doctor\\DoctorAddUpdateVisit.xaml",
-              "RelativeToolTip": "EmployeeApplication\\Doctor\\DoctorAddUpdateVisit.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-06T08:14:05.719Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DoctorWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Doctor\\DoctorWindow.xaml.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Doctor\\DoctorWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Doctor\\DoctorWindow.xaml.cs",
-              "RelativeToolTip": "EmployeeApplication\\Doctor\\DoctorWindow.xaml.cs",
-              "ViewState": "AgIAABwBAAAAAAAAAAAIwJkAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T06:48:53.568Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "AdminAddUpdateEmployeeAssignment.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateEmployeeAssignment.xaml.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Admin\\AdminAddUpdateEmployeeAssignment.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateEmployeeAssignment.xaml.cs",
-              "RelativeToolTip": "EmployeeApplication\\Admin\\AdminAddUpdateEmployeeAssignment.xaml.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAAAG4AAAAIAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Views\\Admin\\AdminAddUpdateEmployeeAssignment.xaml.cs",
+              "RelativeDocumentMoniker": "EmployeeApplication\\Views\\Admin\\AdminAddUpdateEmployeeAssignment.xaml.cs",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Views\\Admin\\AdminAddUpdateEmployeeAssignment.xaml.cs",
+              "RelativeToolTip": "EmployeeApplication\\Views\\Admin\\AdminAddUpdateEmployeeAssignment.xaml.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwHYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T03:39:35.075Z",
+              "WhenOpened": "2026-04-19T17:01:26.771Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AdminAddUpdateEmployeeAssignment.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateEmployeeAssignment.xaml",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Admin\\AdminAddUpdateEmployeeAssignment.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateEmployeeAssignment.xaml",
-              "RelativeToolTip": "EmployeeApplication\\Admin\\AdminAddUpdateEmployeeAssignment.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-03T03:13:38.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AdminAddUpdatePatient.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdatePatient.xaml.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Admin\\AdminAddUpdatePatient.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdatePatient.xaml.cs",
-              "RelativeToolTip": "EmployeeApplication\\Admin\\AdminAddUpdatePatient.xaml.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAAAHoAAAANAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "DoctorWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Views\\Doctor\\DoctorWindow.xaml.cs",
+              "RelativeDocumentMoniker": "EmployeeApplication\\Views\\Doctor\\DoctorWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Views\\Doctor\\DoctorWindow.xaml.cs",
+              "RelativeToolTip": "EmployeeApplication\\Views\\Doctor\\DoctorWindow.xaml.cs",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAAwPMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T13:17:36.215Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DB.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\DataBase\\DB.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\DataBase\\DB.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\DataBase\\DB.cs",
-              "RelativeToolTip": "EmployeeApplication\\DataBase\\DB.cs",
-              "ViewState": "AgIAAOAAAAAAAAAAAAAhwP8AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T16:12:13.049Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MedicalProcedure.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\MedicalProcedure.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Models\\MedicalProcedure.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\MedicalProcedure.cs",
-              "RelativeToolTip": "EmployeeApplication\\Models\\MedicalProcedure.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T08:41:51.89Z",
+              "WhenOpened": "2026-04-19T16:43:10.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DoctorWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Doctor\\DoctorWindow.xaml",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Doctor\\DoctorWindow.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Doctor\\DoctorWindow.xaml",
-              "RelativeToolTip": "EmployeeApplication\\Doctor\\DoctorWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-04T13:19:44.473Z",
+              "Title": "NurseWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Views\\Nurse\\NurseWindow.xaml.cs",
+              "RelativeDocumentMoniker": "EmployeeApplication\\Views\\Nurse\\NurseWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Views\\Nurse\\NurseWindow.xaml.cs",
+              "RelativeToolTip": "EmployeeApplication\\Views\\Nurse\\NurseWindow.xaml.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAcwHUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T16:43:09.072Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "DoctorAddUpdateVisit.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Doctor\\DoctorAddUpdateVisit.xaml.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Doctor\\DoctorAddUpdateVisit.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Doctor\\DoctorAddUpdateVisit.xaml.cs",
-              "RelativeToolTip": "EmployeeApplication\\Doctor\\DoctorAddUpdateVisit.xaml.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAowFkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T09:34:47.327Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "VisitProcedure.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\VisitProcedure.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Models\\VisitProcedure.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\VisitProcedure.cs",
-              "RelativeToolTip": "EmployeeApplication\\Models\\VisitProcedure.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBUAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T08:40:03.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AdminWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminWindow.xaml.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Admin\\AdminWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminWindow.xaml.cs",
-              "RelativeToolTip": "EmployeeApplication\\Admin\\AdminWindow.xaml.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAwCcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T07:01:49.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Visit.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\Visit.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Models\\Visit.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\Visit.cs",
-              "RelativeToolTip": "EmployeeApplication\\Models\\Visit.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T08:39:21.694Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\App.xaml",
-              "RelativeDocumentMoniker": "EmployeeApplication\\App.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\App.xaml",
-              "RelativeToolTip": "EmployeeApplication\\App.xaml",
+              "Title": "DoctorWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Views\\Doctor\\DoctorWindow.xaml",
+              "RelativeDocumentMoniker": "EmployeeApplication\\Views\\Doctor\\DoctorWindow.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Views\\Doctor\\DoctorWindow.xaml",
+              "RelativeToolTip": "EmployeeApplication\\Views\\Doctor\\DoctorWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-03T10:19:36.836Z",
+              "WhenOpened": "2026-04-19T16:40:44.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AdminAddUpdateEmployee.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateEmployee.xaml.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Admin\\AdminAddUpdateEmployee.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateEmployee.xaml.cs",
-              "RelativeToolTip": "EmployeeApplication\\Admin\\AdminAddUpdateEmployee.xaml.cs",
-              "ViewState": "AgIAADgBAAAAAAAAAAAqwFMBAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T13:17:04.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Treatment.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Treatment.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Treatment.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Treatment.cs",
-              "RelativeToolTip": "EmployeeApplication\\Treatment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T05:43:12.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AdminWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminWindow.xaml",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Admin\\AdminWindow.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminWindow.xaml",
-              "RelativeToolTip": "EmployeeApplication\\Admin\\AdminWindow.xaml",
+              "DocumentIndex": 2,
+              "Title": "NurseWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Views\\Nurse\\NurseWindow.xaml",
+              "RelativeDocumentMoniker": "EmployeeApplication\\Views\\Nurse\\NurseWindow.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Views\\Nurse\\NurseWindow.xaml",
+              "RelativeToolTip": "EmployeeApplication\\Views\\Nurse\\NurseWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-13T18:33:42.395Z",
+              "WhenOpened": "2026-04-19T14:10:49.169Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AdminAddUpdateUser.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateUser.xaml.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Admin\\AdminAddUpdateUser.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateUser.xaml.cs",
-              "RelativeToolTip": "EmployeeApplication\\Admin\\AdminAddUpdateUser.xaml.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAAALgAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "DB.cs",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Classes\\DataBase\\DB.cs",
+              "RelativeDocumentMoniker": "EmployeeApplication\\Classes\\DataBase\\DB.cs",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Classes\\DataBase\\DB.cs",
+              "RelativeToolTip": "EmployeeApplication\\Classes\\DataBase\\DB.cs",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAwwO0AAAB7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T13:17:46.469Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "VisitProcedureHistory.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\VisitProcedureHistory.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Models\\VisitProcedureHistory.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\VisitProcedureHistory.cs",
-              "RelativeToolTip": "EmployeeApplication\\Models\\VisitProcedureHistory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T08:41:21.972Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Authorization\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Authorization\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Authorization\\MainWindow.xaml.cs",
-              "RelativeToolTip": "EmployeeApplication\\Authorization\\MainWindow.xaml.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T18:21:45.467Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "AdminAddUpdateEmployee.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateEmployee.xaml",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Admin\\AdminAddUpdateEmployee.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateEmployee.xaml",
-              "RelativeToolTip": "EmployeeApplication\\Admin\\AdminAddUpdateEmployee.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-03T10:22:04.228Z",
+              "WhenOpened": "2026-04-17T17:02:59.979Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "AdminAddUpdatePatient.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdatePatient.xaml",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Admin\\AdminAddUpdatePatient.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdatePatient.xaml",
-              "RelativeToolTip": "EmployeeApplication\\Admin\\AdminAddUpdatePatient.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-22T08:25:55.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Department.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\Department.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Models\\Department.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\Department.cs",
-              "RelativeToolTip": "EmployeeApplication\\Models\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T03:35:37.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Authorization\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Authorization\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Authorization\\MainWindow.xaml",
-              "RelativeToolTip": "EmployeeApplication\\Authorization\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-13T18:21:46.098Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Models\\Employee.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\Employee.cs",
-              "RelativeToolTip": "EmployeeApplication\\Models\\Employee.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T05:19:07.754Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AdminAddUpdateUser.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateUser.xaml",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Admin\\AdminAddUpdateUser.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Admin\\AdminAddUpdateUser.xaml",
-              "RelativeToolTip": "EmployeeApplication\\Admin\\AdminAddUpdateUser.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-03T10:21:52.04Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "WorkSchedule.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\WorkSchedule.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Models\\WorkSchedule.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\WorkSchedule.cs",
-              "RelativeToolTip": "EmployeeApplication\\Models\\WorkSchedule.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwA8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T16:58:53.407Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\User.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\User.cs",
-              "RelativeToolTip": "EmployeeApplication\\Models\\User.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowBUAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T16:54:02.706Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "packages.config",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\packages.config",
-              "RelativeDocumentMoniker": "EmployeeApplication\\packages.config",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\packages.config",
-              "RelativeToolTip": "EmployeeApplication\\packages.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-03-13T18:44:20.92Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Cabinet.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\Cabinet.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Models\\Cabinet.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\Cabinet.cs",
-              "RelativeToolTip": "EmployeeApplication\\Models\\Cabinet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T03:36:51.195Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "EmployeeAssignment.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\EmployeeAssignment.cs",
-              "RelativeDocumentMoniker": "EmployeeApplication\\Models\\EmployeeAssignment.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\EmployeeApplication\\EmployeeApplication\\Models\\EmployeeAssignment.cs",
-              "RelativeToolTip": "EmployeeApplication\\Models\\EmployeeAssignment.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAADwvxsAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T16:53:36.33Z"
             }
           ]
         }

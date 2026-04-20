@@ -3,35 +3,45 @@ namespace MobileApplication;
 public partial class ChildrenPage : ContentPage
 {
 	DB dB = new DB();
+    List<Children> childrens = new List<Children>();
 
 	public ChildrenPage()
 	{
 		InitializeComponent();
 
-        var childrens = dB.GetChildrens();
-        childrens.Add(new Children
-        {
-            id = -5,
-            lastName = "Добавить нового ребенка"
-        });
+        this.Title = UserAuthorization.fio;
+
+        childrens = dB.GetChildrens();
 
 		PickerChildrens.ItemsSource = childrens;
-
-        DataChildren.IsVisible = false;
 
     }
 
     private void PickerChildrens_SelectedIndexChanged(object sender, EventArgs e)
     {
-        var children = PickerChildrens.SelectedItem as Children;
-
-        if(children.id == -5)
+        if(PickerChildrens.SelectedIndex != -1)
         {
-            DataChildren.IsVisible = true;
+            ButtonChildren.IsEnabled = true;
         }
         else
         {
-            DataChildren.IsVisible = false;
+            ButtonChildren.IsEnabled = false;
         }
     }
+
+    private void ButtonChildrenClicked(object sender, EventArgs e)
+    {
+        if(PickerChildrens.SelectedIndex != -1)
+        {
+            var children = PickerChildrens.SelectedItem as Children;
+
+            ReceptionSetting.patientId = children.id;
+            ReceptionSetting.patientGender = children.gender;
+            ReceptionSetting.patientPolyclinicId = children.wingId;
+
+            Navigation.PushAsync(new TypeWingPage());
+        }
+    }
+
+    
 }

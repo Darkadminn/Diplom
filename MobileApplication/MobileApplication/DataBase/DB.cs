@@ -10,8 +10,9 @@ namespace MobileApplication
 {
     public class DB
     {
+        string connectionString = "Host=192.168.0.114;Port=5432;Database=db_medical_institutions;Username=postgres;Password=PostgreSQL";
+        //string connectionString = "Host=10.109.137.252;Port=5432;Database=db_medical_institutions;Username=postgres;Password=PostgreSQL";
         //string connectionString = "Host=192.168.0.162;Port=5432;Database=db_medical_institutions;Username=postgres;Password=PostgreSQL";
-        string connectionString = "Host=10.109.137.252;Port=5432;Database=db_medical_institutions;Username=postgres;Password=PostgreSQL";
 
 
         public NpgsqlConnection GetConnection()
@@ -65,6 +66,57 @@ namespace MobileApplication
                     UserAuthorization.id = id;
 
                 }
+            }
+        }
+
+        public string AvailablePhoneLogin(string phone, string login)
+        {
+            using (var connection = GetConnection())
+            {
+                string sql = @"select available_phone_login_patient(@Phone, @Login)";
+
+                return connection.QueryFirstOrDefault<string>(sql, new {
+                    Phone = phone,
+                    Login = login
+                });
+            }
+        }
+
+        public string AvailableUserPhone(string phone)
+        {
+            using (var connection = GetConnection())
+            {
+                string sql = @"select available_phone_user_patient(@Phone)";
+
+                return connection.QueryFirstOrDefault<string>(sql, new { Phone = phone});
+            }
+        }
+
+        public string InsertUser(string login, string password, string phone)
+        {
+            using (var connection = GetConnection())
+            {
+                string sql = @"call insert_user_patient(@Login, @Password, @Phone, '0')";
+
+                return connection.QueryFirstOrDefault<string>(sql, new { 
+                    Login = login,
+                    Password = password,
+                    Phone = phone 
+                });
+            }
+        }
+
+        public string UpdateUser(string password, string phone)
+        {
+            using (var connection = GetConnection())
+            {
+                string sql = @"call update_user_patient(@Password, @Phone, '0')";
+
+                return connection.QueryFirstOrDefault<string>(sql, new
+                {
+                    Password = password,
+                    Phone = phone
+                });
             }
         }
 
@@ -334,8 +386,9 @@ namespace MobileApplication
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string sql = @"select v.id as id, concat(ind.last_name, ' ', ind.first_name, coalesce(' ' || ind.middle_name, '')) as fio, v.date as date, 
-                                w.name as wingName, c.name as cabinet, v.status as status, p.name as postName
+                string sql = @"select v.id as id, concat(ind.last_name, ' ', ind.first_name, coalesce(' ' || ind.middle_name, '')) as fio, 
+                                v.date as date, w.name as wingName, c.name as cabinet, v.status as status, p.name as postName, 
+                                concat(ind_pat.last_name, ' ', ind_pat.first_name, coalesce(' ' || ind_pat.middle_name, '')) as patient
                                 from wings w inner join departments d
                                 on w.id = d.wing_id
                                 inner join cabinets c
@@ -350,6 +403,10 @@ namespace MobileApplication
                                 on emp.id = emp_assig.employee_id
                                 inner join individuals ind
                                 on emp.individual_id = ind.id
+                                inner join patients pat
+                                on pat.id = v.patient_id
+                                inner join individuals ind_pat
+                                on ind_pat.id = pat.individual_id
                                 inner join posts p
                                 on emp.post_id = p.id
                                 where v.patient_id = @PatientId";

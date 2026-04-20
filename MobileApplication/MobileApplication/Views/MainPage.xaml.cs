@@ -43,5 +43,10 @@ namespace MobileApplication
         {
             await Navigation.PushAsync(new RegistrationPage());
         }
+
+        private async void RecoveryPasswordTapped(object sender, TappedEventArgs e)
+        {
+            await Navigation.PushAsync(new RecoveryPage());
+        }
     }
 }

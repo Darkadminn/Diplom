@@ -1,49 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileApplication.ChildrenPage"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+             x:Class="MobileApplication.ChildrenPage">
     <ScrollView>
-        <StackLayout Background="#f0f0f0">
+        <StackLayout Background="White">
 
-            <Label Text="Укажите данные ребенка" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36" Margin="0,20,0,0"/>
+            <Label Text="Выберите ребёнка" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36" Margin="0,10,0,20"/>
 
-            <StackLayout Background="White">
-                <Label Text="Выберите ребёнка" FontSize="16" TextColor="Black" HorizontalOptions="Start"/>
-                <Picker x:Name="PickerChildrens" ItemDisplayBinding="{Binding fio}" TextColor="Black" FontSize="16" SelectedIndexChanged="PickerChildrens_SelectedIndexChanged"/>
+            <Picker x:Name="PickerChildrens" ItemDisplayBinding="{Binding fio}" TextColor="Black" FontSize="16" 
+                    SelectedIndexChanged="PickerChildrens_SelectedIndexChanged" Margin="0,0,0,20"/>
 
-                <StackLayout x:Name="DataChildren">
-                    <Label Text="Полис ОМС" FontSize="16" TextColor="Black" HorizontalOptions="Start"/>
-                    <Entry x:Name="InsurancePolicy" FontSize="16" TextColor="Black" Background="#f0f0f0" Keyboard="Numeric">
-                        <Entry.Behaviors>
-                            <toolkit:MaskedBehavior Mask="0000 0000 0000 0000"/>
-                        </Entry.Behaviors>
-                    </Entry>
-                    <Label Text="Страховая компания" FontSize="16" TextColor="Black" HorizontalOptions="Start"/>
-                    <Entry x:Name="InsuranceCompany" FontSize="16" TextColor="Black" Background="#f0f0f0"/>
-                    <Label Text="Фамилия" FontSize="16" TextColor="Black" HorizontalOptions="Start"/>
-                    <Entry x:Name="LastName" FontSize="16" TextColor="Black" Background="#f0f0f0"/>
-                    <Label Text="Имя" FontSize="16" TextColor="Black" HorizontalOptions="Start"/>
-                    <Entry x:Name="FirstName" FontSize="16" TextColor="Black" Background="#f0f0f0"/>
-                    <Label Text="Отчество" FontSize="16" TextColor="Black" HorizontalOptions="Start"/>
-                    <Entry x:Name="MiddleName" FontSize="16" TextColor="Black" Background="#f0f0f0"/>
-                    <Label Text="При наличии" FontSize="10" TextColor="Black" HorizontalOptions="Start"/>
-                    <Label Text="Дата рождения" FontSize="16" TextColor="Black" HorizontalOptions="Start"/>
-                    <DatePicker x:Name="Birthday" FontSize="16" TextColor="Black" Background="#f0f0f0"/>
-                    <Label Text="Пол ребёнка" FontSize="16" TextColor="Black" HorizontalOptions="Start"/>
-                    <StackLayout Orientation="Horizontal">
-                        <RadioButton Content="Мужской" GroupName="Gender" x:Name="GenderMan"/>
-                        <RadioButton Content="Женский" GroupName="Gender" x:Name="GenderWoman"/>
-                    </StackLayout>
-                    <Label Text="СНИЛС" FontSize="16" TextColor="Black" HorizontalOptions="Start"/>
-                    <Entry x:Name="Snils" FontSize="16" TextColor="Black" Background="#f0f0f0">
-                        <Entry.Behaviors>
-                            <toolkit:MaskedBehavior Mask="000-000-000 00"/>
-                        </Entry.Behaviors>
-                    </Entry>
-                    <Label Text="При наличии" FontSize="10" TextColor="Black" HorizontalOptions="Start"/>
-                </StackLayout>
-            </StackLayout>
+            <Button Text="Далее" x:Name="ButtonChildren" IsEnabled="False" Margin="0,50,10,0" WidthRequest="300" HorizontalOptions="Center"
+                    BackgroundColor="Red" Clicked="ButtonChildrenClicked"/>
 
 
 

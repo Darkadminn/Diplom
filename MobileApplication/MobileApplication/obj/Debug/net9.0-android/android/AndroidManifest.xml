@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     Этот код был создан программным средством.
-    Он был создан на основе файла шаблона C:\Users\burul\source\repos\MobileApplication\MobileApplication\Platforms\Android\AndroidManifest.xml
+    Он был создан на основе файла шаблона C:\Users\burul\source\repos\Diplom\MobileApplication\MobileApplication\Platforms\Android\AndroidManifest.xml
     Изменения, внесенные в этот файл, могут привести к неправильному поведению и будут потеряны
     в случае повторного создания содержимого.
 -->
@@ -9,6 +9,17 @@
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.SEND_SMS" />
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.DIAL" />
+      <data android:scheme="tel" />
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="smsto" />
+    </intent>
+  </queries>
   <permission android:name="com.companyname.mobileapplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature" />
   <uses-permission android:name="com.companyname.mobileapplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
   <application android:name="crc64162217fdecd4b26c.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/appicon" android:label="MobileApplication" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true">

@@ -1,0 +1,177 @@
+﻿<Window x:Class="EmployeeApplication.DoctorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeApplication"
+        mc:Ignorable="d"
+        Title="ИС «МедСервис» - Главное меню специалиста" 
+        Icon="/Images/icons.ico"
+        Height="450" 
+        Width="800"
+        SizeChanged="Window_SizeChanged">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="115"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="PaleGreen">
+            <Image Source="/Images/logo.png" Width="80" Height="80" Margin="0,0,0,20"/>
+            <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Приемы" FontWeight="Bold" Click="ButtonClickVisits"/>
+            <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Процедуры" FontWeight="Bold" Click="ButtonClickProcedures"/>
+            <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Стационар" FontWeight="Bold" Click="ButtonClickTreatments"/>
+            <StackPanel Name="StackExit" Orientation="Horizontal">
+                <Button Background="Transparent" Height="30" BorderBrush="Transparent" Width="115" FontSize="15" VerticalAlignment="Bottom" Click="ButtonClickExit">
+                    <Bold>Выйти</Bold>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="5">
+            <TextBlock Name="TextBlockUser" FontSize="12" HorizontalAlignment="Right"/>
+            <TextBlock Name="TextBlockPostUser" FontSize="12" HorizontalAlignment="Right"/>
+            <TextBlock Name="TextBlockHeader" FontSize="32" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <StackPanel>
+                <StackPanel Name="StackPanelVisits" Visibility="Collapsed">
+
+                    <DataGrid Name="DataGridCurrentVisits" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" 
+                                IsReadOnly="True" MouseDoubleClick="DataGridCurrentVisits_MouseDoubleClick" Margin="0,0,0,20">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Дата" Width="auto" Binding="{Binding date, StringFormat= 'dd:MM:yyyy'}"/>
+                            <DataGridTextColumn Header="Время" Width="auto" Binding="{Binding date, StringFormat= 'HH:mm'}"/>
+                            <DataGridTextColumn Header="Пациент" Width="auto" Binding="{Binding patient}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Margin="10,0,20,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="155"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Left" Width="150">
+                            <TextBlock Text="Поиск"/>
+                            <TextBox Name="SearchVisit"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="200">
+                            <TextBlock Text="Фильтрация"/>
+                            <ComboBox Name="VisitStatuses">
+                                <ComboBoxItem Content="Все"/>
+                                <ComboBoxItem Content="Запланирован"/>
+                                <ComboBoxItem Content="Завершен"/>
+                                <ComboBoxItem Content="Перенесен"/>
+                                <ComboBoxItem Content="Отменен"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+
+                    <DataGrid Name="DataGridVisits" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" 
+                                IsReadOnly="True" MouseDoubleClick="DataGridVisits_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Дата" Width="auto" Binding="{Binding date, StringFormat= 'dd:MM:yyyy'}"/>
+                            <DataGridTextColumn Header="Время" Width="auto" Binding="{Binding date, StringFormat= 'HH:mm'}"/>
+                            <DataGridTextColumn Header="Пациент" Width="auto" Binding="{Binding patient}"/>
+                            <DataGridTextColumn Header="Статус" Width="auto" Binding="{Binding status}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </StackPanel>
+                <StackPanel Name="StackPanelProcedures" Visibility="Collapsed">
+
+                    <Grid Margin="10,0,20,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="155"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Left" Width="150">
+                            <TextBlock Text="Поиск"/>
+                            <TextBox Name="SearchProcedure"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="200">
+                            <TextBlock Text="Фильтрация"/>
+                            <ComboBox Name="FilterProcedure">
+                                <ComboBoxItem Content="Все"/>
+                                <ComboBoxItem Content="Незавершенные"/>
+                                <ComboBoxItem Content="Завершенные"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+
+                    <DataGrid Name="DataGridProcedures" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" 
+                                IsReadOnly="True" MouseDoubleClick="DataGridProcedures_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Пациент" Width="auto" Binding="{Binding patient}"/>
+                            <DataGridTextColumn Header="Процедура" Width="auto" Binding="{Binding medicalProcedure}"/>
+                            <DataGridTextColumn Header="Количество" Width="auto" Binding="{Binding count}"/>
+                            <DataGridTextColumn Header="Пройдено" Width="auto" Binding="{Binding countСompleted}"/>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Width="30" Background="{Binding brushColor}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                    
+                <StackPanel Name="StackPanelTreatments" Visibility="Collapsed">
+
+                    <DataGrid Margin="0,0,0,20" Name="DataGridCurrentTreatments" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGridCurrentTreatments_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Дата приема" Width="auto" Binding="{Binding dateVisit, StringFormat= 'dd:MM:yyyy'}"/>
+                            <DataGridTextColumn Header="Время приема" Width="auto" Binding="{Binding dateVisit, StringFormat= 'HH:mm'}"/>
+                            <DataGridTextColumn Header="Пациент" Width="auto" Binding="{Binding patient}"/>
+                            <DataGridTextColumn Header="Диагноз" Width="auto" Binding="{Binding diagnosis}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Margin="10,0,20,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="155"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Left" Width="150">
+                            <TextBlock Text="Поиск"/>
+                            <TextBox Name="SearchTreatmentPatient"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="200">
+                            <TextBlock Text="Фильтрация"/>
+                            <ComboBox Name="FilterTreatment">
+                                <ComboBoxItem Content="Все"/>
+                                <ComboBoxItem Content="Незавершенные"/>
+                                <ComboBoxItem Content="Завершенные"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+
+                    <DataGrid Name="DataGridTreatments" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" 
+                                IsReadOnly="True" MouseDoubleClick="DataGridTreatments_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Дата приема" Width="auto" Binding="{Binding dateVisit, StringFormat= 'dd:MM:yyyy'}"/>
+                            <DataGridTextColumn Header="Время приема" Width="auto" Binding="{Binding dateVisit, StringFormat= 'HH:mm'}"/>
+                            <DataGridTextColumn Header="Пациент" Width="auto" Binding="{Binding patient}"/>
+                            <DataGridTextColumn Header="Диагноз" Width="auto" Binding="{Binding diagnosis}"/>
+                            <DataGridTemplateColumn Header="Завершен" Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Width="30" Background="{Binding brushColor}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

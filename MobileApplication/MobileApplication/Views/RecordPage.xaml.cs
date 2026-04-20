@@ -5,7 +5,9 @@ public partial class RecordPage : ContentPage
 	public RecordPage()
 	{
 		InitializeComponent();
-	}
+
+        this.Title = UserAuthorization.fio;
+    }
 
     private void ButtonClickedI(object sender, EventArgs e)
     {
@@ -14,5 +16,10 @@ public partial class RecordPage : ContentPage
 		ReceptionSetting.patientPolyclinicId = UserAuthorization.polyclinicId;
 
         Navigation.PushAsync(new TypeWingPage());
+    }
+
+    private void ButtonClickedChildren(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ChildrenPage());
     }
 }
