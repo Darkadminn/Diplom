@@ -58,6 +58,12 @@ namespace EmployeeApplication
                     window.Show();
                     this.Close();
                 }
+                else if(UserAuthorization.role == "Лаборант")
+                {
+                    var window = new LaboratoryTechnicianWindow();
+                    window.Show();
+                    this.Close();
+                }
 
             }
             else

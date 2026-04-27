@@ -181,11 +181,11 @@ namespace EmployeeWPF
                 new Fonts(
                     new DocumentFormat.OpenXml.Spreadsheet.Font(
                         new DocumentFormat.OpenXml.Spreadsheet.FontSize() { Val = 11 },
-                        new DocumentFormat.OpenXml.Spreadsheet.FontName() { Val = "Calibri" }
+                        new DocumentFormat.OpenXml.Spreadsheet.FontName() { Val = "Arial" }
                     ),
                     new DocumentFormat.OpenXml.Spreadsheet.Font(
                         new DocumentFormat.OpenXml.Spreadsheet.FontSize() { Val = 11 },
-                        new DocumentFormat.OpenXml.Spreadsheet.FontName() { Val = "Calibri" },
+                        new DocumentFormat.OpenXml.Spreadsheet.FontName() { Val = "Arial" },
                         new Bold()
                     )
                 ),
@@ -194,7 +194,7 @@ namespace EmployeeWPF
                     new Fill(new PatternFill()
                     {
                         PatternType = PatternValues.Solid,
-                        ForegroundColor = new ForegroundColor() { Rgb = "bef574" }
+                        ForegroundColor = new ForegroundColor() { Rgb = "FFbef574" }
                     })
                 ),
                 new Borders(
@@ -202,7 +202,7 @@ namespace EmployeeWPF
                 ),
                 new CellFormats(
                     new CellFormat() { FontId = 0, FillId = 0, BorderId = 0 },
-                    new CellFormat() { FontId = 1, FillId = 1, BorderId = 0, ApplyFill = true }
+                    new CellFormat() { FontId = 1, FillId = 1, BorderId = 0, ApplyFill = true, ApplyFont = true }
                 )
             );
         }

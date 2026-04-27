@@ -71,7 +71,7 @@ namespace EmployeeApplication
 
         private void ButtonClickProcedures(object sender, RoutedEventArgs e)
         {
-            TextBlockHeader.Text = "Процедуры";
+            TextBlockHeader.Text = "Анализы";
 
             StackPanelProcedures.Visibility = Visibility.Visible;
 
@@ -112,7 +112,7 @@ namespace EmployeeApplication
             {
                 var procedure = DataGridProcedures.SelectedItem as VisitHospitalProcedure;
 
-                var window = new NurseProcedureHistories(procedure);
+                var window = new LaboratoryTechnicianProcedureHistories(procedure);
                 window.ShowDialog();
 
                 if (window.DialogResult == true)

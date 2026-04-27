@@ -50,15 +50,11 @@ namespace MobileApplication
                             }
                         }
                     }
-
                     connection.Close();
-
                 }
                 else
                 {
-
                     UserAuthorization.id = id;
-
                 }
             }
         }

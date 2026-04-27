@@ -43,6 +43,7 @@ namespace EmployeeApplication
 
             Doctors.ItemsSource = dB.GetEmployees().Where(emp => emp.postType == "Врачебный").GroupBy(emp => emp.id).Select(emp => emp.First()).ToList();
             DoctorsGraph.ItemsSource = dB.GetEmployees().Where(emp => emp.postType == "Врачебный").GroupBy(emp => emp.id).Select(emp => emp.First()).ToList();
+            DoctorsProcedures.ItemsSource = dB.GetEmployees().Where(emp => emp.postType == "Врачебный").GroupBy(emp => emp.id).Select(emp => emp.First()).ToList();
 
             StackPanelPatients.Visibility = Visibility.Collapsed;
             StackPanelEmployees.Visibility = Visibility.Collapsed;
@@ -669,7 +670,7 @@ namespace EmployeeApplication
         {
             Employee employee = DoctorsProcedures.SelectedItem as Employee;
 
-            List<VisitHospitalProcedure> visitHospitals = dB.GetVisitHospitalProceduresAll();
+            List<VisitHospitalProcedure> visitHospitals = dB.GetVisitHospitalProceduresAll().Where(v => v.employeeId == employee.id).ToList();
 
             if (DateProcedureStart.SelectedDate > DateProcedureEnd.SelectedDate)
             {
@@ -882,12 +883,12 @@ namespace EmployeeApplication
                     // Добавляем столбцы
                     dataGrid.Columns.Add(CreateColumn("Дата", "date", "dd.MM.yyyy", 100));
                     dataGrid.Columns.Add(CreateColumn("Пациент", "patient", null, 150));
-                    dataGrid.Columns.Add(CreateColumn("Услуга", "status", null, 250));
+                    dataGrid.Columns.Add(CreateColumn("Услуга", "medicalService", null, 250));
                     dataGrid.Columns.Add(CreateColumn("Тип", "type", null, 200));
                     dataGrid.Columns.Add(CreateColumn("Количество", "count", null, 100));
                     dataGrid.Columns.Add(CreateColumn("Количество пройденных", "countСompleted", null, 100));
 
-                    dataGrid.ItemsSource = DataGridVisits.ItemsSource;
+                    dataGrid.ItemsSource = DataGridProcedures.ItemsSource;
 
                     if (Formats.SelectedIndex == 0)
                     {

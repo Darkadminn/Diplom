@@ -86,10 +86,15 @@ namespace EmployeeWPF
                 date.SpacingAfter = 20;
                 document.Add(date);
 
-                PdfPTable table = new PdfPTable(8);
+                PdfPTable table = new PdfPTable(dataGrid.Columns.Count());
                 table.WidthPercentage = 100;
 
-                float[] columnWidths = new float[] { 1f, 0.8f, 1.5f, 1f, 2f, 2f, 1.5f, 2f };
+                float[] columnWidths;
+
+                if(dataGrid.Columns.Count() == 8) columnWidths = new float[] { 1f, 0.8f, 1.5f, 1f, 2f, 2f, 1.5f, 2f };
+                else columnWidths = new float[] { 1f, 0.8f, 1.5f, 1f, 2f, 2f};
+
+
                 table.SetWidths(columnWidths);
 
                 string[] headers;
