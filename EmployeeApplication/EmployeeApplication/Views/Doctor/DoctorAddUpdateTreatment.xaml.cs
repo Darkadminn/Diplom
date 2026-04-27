@@ -25,9 +25,12 @@ namespace EmployeeApplication
         DB dB = new DB();
         List<HospitalResearche> researches = new List<HospitalResearche>();
         List<HospitalProcedure> procedures = new List<HospitalProcedure>();
-        List<HospitalProcedureHistory> procedureHistories = new List<HospitalProcedureHistory>();
         List<HospitalOperation> operations = new List<HospitalOperation>();
         List<WardTraffic> wardTraffics = new List<WardTraffic>();
+        List<MedicalService> services = new List<MedicalService>();
+        List<MedicalService> researcheServices = new List<MedicalService>();
+        List<MedicalService> procedureServices = new List<MedicalService>();
+        List<MedicalService> operationServices = new List<MedicalService>();
         Treatment treatment0;
         public DoctorAddUpdateTreatment(Treatment treatment, bool read)
         {
@@ -40,9 +43,16 @@ namespace EmployeeApplication
             DateStart.SelectedDate = treatment.dateStart;
             DateEnd.SelectedDate = treatment.dateEnd;
 
+            researcheServices = services.Where(s => s.isResearche).ToList();
+            procedureServices = services.Where(s => s.isProcedure).ToList();
+            operationServices = services.Where(s => s.isOperation).ToList();
+
+            NameResearche.ItemsSource = researcheServices;
+            NameProcedure.ItemsSource = procedureServices;
+            NameOperation.ItemsSource = operationServices;
+
             researches = dB.GetResearches(treatment.id);
             procedures = dB.GetHospitalProcedures(treatment.id);
-            procedureHistories = dB.GetHospitalProcedureHistoriesTreatment(treatment.id);
             wardTraffics = dB.GetWardTraffics(treatment.id);
             operations = dB.GetOperations(treatment.id);
 
@@ -50,6 +60,12 @@ namespace EmployeeApplication
             DataGridProcedures.ItemsSource = procedures;
             DataGridWardTraffics.ItemsSource = wardTraffics;
             DataGridOperations.ItemsSource = operations;
+
+            if (read)
+            {
+                ButtonSave.Visibility = Visibility.Collapsed;
+                ButtonEnd.Visibility = Visibility.Collapsed;
+            }
 
             if(UserAuthorization.isOperation == true) TabOperations.Visibility = Visibility.Visible;
             else TabOperations.Visibility = Visibility.Collapsed;
@@ -72,17 +88,9 @@ namespace EmployeeApplication
             {
                 var procedure = DataGridProcedures.SelectedItem as HospitalProcedure;
 
-                var window = new DoctorTreatmentProcedureHistories(procedure, procedureHistories);
+                var window = new DoctorProcedureHistories(procedure);
                 window.ShowDialog();
 
-                if(window.DialogResult == true)
-                {
-                    procedureHistories.RemoveAll(ph => ph.hospitalProcedureId == procedure.id);
-                    procedureHistories.AddRange(StaticHospitalProcedureHistory.hospitalProcedureHistories);
-
-                    StaticHospitalProcedureHistory.hospitalProcedureHistories.Clear();
-
-                }
             }
             
         }
@@ -109,15 +117,14 @@ namespace EmployeeApplication
 
                 DateResearche.SelectedDate = treatmentResearches.date;
                 TimeResearche.Text = treatmentResearches.date.ToString("HH mm").Replace(" ", "");
-                NameResearche.Text = treatmentResearches.name;
-                ResultResearche.Text = treatmentResearches.result;
+                NameResearche.SelectedItem = researcheServices.FirstOrDefault(r => r.id == treatmentResearches.medicalServiceId);
 
             }
         }
 
         private void ButtonClickAddResearche(object sender, RoutedEventArgs e)
         {
-            if (DateResearche.SelectedDate == null || TimeResearche.Text.Contains(TimeResearche.PromptChar.ToString()) || string.IsNullOrWhiteSpace(NameResearche.Text))
+            if (DateResearche.SelectedDate == null || TimeResearche.Text.Contains(TimeResearche.PromptChar.ToString()) || NameResearche.SelectedItem == null)
             {
                 MessageBox.Show("Заполните все обязательные поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
@@ -151,88 +158,20 @@ namespace EmployeeApplication
                     return;
                 }
 
-                string result0 = null;
-
-                if (!string.IsNullOrWhiteSpace(ResultResearche.Text)) result0 = ResultResearche.Text;
+                var researche = NameResearche.SelectedItem as MedicalService;
 
                 HospitalResearche treatmentResearches = new HospitalResearche
                 {
                     date = (DateTime)dateTime,
-                    name = NameResearche.Text,
-                    result = result0
+                    medicalService = researche.name,
+                    medicalServiceId = researche.id,
                 };
 
                 researches.Add(treatmentResearches);
 
                 DataGridResearches.Items.Refresh();
             }
-        }
-
-        private void ButtonClickUpdateResearche(object sender, RoutedEventArgs e)
-        {
-            if (DataGridResearches.SelectedItem == null)
-            {
-                MessageBox.Show("Выберите запись", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-            else
-            {
-                if (DateResearche.SelectedDate == null || TimeResearche.Text.Contains(TimeResearche.PromptChar.ToString()) || string.IsNullOrWhiteSpace(NameResearche.Text))
-                {
-                    MessageBox.Show("Заполните все обязательные поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-                else
-                {
-                    if (!TimeSpan.TryParse(TimeResearche.Text, out TimeSpan timeResearches))
-                    {
-                        MessageBox.Show("Неверный формат времени", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
-
-                    if (DateResearche.SelectedDate > DateTime.Now)
-                    {
-                        MessageBox.Show("Дата не может быть больше текущей", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
-
-                    if (DataGridWardTraffics.Items.Count == 0)
-                    {
-                        MessageBox.Show("Пациент не находится в стационаре", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
-
-                    DateTime? dateTime = DateResearche.SelectedDate?.Date.Add(timeResearches);
-
-                    WardTraffic wardTraffic = wardTraffics.OrderBy(tr => tr.dateArrival).FirstOrDefault();
-
-                    if ((DateTime)dateTime < wardTraffic.dateArrival)
-                    {
-                        MessageBox.Show("В это время пациента не было в стационаре", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
-
-                    string result0 = null;
-
-                    if (!string.IsNullOrWhiteSpace(ResultResearche.Text)) result0 = ResultResearche.Text;
-
-                    var treatmentResearches = (HospitalResearche)DataGridResearches.SelectedItem;
-
-                    int index = DataGridResearches.SelectedIndex;
-
-                    HospitalResearche treatmentResearchesNew = new HospitalResearche
-                    {
-                        date = (DateTime)dateTime,
-                        name = NameResearche.Text,
-                        result = result0
-                    };
-
-                    researches.Remove(treatmentResearches);
-
-                    researches.Insert(index, treatmentResearchesNew);
-
-                    DataGridResearches.Items.Refresh();
-                }
-            }
-        }
+        }       
 
         private void ButtonClickDeleteResearche(object sender, RoutedEventArgs e)
         {
@@ -255,7 +194,7 @@ namespace EmployeeApplication
 
                 DateProcedure.SelectedDate = treatmentProcedure.date;
                 TimeProcedure.Text = treatmentProcedure.date.ToString("HH mm").Replace(" ", "");
-                NameProcedure.Text = treatmentProcedure.name;
+                NameProcedure.SelectedItem = procedureServices.FirstOrDefault(p => p.id == treatmentProcedure.medicalServiceId);
                 CountProcedure.Text = treatmentProcedure.count.ToString();
                 DescriptionProcedure.Text = treatmentProcedure.description;
 
@@ -264,7 +203,8 @@ namespace EmployeeApplication
 
         private void ButtonClickAddProcedure(object sender, RoutedEventArgs e)
         {
-            if (DateProcedure.SelectedDate == null || TimeProcedure.Text.Contains(TimeResearche.PromptChar.ToString()) || string.IsNullOrWhiteSpace(NameProcedure.Text))
+            if (DateProcedure.SelectedDate == null || TimeProcedure.Text.Contains(TimeResearche.PromptChar.ToString()) 
+                || NameProcedure.SelectedItem == null || CountProcedure.Value == null)
             {
                 MessageBox.Show("Заполните все обязательные поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
@@ -302,10 +242,14 @@ namespace EmployeeApplication
 
                 if (!string.IsNullOrWhiteSpace(DescriptionProcedure.Text)) description0 = DescriptionProcedure.Text;
 
+                var procedure = NameProcedure.SelectedItem as MedicalService;
+
                 HospitalProcedure treatmentProcedure = new HospitalProcedure
                 {
                     date = (DateTime)dateTime,
-                    name = NameProcedure.Text,
+                    medicalService = procedure.name,
+                    medicalServiceId = procedure.id,
+                    count = (int)CountProcedure.Value,
                     description = description0
                 };
 
@@ -315,82 +259,12 @@ namespace EmployeeApplication
             }
         }
 
-        private void ButtonClickUpdateProcedure(object sender, RoutedEventArgs e)
-        {
-            if (DataGridProcedures.SelectedItem != null)
-            {
-                MessageBox.Show("Выберите запись", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-            else
-            {
-                if (DateProcedure.SelectedDate == null || TimeProcedure.Text.Contains(TimeResearche.PromptChar.ToString()) || string.IsNullOrWhiteSpace(NameProcedure.Text))
-                {
-                    MessageBox.Show("Заполните все обязательные поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-                else
-                {
-                    if (!TimeSpan.TryParse(TimeProcedure.Text, out TimeSpan timeProcedure))
-                    {
-                        MessageBox.Show("Неверный формат времени", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
-
-                    if (DateProcedure.SelectedDate > DateTime.Now)
-                    {
-                        MessageBox.Show("Дата не может быть больше текущей", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
-
-                    if (DataGridWardTraffics.Items.Count == 0)
-                    {
-                        MessageBox.Show("Пациент не находится в стационаре", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
-
-                    DateTime? dateTime = DateProcedure.SelectedDate?.Date.Add(timeProcedure);
-
-                    WardTraffic wardTraffic = wardTraffics.OrderBy(tr => tr.dateArrival).FirstOrDefault();
-
-                    if ((DateTime)dateTime < wardTraffic.dateArrival)
-                    {
-                        MessageBox.Show("В это время пациента не было в стационаре", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        return;
-                    }
-
-                    string description0 = "";
-
-                    if (!string.IsNullOrWhiteSpace(DescriptionProcedure.Text)) description0 = DescriptionProcedure.Text;
-
-                    var treatmentProcedure = (HospitalProcedure)DataGridProcedures.SelectedItem;
-
-                    HospitalProcedure treatmentProcedureNew = new HospitalProcedure
-                    {
-                        date = (DateTime)dateTime,
-                        name = NameProcedure.Text,
-                        description = description0
-                    };
-
-                    int index = DataGridProcedures.SelectedIndex;
-
-                    procedures.Remove(treatmentProcedure);
-                    procedures.Insert(index, treatmentProcedureNew);
-
-                    DataGridProcedures.Items.Refresh();
-                }
-            }
-        }
 
         private void ButtonClickDeleteProcedure(object sender, RoutedEventArgs e)
         {
             HospitalProcedure treatmentProcedure = (HospitalProcedure)DataGridProcedures.SelectedItem;
 
             procedures.Remove(treatmentProcedure);
-            var procedureHistoriesRemove = procedureHistories.Where(ph => ph.hospitalProcedureId == treatmentProcedure.id).ToList();
-
-            foreach (var procedureHistory in procedureHistoriesRemove)
-            {
-                procedureHistories.Remove(procedureHistory);
-            }
 
             DataGridProcedures.Items.Refresh();
         }
@@ -492,7 +366,7 @@ namespace EmployeeApplication
 
                 DateOperation.SelectedDate = treatmentOperation.date;
                 TimeOperation.Text = treatmentOperation.date.ToString("HH mm").Replace(" ", "");
-                NameOperation.Text = treatmentOperation.name;
+                NameOperation.SelectedItem = operationServices.FirstOrDefault(o => o.id == treatmentOperation.medicalServiceId);
 
                 if (treatmentOperation.result == true) ResultOperation.SelectedIndex = 0;
                 else ResultOperation.SelectedIndex = 1;
@@ -540,10 +414,13 @@ namespace EmployeeApplication
                 if (ResultOperation.SelectedIndex == 0) result0 = true;
                 else result0 = false;
 
+                var operationService = NameOperation.SelectedItem as MedicalService;
+
                 HospitalOperation operation = new HospitalOperation
                 {
                     date = (DateTime)dateTime,
-                    name = NameOperation.Text,
+                    medicalService = operationService.name,
+                    medicalServiceId = operationService.id,
                     result = result0
                 };
 
@@ -606,10 +483,13 @@ namespace EmployeeApplication
 
                     operations.Remove(operation);
 
+                    var operationService = NameOperation.SelectedItem as MedicalService;
+
                     HospitalOperation operationNew = new HospitalOperation
                     {
                         date = (DateTime)dateTime,
-                        name = NameOperation.Text,
+                        medicalService = operationService.name,
+                        medicalServiceId = operationService.id,
                         result = result0
                     };
 
@@ -631,7 +511,7 @@ namespace EmployeeApplication
 
         private void ButtonClickSave(object sender, RoutedEventArgs e)
         {
-            bool result = dB.SaveOrEndTreatment(treatment0, researches, procedures, procedureHistories, wardTraffics, operations, false);
+            bool result = dB.SaveOrEndTreatment(treatment0, researches, procedures, wardTraffics, operations, false);
 
             if (result == true)
             {
@@ -649,7 +529,7 @@ namespace EmployeeApplication
 
         private void ButtonClickEnd(object sender, RoutedEventArgs e)
         {
-            bool result = dB.SaveOrEndTreatment(treatment0, researches, procedures, procedureHistories, wardTraffics, operations, true);
+            bool result = dB.SaveOrEndTreatment(treatment0, researches, procedures, wardTraffics, operations, true);
 
             if (result == true)
             {

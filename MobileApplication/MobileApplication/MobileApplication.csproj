@@ -67,37 +67,37 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\RecoveryPage.xaml">
+	  <MauiXaml Update="Views\Registration\RecoveryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\RecoveryPasswordPage.xaml">
+	  <MauiXaml Update="Views\Registration\RecoveryPasswordPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\PhoneConfirmationPage.xaml">
+	  <MauiXaml Update="Views\Registration\PhoneConfirmationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ChildrenPage.xaml">
+	  <MauiXaml Update="Views\Visits\ChildrenPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\DoctorsPage.xaml">
+	  <MauiXaml Update="Views\Visits\DoctorsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MainMenuPage.xaml">
+	  <MauiXaml Update="Views\Visits\MainMenuPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\PostDoctorPage.xaml">
+	  <MauiXaml Update="Views\Visits\PostDoctorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\RecordPage.xaml">
+	  <MauiXaml Update="Views\Visits\RecordPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\RegistrationPage.xaml">
+	  <MauiXaml Update="Views\Registration\RegistrationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\TypeWingPage.xaml">
+	  <MauiXaml Update="Views\Visits\TypeWingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\VisitsPage.xaml">
+	  <MauiXaml Update="Views\Visits\VisitsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

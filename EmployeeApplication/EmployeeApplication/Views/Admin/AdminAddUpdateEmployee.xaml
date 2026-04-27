@@ -9,7 +9,7 @@
         Title="AdminAddUpdateEmployee"
         Icon="/Images/icons.ico"
         Height="900" 
-        Width="850"
+        Width="950"
         FontSize="18">
     <Grid>
         <Grid.RowDefinitions>
@@ -117,7 +117,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="310"/>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="500"/>
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Column="0" HorizontalAlignment="Left">

@@ -59,7 +59,10 @@
                             IsReadOnly="True" MouseDoubleClick="DataGridProcedures_MouseDoubleClick">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Пациент" Width="auto" Binding="{Binding patient}"/>
-                            <DataGridTextColumn Header="Процедура" Width="auto" Binding="{Binding medicalProcedure}"/>
+                            <DataGridTextColumn Header="Специалист" Width="auto" Binding="{Binding employee}"/>
+                            <DataGridTextColumn Header="Должность" Width="auto" Binding="{Binding post}"/>
+                            <DataGridTextColumn Header="Процедура" Width="auto" Binding="{Binding name}"/>
+                            <DataGridTextColumn Header="Тип" Width="auto" Binding="{Binding type}"/>
                             <DataGridTextColumn Header="Количество" Width="auto" Binding="{Binding count}"/>
                             <DataGridTextColumn Header="Пройдено" Width="auto" Binding="{Binding countСompleted}"/>
                             <DataGridTemplateColumn>

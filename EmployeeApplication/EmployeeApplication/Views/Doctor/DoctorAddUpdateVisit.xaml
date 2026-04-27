@@ -29,16 +29,8 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Text="Данные о приеме:" FontSize="24" Margin="0,10,0,20" Grid.Column="0" HorizontalAlignment="Left"/>
-                        
+
                         <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
-                            <StackPanel>
-                                <TextBlock Text="Формат"/>
-                                <ComboBox Width="150" Height="20" Margin="0,0,20,0">
-                                    <ComboBoxItem Content="Excel"/>
-                                    <ComboBoxItem Content="PDF"/>
-                                </ComboBox>
-                            </StackPanel>
-                            
                             <Button Width="50" Height="50" Background="Transparent" Click="ButtonClickPrint">
                                 <Image Source="/Images/printer.png"/>
                             </Button>
@@ -99,7 +91,7 @@
                             <TextBox Name="Recommendation" Width="300" Height="120" TextWrapping="Wrap" Margin="0,0,0,10"/>
                         </StackPanel>
                         <StackPanel Grid.Column="2" HorizontalAlignment="Right">
-                            <TextBlock Text="Необходимо стационарное лечение"/>
+                            <TextBlock Text="Необходимо стационарное лечение" FontSize="18"/>
                             <CheckBox Name="DirectionBool"  Width="300" Height="30" FontSize="18" Background="#bef574" Unchecked="DirectionBool_Unchecked" Checked="DirectionBool_Checked">
                                 <CheckBox.RenderTransform>
                                     <ScaleTransform>
@@ -122,8 +114,8 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0" HorizontalAlignment="Left">
-                            <TextBlock Text="Процедура"/>
-                            <ComboBox Name="Procedure" Width="300" Height="30" Margin="0,0,0,10" DisplayMemberPath="info"/>
+                            <TextBlock Text="Услуга"/>
+                            <ComboBox Name="Service" Width="300" Height="30" Margin="0,0,0,10" DisplayMemberPath="info" SelectionChanged="Service_SelectionChanged"/>
                             <TextBlock Text="Количество"/>
                             <xctk:DoubleUpDown Name="Count" Width="300" Height="30" Margin="0,0,0,10"/>
                             <TextBlock Text="Комментарий" FontSize="18"/>
@@ -132,15 +124,15 @@
                             <Button Name="ButtonUpdate" Content="Изменить" Click="ButtonClickUpdateProcedure" Width="300" Height="30" FontSize="16" />
                         </StackPanel>
                         <StackPanel Grid.Column="2" HorizontalAlignment="Right">
-                            <DataGrid Name="DataGridProcedures" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DataGridProcedures_SelectionChanged">
+                            <DataGrid Name="DataGridServices" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DataGridServices_SelectionChanged">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Процедура" Width="auto" Binding="{Binding medicalProcedure}"/>
+                                    <DataGridTextColumn Header="Услуга" Width="auto" Binding="{Binding medicalService}"/>
                                     <DataGridTextColumn Header="Количество" Width="auto" Binding="{Binding count}"/>
                                     <DataGridTextColumn Header="Комментарий" Width="150" Binding="{Binding comment}"/>
                                     <DataGridTemplateColumn>
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Content="-" FontSize = "16" Width="40" Height="20" Click="ButtonClickDeleteProcedure"/>
+                                                <Button Content="-" FontSize = "16" Width="40" Height="20" Click="ButtonClickDeleteService"/>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>

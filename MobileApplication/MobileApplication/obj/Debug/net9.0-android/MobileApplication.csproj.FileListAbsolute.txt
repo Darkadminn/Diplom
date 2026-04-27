@@ -1929,3 +1929,5 @@ C:\Users\burul\source\repos\Diplom\MobileApplication\MobileApplication\obj\Debug
 C:\Users\burul\source\repos\Diplom\MobileApplication\MobileApplication\obj\Debug\net9.0-android\resizetizer\6CD7C47F03026257-files.cache
 C:\Users\burul\source\repos\Diplom\MobileApplication\MobileApplication\obj\Debug\net9.0-android\assets\OpenSans-Regular.ttf
 C:\Users\burul\source\repos\Diplom\MobileApplication\MobileApplication\obj\Debug\net9.0-android\assets\OpenSans-Semibold.ttf
+C:\Users\burul\source\repos\Diplom\MobileApplication\MobileApplication\obj\Debug\net9.0-android\resizetizer\r\drawable\icons.ico
+C:\Users\burul\source\repos\Diplom\MobileApplication\MobileApplication\obj\Debug\net9.0-android\resizetizer\r\drawable\logo.png

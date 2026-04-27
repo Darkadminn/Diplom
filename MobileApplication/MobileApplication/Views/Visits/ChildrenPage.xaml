@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApplication.ChildrenPage">
+    <ScrollView>
+        <StackLayout Background="White">
+
+            <Label Text="Выберите ребёнка" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36" Margin="0,10,0,20"/>
+
+            <StackLayout VerticalOptions="Center" WidthRequest="300">
+                <Picker x:Name="PickerChildrens" Title="Выберите ребенка" ItemDisplayBinding="{Binding fio}" TextColor="Black" FontSize="18" Background="#bef574" WidthRequest="300"
+                        SelectedIndexChanged="PickerChildrens_SelectedIndexChanged" Margin="0,0,0,20"/>
+
+                <Button Text="Далее" x:Name="ButtonChildren" IsEnabled="False" Margin="0,50,10,0" WidthRequest="300" HorizontalOptions="Center"
+                        BackgroundColor="Red" Clicked="ButtonChildrenClicked"/>
+                
+            </StackLayout>
+            
+
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

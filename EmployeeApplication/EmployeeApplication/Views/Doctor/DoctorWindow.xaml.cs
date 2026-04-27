@@ -39,6 +39,8 @@ namespace EmployeeApplication
             StackPanelProcedures.Visibility = Visibility.Collapsed;
             StackPanelTreatments.Visibility = Visibility.Collapsed;
 
+            if(UserAuthorization.wingType != "Стационар") ButtonTreatment.Visibility = Visibility.Collapsed;
+
             SearchVisit.TextChanged += (a, args) =>
             {
                 FilterVisits();
@@ -91,9 +93,17 @@ namespace EmployeeApplication
             if (this.Height - 180 >= 30) DataGridProcedures.Height = this.Height - 180;
             else DataGridProcedures.Height = 30;
 
-
-            if (this.Height - 230 >= 30) StackExit.Height = this.Height - 230;
-            else StackExit.Height = 30;
+            if(ButtonTreatment.Visibility == Visibility.Visible)
+            {
+                if (this.Height - 230 >= 30) StackExit.Height = this.Height - 230;
+                else StackExit.Height = 30;
+            }
+            else
+            {
+                if (this.Height - 200 >= 30) StackExit.Height = this.Height - 200;
+                else StackExit.Height = 30;
+            }
+            
         }
 
         private void ButtonClickExit(object sender, RoutedEventArgs e)
@@ -105,6 +115,7 @@ namespace EmployeeApplication
             UserAuthorization.isOperation = false;
             UserAuthorization.wingType = "";
             UserAuthorization.postName = "";
+            UserAuthorization.wingId = -1;
 
             var window = new MainWindow();
             window.Show();
@@ -220,7 +231,7 @@ namespace EmployeeApplication
             if (!string.IsNullOrEmpty(SearchProcedure.Text))
             {
                 filterProcedures = filterProcedures.Where(p => p.patient.ToLower().Contains(SearchProcedure.Text.ToLower())
-                                                            || p.medicalProcedure.ToLower().Contains(SearchProcedure.Text.ToLower())).ToList();
+                                                            || p.medicalService.ToLower().Contains(SearchProcedure.Text.ToLower())).ToList();
             }
 
             if(FilterProcedure.SelectedIndex > 0)

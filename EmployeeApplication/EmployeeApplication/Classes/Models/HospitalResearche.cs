@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace EmployeeApplication
 {
@@ -10,8 +11,11 @@ namespace EmployeeApplication
     {
         public int id {  get; set; }
         public DateTime date { get; set; }
-        public string name { get; set; }
+        public int medicalServiceId { get; set; }
+        public string medicalService { get; set; }
         public string result { get; set; }
+        public bool isCompleted { get; set; }
+        public Brush brushColor => isCompleted ? Brushes.Green : Brushes.Red;
 
     }
 }

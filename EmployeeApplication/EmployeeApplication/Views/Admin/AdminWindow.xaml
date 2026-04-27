@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmployeeApplication"
+        xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
         mc:Ignorable="d"
         Title="ИС «МедСервис» - Главное меню администратора" 
         Icon="/Images/icons.ico"
@@ -197,6 +198,110 @@
                     </DataGrid>
                 </StackPanel>
                 <StackPanel Name="StackPanelReports">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <StackPanel Width="150" Margin="0,0,20,0">
+                            <TextBlock Text="Формат"/>
+                            <ComboBox Name="Formats">
+                                <ComboBoxItem Content="EXCEL"/>
+                                <ComboBoxItem Content="PDF"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <Button Content="Экспорт" Height="30" Width="150" Grid.Column="1" VerticalAlignment="Bottom" Click="ButtonClickExport"/>
+                    </StackPanel>
+
+                    <TabControl Name="TabControlTable" Grid.Row="2">
+                        <TabItem Header="Подробности приемов">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel HorizontalAlignment="Left" Margin="10,10,0,0" Width="200">
+                                        <TextBlock Text="Специалист"/>
+                                        <ComboBox Name="Doctors" DisplayMemberPath="info" SelectionChanged="Doctors_SelectionChanged"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                        <TextBlock Text="C" VerticalAlignment="Center" Margin="40,0,0,0"/>
+                                        <DatePicker Name="DateVisitStart" Width="150" Height="30" FontSize="18" Margin="10,0,0,0" SelectedDateChanged="DateVisitStart_SelectedDateChanged"/>
+                                        <TextBlock Text="По" FontSize="16" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                                        <DatePicker Name="DateVisitEnd" Width="150" Height="30" FontSize="18" Margin="10,0,0,0" SelectedDateChanged="DateVisitEnd_SelectedDateChanged"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                
+                                <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True" Name="DataGridVisits" Margin="0,10,0,0">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Дата" Width="auto" Binding="{Binding date, StringFormat='dd:MM:yyyy'}"/>
+                                        <DataGridTextColumn Header="Время" Width="auto" Binding="{Binding date, StringFormat='HH:mm'}"/>
+                                        <DataGridTextColumn Header="Пациент" Width="auto" Binding="{Binding patient}"/>
+                                        <DataGridTextColumn Header="Симптомы" Width="auto" Binding="{Binding objective}"/>
+                                        <DataGridTextColumn Header="Диагноз" Width="auto" Binding="{Binding diagnosis}"/>
+                                        <DataGridTextColumn Header="Статус" Width="auto" Binding="{Binding status}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="Количество проведенных приемов">
+                            <ScrollViewer>
+                                <StackPanel Orientation="Vertical">
+                                    <Grid Margin="10,10,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="210"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel HorizontalAlignment="Left" Grid.Column="0" Width="200">
+                                            <TextBlock Text="Специалист"/>
+                                            <ComboBox Name="DoctorsGraph" DisplayMemberPath="info" SelectionChanged="DoctorsGraph_SelectionChanged"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                            <TextBlock Text="C" VerticalAlignment="Center" Margin="40,0,0,0"/>
+                                            <DatePicker Name="DateStart" Width="150" Height="30" FontSize="16" Margin="10,0,0,0" Background="#bef574" SelectedDateChanged="DateStart_SelectedDateChanged"/>
+                                            <TextBlock Text="По" FontSize="16" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                                            <DatePicker Name="DateEnd" Width="150" Height="30" FontSize="16" Margin="10,0,0,0" Background="#bef574" SelectedDateChanged="DateEnd_SelectedDateChanged"/>
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <ScottPlot:WpfPlot Name="Graph" Margin="0,10,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                            
+                        </TabItem>
+                        <TabItem Header="Услуги">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel HorizontalAlignment="Left" Margin="10,10,0,0" Width="200">
+                                        <TextBlock Text="Специалист"/>
+                                        <ComboBox Name="DoctorsProcedures" DisplayMemberPath="info" SelectionChanged="DoctorsProcedures_SelectionChanged"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                        <TextBlock Text="C" VerticalAlignment="Center" Margin="40,0,0,0"/>
+                                        <DatePicker Name="DateProcedureStart" Width="150" Height="30" FontSize="18" Margin="10,0,0,0" SelectedDateChanged="DateProcedureStart_SelectedDateChanged"/>
+                                        <TextBlock Text="По" FontSize="16" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                                        <DatePicker Name="DateProcedureEnd" Width="150" Height="30" FontSize="18" Margin="10,0,0,0" SelectedDateChanged="DateProcedureEnd_SelectedDateChanged"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsReadOnly="True" Name="DataGridProcedures" Margin="0,10,0,0">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Дата" Width="auto" Binding="{Binding date, StringFormat='dd:MM:yyyy'}"/>
+                                        <DataGridTextColumn Header="Пациент" Width="auto" Binding="{Binding patient}"/>
+                                        <DataGridTextColumn Header="Специалист" Width="auto" Binding="{Binding employee}"/>
+                                        <DataGridTextColumn Header="Услуга" Width="auto" Binding="{Binding medicalService}"/>
+                                        <DataGridTextColumn Header="Тип" Width="auto" Binding="{Binding type}"/>
+                                        <DataGridTextColumn Header="Количество" Width="auto" Binding="{Binding count}"/>
+                                        <DataGridTextColumn Header="Пройдено" Width="auto" Binding="{Binding countСompleted}"/>
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Width="30" Background="{Binding brushColor}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
 
                 </StackPanel>
             </StackPanel>

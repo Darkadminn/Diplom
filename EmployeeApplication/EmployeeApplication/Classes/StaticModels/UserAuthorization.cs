@@ -15,5 +15,6 @@ namespace EmployeeApplication
         public static string fio;
         public static int employeeId;
         public static string postName;
+        public static int wingId;
     }
 }

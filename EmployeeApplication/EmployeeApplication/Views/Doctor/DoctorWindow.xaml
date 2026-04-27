@@ -20,7 +20,7 @@
             <Image Source="/Images/logo.png" Width="80" Height="80" Margin="0,0,0,20"/>
             <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Приемы" FontWeight="Bold" Click="ButtonClickVisits"/>
             <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Процедуры" FontWeight="Bold" Click="ButtonClickProcedures"/>
-            <Button Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Стационар" FontWeight="Bold" Click="ButtonClickTreatments"/>
+            <Button Name="ButtonTreatment" Background="Transparent" Height="30" BorderBrush="Transparent" FontSize="15" Content="Стационар" FontWeight="Bold" Click="ButtonClickTreatments"/>
             <StackPanel Name="StackExit" Orientation="Horizontal">
                 <Button Background="Transparent" Height="30" BorderBrush="Transparent" Width="115" FontSize="15" VerticalAlignment="Bottom" Click="ButtonClickExit">
                     <Bold>Выйти</Bold>
@@ -49,14 +49,14 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="155"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="155"/>
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0" HorizontalAlignment="Left" Width="150">
                             <TextBlock Text="Поиск"/>
                             <TextBox Name="SearchVisit"/>
                         </StackPanel>
-                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="200">
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="150">
                             <TextBlock Text="Фильтрация"/>
                             <ComboBox Name="VisitStatuses">
                                 <ComboBoxItem Content="Все"/>
@@ -85,14 +85,14 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="155"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="150"/>
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0" HorizontalAlignment="Left" Width="150">
                             <TextBlock Text="Поиск"/>
                             <TextBox Name="SearchProcedure"/>
                         </StackPanel>
-                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="200">
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="150">
                             <TextBlock Text="Фильтрация"/>
                             <ComboBox Name="FilterProcedure">
                                 <ComboBoxItem Content="Все"/>
@@ -106,7 +106,7 @@
                                 IsReadOnly="True" MouseDoubleClick="DataGridProcedures_MouseDoubleClick">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Пациент" Width="auto" Binding="{Binding patient}"/>
-                            <DataGridTextColumn Header="Процедура" Width="auto" Binding="{Binding medicalProcedure}"/>
+                            <DataGridTextColumn Header="Процедура" Width="auto" Binding="{Binding medicalService}"/>
                             <DataGridTextColumn Header="Количество" Width="auto" Binding="{Binding count}"/>
                             <DataGridTextColumn Header="Пройдено" Width="auto" Binding="{Binding countСompleted}"/>
                             <DataGridTemplateColumn>
@@ -136,14 +136,14 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="155"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="150"/>
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0" HorizontalAlignment="Left" Width="150">
                             <TextBlock Text="Поиск"/>
                             <TextBox Name="SearchTreatmentPatient"/>
                         </StackPanel>
-                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="200">
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Width="150">
                             <TextBlock Text="Фильтрация"/>
                             <ComboBox Name="FilterTreatment">
                                 <ComboBoxItem Content="Все"/>

@@ -66,12 +66,12 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.111, )"
+              "version": "[9.0.120, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.10, )",
+              "version": "[9.0.15, )",
               "autoReferenced": true
             },
             "Npgsql": {
@@ -90,6 +90,28 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.Android.Ref.35",
+              "version": "[35.0.105, 35.0.105]"
+            },
+            {
+              "name": "Microsoft.Android.Runtime.35.android-arm64",
+              "version": "[35.0.105, 35.0.105]"
+            },
+            {
+              "name": "Microsoft.Android.Runtime.35.android-x64",
+              "version": "[35.0.105, 35.0.105]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.android-arm64",
+              "version": "[9.0.15, 9.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.android-x64",
+              "version": "[9.0.15, 9.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.Android": {
               "privateAssets": "all"
@@ -98,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

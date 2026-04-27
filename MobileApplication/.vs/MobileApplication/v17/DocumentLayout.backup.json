@@ -3,143 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\phoneconfirmationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\phoneconfirmationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\registrationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\registrationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\registration\\recoverypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\registration\\recoverypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\visits\\doctorspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\visits\\doctorspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\visits\\typewingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\visits\\typewingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\registration\\registrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\registration\\registrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\registration\\recoverypasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\registration\\recoverypasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\registration\\phoneconfirmationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\registration\\phoneconfirmationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\authorization\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\authorization\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\visits\\mainmenupage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\visits\\mainmenupage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\registration\\phoneconfirmationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\registration\\phoneconfirmationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\authorization\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\authorization\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\mobileapplication.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\mobileapplication.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\models\\userauthorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\models\\userauthorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\recoverypasswordpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\recoverypasswordpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\visits\\childrenpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\visits\\childrenpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\database\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\visits\\childrenpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\visits\\childrenpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\recoverypasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\recoverypasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\recoverypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\recoverypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\recoverypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\recoverypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\registrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\registrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\recordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\recordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\phoneconfirmationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\phoneconfirmationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\models\\receptionsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\models\\receptionsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\childrenpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\childrenpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\visitspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\visitspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\typewingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\typewingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\visitspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\visitspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\typewingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\typewingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\recordpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\recordpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\postdoctorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\postdoctorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\postdoctorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\postdoctorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\mainmenupage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\mainmenupage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\mainmenupage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\mainmenupage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\doctorspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\doctorspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\doctorspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\doctorspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\childrenpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\childrenpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\models\\visit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\models\\visit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\models\\wing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\models\\wing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\views\\visits\\postdoctorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\views\\visits\\postdoctorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|c:\\users\\burul\\source\\repos\\diplom\\mobileapplication\\mobileapplication\\models\\children.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E191A4FB-4912-4B96-BAED-F2C870AFED45}|MobileApplication\\MobileApplication.csproj|solutionrelative:mobileapplication\\models\\children.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\burul\\.nuget\\packages\\communitytoolkit.maui\\12.1.0\\ReadMe.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -149,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -157,64 +94,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MobileApplication",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\MobileApplication.csproj",
-              "RelativeDocumentMoniker": "MobileApplication\\MobileApplication.csproj",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\MobileApplication.csproj",
-              "RelativeToolTip": "MobileApplication\\MobileApplication.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-13T17:33:09.249Z",
+              "DocumentIndex": 9,
+              "Title": "MainMenuPage.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\MainMenuPage.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Visits\\MainMenuPage.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\MainMenuPage.xaml",
+              "RelativeToolTip": "MobileApplication\\Views\\Visits\\MainMenuPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-26T10:07:51.213Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AndroidManifest.xml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Platforms\\Android\\AndroidManifest.xml",
-              "RelativeDocumentMoniker": "MobileApplication\\Platforms\\Android\\AndroidManifest.xml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Platforms\\Android\\AndroidManifest.xml",
-              "RelativeToolTip": "MobileApplication\\Platforms\\Android\\AndroidManifest.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-04-13T17:21:39.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegistrationPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RegistrationPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\RegistrationPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RegistrationPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\RegistrationPage.xaml.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAIwE0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T18:26:23.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\MainPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\MainPage.xaml.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T17:42:33.154Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "DB.cs",
               "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\DataBase\\DB.cs",
               "RelativeDocumentMoniker": "MobileApplication\\DataBase\\DB.cs",
               "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\DataBase\\DB.cs",
               "RelativeToolTip": "MobileApplication\\DataBase\\DB.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAH0BAAAAAAAAAAAAAIwBAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T17:37:42.2Z",
               "EditorCaption": ""
@@ -223,391 +122,215 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\MainPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\MainPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABYAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Authorization\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Authorization\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Authorization\\MainPage.xaml",
+              "RelativeToolTip": "MobileApplication\\Views\\Authorization\\MainPage.xaml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAACtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-19T17:08:47.745Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "PhoneConfirmationPage.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Registration\\PhoneConfirmationPage.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Registration\\PhoneConfirmationPage.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Registration\\PhoneConfirmationPage.xaml",
+              "RelativeToolTip": "MobileApplication\\Views\\Registration\\PhoneConfirmationPage.xaml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAACWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T03:30:50.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RecoveryPage.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Registration\\RecoveryPage.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Registration\\RecoveryPage.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Registration\\RecoveryPage.xaml",
+              "RelativeToolTip": "MobileApplication\\Views\\Registration\\RecoveryPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T03:31:14.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RecoveryPasswordPage.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Registration\\RecoveryPasswordPage.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Registration\\RecoveryPasswordPage.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Registration\\RecoveryPasswordPage.xaml",
+              "RelativeToolTip": "MobileApplication\\Views\\Registration\\RecoveryPasswordPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAACsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T03:31:29.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegistrationPage.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Registration\\RegistrationPage.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Registration\\RegistrationPage.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Registration\\RegistrationPage.xaml",
+              "RelativeToolTip": "MobileApplication\\Views\\Registration\\RegistrationPage.xaml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T03:32:19.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TypeWingPage.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\TypeWingPage.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Visits\\TypeWingPage.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\TypeWingPage.xaml",
+              "RelativeToolTip": "MobileApplication\\Views\\Visits\\TypeWingPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-25T12:01:51.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\App.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\App.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\App.xaml",
+              "RelativeToolTip": "MobileApplication\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-25T12:01:10.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DoctorsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\DoctorsPage.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Visits\\DoctorsPage.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\DoctorsPage.xaml",
+              "RelativeToolTip": "MobileApplication\\Views\\Visits\\DoctorsPage.xaml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-25T12:00:27.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ChildrenPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\ChildrenPage.xaml.cs",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Visits\\ChildrenPage.xaml.cs",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\ChildrenPage.xaml.cs",
+              "RelativeToolTip": "MobileApplication\\Views\\Visits\\ChildrenPage.xaml.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwA8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T11:56:58.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ChildrenPage.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\ChildrenPage.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Visits\\ChildrenPage.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\ChildrenPage.xaml",
+              "RelativeToolTip": "MobileApplication\\Views\\Visits\\ChildrenPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-25T11:57:22.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Children.cs",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\Children.cs",
+              "RelativeDocumentMoniker": "MobileApplication\\Models\\Children.cs",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\Children.cs",
+              "RelativeToolTip": "MobileApplication\\Models\\Children.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T11:57:32.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PostDoctorPage.xaml",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\PostDoctorPage.xaml",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Visits\\PostDoctorPage.xaml",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Visits\\PostDoctorPage.xaml",
+              "RelativeToolTip": "MobileApplication\\Views\\Visits\\PostDoctorPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-25T12:01:57.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MobileApplication",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\MobileApplication.csproj",
+              "RelativeDocumentMoniker": "MobileApplication\\MobileApplication.csproj",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\MobileApplication.csproj",
+              "RelativeToolTip": "MobileApplication\\MobileApplication.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-26T09:51:57.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "MobileApplication\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Properties\\launchSettings.json",
+              "RelativeToolTip": "MobileApplication\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-26T09:56:55.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "PhoneConfirmationPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\PhoneConfirmationPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\PhoneConfirmationPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\PhoneConfirmationPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\PhoneConfirmationPage.xaml.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAAADwAAAAuAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Registration\\PhoneConfirmationPage.xaml.cs",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Registration\\PhoneConfirmationPage.xaml.cs",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Registration\\PhoneConfirmationPage.xaml.cs",
+              "RelativeToolTip": "MobileApplication\\Views\\Registration\\PhoneConfirmationPage.xaml.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-11T15:42:45.632Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RecoveryPasswordPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecoveryPasswordPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\RecoveryPasswordPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecoveryPasswordPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\RecoveryPasswordPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T15:03:24.397Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RecoveryPasswordPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecoveryPasswordPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\RecoveryPasswordPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecoveryPasswordPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\RecoveryPasswordPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAswBEAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-13T14:52:15.528Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "RegistrationPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RegistrationPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\RegistrationPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RegistrationPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\RegistrationPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-12T03:04:46.126Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "RecoveryPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecoveryPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\RecoveryPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecoveryPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\RecoveryPage.xaml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAswBMAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-13T14:51:34.713Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RecoveryPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecoveryPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\RecoveryPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecoveryPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\RecoveryPage.xaml.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBsAAAA+AAAAAAAAAA==",
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Authorization\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MobileApplication\\Views\\Authorization\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\Authorization\\MainPage.xaml.cs",
+              "RelativeToolTip": "MobileApplication\\Views\\Authorization\\MainPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T15:01:47.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Styles.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Resources\\Styles\\Styles.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Resources\\Styles\\Styles.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Resources\\Styles\\Styles.xaml",
-              "RelativeToolTip": "MobileApplication\\Resources\\Styles\\Styles.xaml",
-              "ViewState": "AgIAAGwAAAAAAAAAAIBJwHEAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-11T11:55:05.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "PhoneConfirmationPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\PhoneConfirmationPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\PhoneConfirmationPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\PhoneConfirmationPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\PhoneConfirmationPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAswAoAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-11T15:12:03.632Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "RecordPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecordPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\RecordPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecordPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\RecordPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-11T11:51:12.24Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "VisitsPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\VisitsPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\VisitsPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\VisitsPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\VisitsPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-14T18:38:10.962Z",
+              "WhenOpened": "2026-04-26T09:57:37.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "ReceptionSetting.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\ReceptionSetting.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Models\\ReceptionSetting.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\ReceptionSetting.cs",
-              "RelativeToolTip": "MobileApplication\\Models\\ReceptionSetting.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAMwA0AAAAdAAAAAAAAAA==",
+              "Title": "UserAuthorization.cs",
+              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\UserAuthorization.cs",
+              "RelativeDocumentMoniker": "MobileApplication\\Models\\UserAuthorization.cs",
+              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\UserAuthorization.cs",
+              "RelativeToolTip": "MobileApplication\\Models\\UserAuthorization.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T18:24:33.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ChildrenPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\ChildrenPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\ChildrenPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\ChildrenPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\ChildrenPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAACLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-19T16:53:12.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "VisitsPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\VisitsPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\VisitsPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\VisitsPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\VisitsPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T19:00:47.819Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "TypeWingPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\TypeWingPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\TypeWingPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\TypeWingPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\TypeWingPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-25T18:23:23.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "TypeWingPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\TypeWingPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\TypeWingPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\TypeWingPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\TypeWingPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T18:19:50.871Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "RecordPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecordPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\RecordPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\RecordPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\RecordPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T18:08:57.853Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "PostDoctorPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\PostDoctorPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\PostDoctorPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\PostDoctorPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\PostDoctorPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T18:20:00.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "PostDoctorPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\PostDoctorPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\PostDoctorPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\PostDoctorPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\PostDoctorPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-12T03:06:37.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "MainMenuPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\MainMenuPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\MainMenuPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\MainMenuPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\MainMenuPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T17:42:43.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "MainMenuPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\MainMenuPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\MainMenuPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\MainMenuPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\MainMenuPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-25T19:01:00.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "DoctorsPage.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\DoctorsPage.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\DoctorsPage.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\DoctorsPage.xaml",
-              "RelativeToolTip": "MobileApplication\\Views\\DoctorsPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-19T17:09:09.733Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "DoctorsPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\DoctorsPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\DoctorsPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\DoctorsPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\DoctorsPage.xaml.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAIBJwBMAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T18:25:33.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "ChildrenPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\ChildrenPage.xaml.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Views\\ChildrenPage.xaml.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Views\\ChildrenPage.xaml.cs",
-              "RelativeToolTip": "MobileApplication\\Views\\ChildrenPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T17:21:01.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Visit.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\Visit.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Models\\Visit.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\Visit.cs",
-              "RelativeToolTip": "MobileApplication\\Models\\Visit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBEAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T12:18:57.726Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Colors.xaml",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Resources\\Styles\\Colors.xaml",
-              "RelativeDocumentMoniker": "MobileApplication\\Resources\\Styles\\Colors.xaml",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Resources\\Styles\\Colors.xaml",
-              "RelativeToolTip": "MobileApplication\\Resources\\Styles\\Colors.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-11T11:54:52.229Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Wing.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\Wing.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Models\\Wing.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\Wing.cs",
-              "RelativeToolTip": "MobileApplication\\Models\\Wing.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T18:40:11.711Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Doctor.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\Doctor.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Models\\Doctor.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\Doctor.cs",
-              "RelativeToolTip": "MobileApplication\\Models\\Doctor.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T17:53:21.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "ReadMe.txt",
-              "DocumentMoniker": "C:\\Users\\burul\\.nuget\\packages\\communitytoolkit.maui\\12.1.0\\ReadMe.txt",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\communitytoolkit.maui\\12.1.0\\ReadMe.txt",
-              "ToolTip": "C:\\Users\\burul\\.nuget\\packages\\communitytoolkit.maui\\12.1.0\\ReadMe.txt",
-              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\communitytoolkit.maui\\12.1.0\\ReadMe.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-02-25T17:06:11.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Children.cs",
-              "DocumentMoniker": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\Children.cs",
-              "RelativeDocumentMoniker": "MobileApplication\\Models\\Children.cs",
-              "ToolTip": "C:\\Users\\burul\\source\\repos\\Diplom\\MobileApplication\\MobileApplication\\Models\\Children.cs",
-              "RelativeToolTip": "MobileApplication\\Models\\Children.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBUAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T13:38:53.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-25T12:07:50.635Z"
             }
           ]
         }

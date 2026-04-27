@@ -21,12 +21,21 @@ namespace EmployeeApplication
     {
         DB dB = new DB();
         List<VisitProcedureHistory> visitProcedureHistories = new List<VisitProcedureHistory>();
+        List<HospitalProcedureHistory> hospitalProcedureHistories = new List<HospitalProcedureHistory>();
         public DoctorProcedureHistories(VisitProcedure visitProcedure)
         {
             InitializeComponent();
 
             visitProcedureHistories = dB.GetVisitProcedureHistories(visitProcedure.id);
             DataGridProcedureHistories.ItemsSource = visitProcedureHistories;
+        }
+
+        public DoctorProcedureHistories(HospitalProcedure hospitalProcedure)
+        {
+            InitializeComponent();
+
+            hospitalProcedureHistories = dB.GetHospitalProcedureHistories(hospitalProcedure.id);
+            DataGridProcedureHistories.ItemsSource = hospitalProcedureHistories;
         }
 
         private void ButtonClickBack(object sender, RoutedEventArgs e)

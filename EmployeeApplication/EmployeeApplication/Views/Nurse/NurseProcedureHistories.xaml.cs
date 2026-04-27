@@ -20,16 +20,33 @@ namespace EmployeeApplication
     public partial class NurseProcedureHistories : Window
     {
         DB dB = new DB();
-        VisitProcedure visitProcedure0;
-        List<VisitProcedureHistory> visitProcedureHistories = new List<VisitProcedureHistory>();
-        public NurseProcedureHistories(VisitProcedure visitProcedure)
+        VisitHospitalProcedure visitHospitalProcedure0;
+        List<VisitHospitalProcedureHistory> visitHospitalProcedureHistories = new List<VisitHospitalProcedureHistory>();
+        public NurseProcedureHistories(VisitHospitalProcedure visitHospitalProcedure)
         {
             InitializeComponent();
 
-            visitProcedureHistories = dB.GetVisitProcedureHistories(visitProcedure.id);
-            DataGridProcedureHistories.ItemsSource = visitProcedureHistories;
+            visitHospitalProcedureHistories = dB.GetVisitHospitalProcedureHistories(visitHospitalProcedure);
+            DataGridProcedureHistories.ItemsSource = visitHospitalProcedureHistories;
 
-            visitProcedure0 = visitProcedure;
+            visitHospitalProcedure0 = visitHospitalProcedure;
+
+            if(visitHospitalProcedure.count == visitHospitalProcedure.countСompleted)
+            {
+                ButtonSave.Visibility = Visibility.Collapsed;
+            }
+
+            ResultProcedureHistory.Text = visitHospitalProcedure.result;
+
+            if (visitHospitalProcedure.isProcedure)
+            {
+                StackResult.Visibility = Visibility.Collapsed;
+            }
+
+            if(visitHospitalProcedure.type == "стационар" && visitHospitalProcedure.isResearche)
+            {
+                GridProcedure.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void ButtonClickBack(object sender, RoutedEventArgs e)
@@ -77,27 +94,27 @@ namespace EmployeeApplication
                     return;
                 }
 
-                if(visitProcedureHistories.Count + 1 > visitProcedure0.count)
+                if(visitHospitalProcedureHistories.Count + 1 > visitHospitalProcedure0.count)
                 {
-                    MessageBox.Show($"Количество прохождений не может быть больше {visitProcedure0.count}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show($"Количество проведений не может быть больше {visitHospitalProcedure0.count}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
                 DateTime? dateTime = DateProcedureHistory.SelectedDate?.Date.Add(timeProcedureHistory);
 
-                if(dateTime >= visitProcedure0.visitDate)
+                if(dateTime >= visitHospitalProcedure0.date)
                 {
-                    MessageBox.Show("Дата проведения процедуры не может быть больше даты приема", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Дата проведения процедуры не может быть больше даты назначения", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
-                VisitProcedureHistory visitProcedureHistory = new VisitProcedureHistory
+                VisitHospitalProcedureHistory visitHospitalProcedureHistory = new VisitHospitalProcedureHistory
                 {
                     date = (DateTime)dateTime,
-                    visitProcedureId = visitProcedure0.id,
+                    visitHospitalProcedureId = visitHospitalProcedure0.id,
                 };
 
-                visitProcedureHistories.Add(visitProcedureHistory);
+                visitHospitalProcedureHistories.Add(visitHospitalProcedureHistory);
 
                 DataGridProcedureHistories.Items.Refresh();
             }
@@ -133,25 +150,25 @@ namespace EmployeeApplication
 
                     DateTime? dateTime = DateProcedureHistory.SelectedDate?.Date.Add(timeProcedureHistory);
 
-                    var procedureHistory = DataGridProcedureHistories.SelectedItem as VisitProcedureHistory;
+                    var procedureHistory = DataGridProcedureHistories.SelectedItem as VisitHospitalProcedureHistory;
 
                     int index = DataGridProcedureHistories.SelectedIndex;
 
-                    if (dateTime >= visitProcedure0.visitDate)
+                    if (dateTime >= visitHospitalProcedure0.date)
                     {
                         MessageBox.Show("Дата проведения процедуры не может быть больше даты приема", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                         return;
                     }
 
-                    VisitProcedureHistory visitProcedureHistory = new VisitProcedureHistory
+                    VisitHospitalProcedureHistory visitHospitalProcedureHistory = new VisitHospitalProcedureHistory
                     {
                         date = (DateTime)dateTime,
-                        visitProcedureId = visitProcedure0.id,
+                        visitHospitalProcedureId = visitHospitalProcedure0.id,
                     };
 
-                    visitProcedureHistories.Remove(procedureHistory);
+                    visitHospitalProcedureHistories.Remove(procedureHistory);
 
-                    visitProcedureHistories.Insert(index, visitProcedureHistory);
+                    visitHospitalProcedureHistories.Insert(index, visitHospitalProcedureHistory);
 
                     DataGridProcedureHistories.Items.Refresh();
                 }
@@ -161,19 +178,24 @@ namespace EmployeeApplication
 
         private void ButtonClickDelete(object sender, RoutedEventArgs e)
         {
-            var procedureHistory = DataGridProcedureHistories.SelectedItem as VisitProcedureHistory;
-            visitProcedureHistories.Remove(procedureHistory);
+            var procedureHistory = DataGridProcedureHistories.SelectedItem as VisitHospitalProcedureHistory;
+            visitHospitalProcedureHistories.Remove(procedureHistory);
             DataGridProcedureHistories.Items.Refresh();
         }
 
         private void ButtonClickSave(object sender, RoutedEventArgs e)
         {
-            bool result = dB.SaveVisitProcedure(visitProcedure0, visitProcedureHistories);
+            if (GridProcedure.Visibility == Visibility.Collapsed) visitHospitalProcedureHistories = null;
+
+            visitHospitalProcedure0.result = ResultProcedureHistory.Text;
+
+            bool result = dB.SaveProcedure(visitHospitalProcedure0, visitHospitalProcedureHistories);
 
             if (result)
             {
                 MessageBox.Show("Данные успешно сохранены", "Успех", MessageBoxButton.OK);
                 this.DialogResult = true;
+                this.Close();
             }
         }
 

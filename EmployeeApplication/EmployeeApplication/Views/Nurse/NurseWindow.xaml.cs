@@ -20,8 +20,9 @@ namespace EmployeeApplication
     public partial class NurseWindow : Window
     {
         DB dB = new DB();
-        List<VisitProcedure> procedures = new List<VisitProcedure>();
-        List<VisitProcedure> filterProcedures = new List<VisitProcedure>();
+        List<VisitHospitalProcedure> procedures = new List<VisitHospitalProcedure>();
+        List<VisitHospitalProcedure> filterProcedures = new List<VisitHospitalProcedure>();
+        string type;
         public NurseWindow()
         {
             InitializeComponent();
@@ -40,6 +41,9 @@ namespace EmployeeApplication
             {
                 FilterProcedures();
             };
+
+            if (UserAuthorization.postName == "Медсестра процедурная") type = "амбулатория";
+            else type = "стационар";
 
         }
 
@@ -63,6 +67,7 @@ namespace EmployeeApplication
             UserAuthorization.isOperation = false;
             UserAuthorization.wingType = "";
             UserAuthorization.postName = "";
+            UserAuthorization.wingId = -1;
 
             var window = new MainWindow();
             window.Show();
@@ -80,7 +85,8 @@ namespace EmployeeApplication
 
         private void LoadProcedures()
         {
-            procedures = dB.GetVisitProcedures();
+            procedures = dB.GetVisitHospitalProcedures().Where(pr => pr.type == type && (pr.isResearche || pr.isProcedure) 
+                                                                && !pr.isAnalisis).ToList();
 
             FilterProcedures();
         }
@@ -92,7 +98,9 @@ namespace EmployeeApplication
             if (!string.IsNullOrEmpty(SearchProcedure.Text))
             {
                 filterProcedures = filterProcedures.Where(p => p.patient.ToLower().Contains(SearchProcedure.Text.ToLower())
-                                                            || p.medicalProcedure.ToLower().Contains(SearchProcedure.Text.ToLower())).ToList();
+                                                            || p.medicalService.ToLower().Contains(SearchProcedure.Text.ToLower())
+                                                            || p.employee.ToLower().Contains(SearchProcedure.Text.ToLower())
+                                                            || p.type.ToLower().Contains(SearchProcedure.Text.ToLower())).ToList();
             }
 
             if (FilterProcedure.SelectedIndex > 0)
@@ -108,9 +116,9 @@ namespace EmployeeApplication
         {
             if (DataGridProcedures.SelectedItem != null)
             {
-                var procedure = DataGridProcedures.SelectedItem as VisitProcedure;
+                var procedure = DataGridProcedures.SelectedItem as VisitHospitalProcedure;
 
-                var window = new DoctorProcedureHistories(procedure);
+                var window = new NurseProcedureHistories(procedure);
                 window.ShowDialog();
 
                 if(window.DialogResult == true)

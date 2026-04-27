@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="ИС «МедСервис» - Авторизации"
+        Title="ИС «МедСервис» - Авторизация"
         Icon="/Images/icons.ico"
         Height="360" 
         Width="400">

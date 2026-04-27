@@ -39,7 +39,7 @@ namespace EmployeeApplication
 
                     sql = @"select ue.role as role, w.type as wingType, p.is_operation as isOperation,
                         concat(ind.last_name, ' ', ind.first_name, coalesce(' ' || ind.middle_name, '')) as fio, emp.id as employeeId, 
-					    p.name as postName from posts p inner join employees emp
+					    p.name as postName, w.id as wingId from posts p inner join employees emp
                         on p.id = emp.post_id
                         inner join individuals ind
                         on ind.id = emp.individual_id
@@ -70,6 +70,7 @@ namespace EmployeeApplication
                                 UserAuthorization.fio = reader.GetString(3);
                                 UserAuthorization.employeeId = reader.GetInt32(4);
                                 UserAuthorization.postName = reader.GetString(5);
+                                UserAuthorization.wingId = reader.GetInt32(6);
                             }
                         }
                     }
@@ -248,6 +249,27 @@ namespace EmployeeApplication
             }
         }
 
+        public List<Visit> GetVisitsFull(int employeeId)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql = @"select v.id as id, v.date as date, v.patient_id as patientId, concat(ind.last_name, ' ', ind.first_name, coalesce(' ' || ind.middle_name, '')) as patient, 
+                                v.status as status, v.patient_condition->>'objective' as objective, v.patient_condition->>'subjective' as subjective, v.patient_condition->>'diagnosis' as diagnosis,
+                                v.recommendation as recommendation from individuals ind inner join patients p
+                                on ind.id = p.individual_id
+                                inner join visits v
+                                on p.id = v.patient_id
+                                inner join employee_assignments emp_a
+                                on emp_a.id = v.employee_assignment_id
+                                where emp_a.employee_id = @ID and p.is_deleted = false
+                                order by v.date;";
+
+
+                return connection.Query<Visit>(sql, new {ID = employeeId}).ToList();
+            }
+
+        }
+
         public List<Treatment> GetTreatments()
         {
             using (var connection = new NpgsqlConnection(connectionString))
@@ -290,8 +312,11 @@ namespace EmployeeApplication
             using (var connection = new NpgsqlConnection(connectionString))
             {
 
-                string sql = @"select id, name, date, result from hospital_treatment_researches 
-                                where hospital_treatment_id = @TreatmentId;";
+                string sql = @"select r.id as id, m.id as medicalServiceId, m.name as medicalService, 
+                                r.date as date, r.result as result, r.is_completed as isCompleted 
+                                from hospital_treatment_researches r inner join medical_services m
+                                on m.id = r.medical_service_id
+                                where r.hospital_treatment_id = @TreatmentId;";
 
                 return connection.Query<HospitalResearche>(sql, new { TreatmentId = treatmentId }).ToList();
 
@@ -304,9 +329,10 @@ namespace EmployeeApplication
             using (var connection = new NpgsqlConnection(connectionString))
             {
 
-                string sql = @"select hp.id as id, hp.date as date, hp.name as name, hp.count as count, hp.description as description, 
+                string sql = @"select hp.id as id, hp.date as date, m.id as medicalServiceId, m.name as medicalService, hp.count as count, hp.description as description, 
                                 (select count(*) from hospital_treatment_procedures_histories where hospital_treatment_procedure_id = hp.id) as countСompleted 
-                                from hospital_treatment_procedures hp
+                                from hospital_treatment_procedures hp inner join medical_services m
+                                on m.id = hp.medical_service_id
                                 where hp.hospital_treatment_id = @TreatmentId;";
 
                 return connection.Query<HospitalProcedure>(sql, new { TreatmentId = treatmentId }).ToList();
@@ -320,7 +346,7 @@ namespace EmployeeApplication
             using (var connection = new NpgsqlConnection(connectionString))
             {
 
-                string sql = @"select id, date, hospital_treatment_procedure_id as hospitalProcedureId from hospital_treatment_procedures_histories 
+                string sql = @"select id, date, hospital_treatment_procedure_id as hospitalProcedureId from hospital_treatment_procedure_histories 
                                 where hospital_treatment_procedure_id = @HospitalProcedureId;";
 
                 return connection.Query<HospitalProcedureHistory>(sql, new { HospitalProcedureId = hospitalProcedureId }).ToList();
@@ -329,13 +355,13 @@ namespace EmployeeApplication
             }
         }
 
-        public List<HospitalProcedureHistory> GetHospitalProcedureHistoriesTreatment(int treatmentId)
+        private List<HospitalProcedureHistory> GetHospitalProcedureHistoriesTreatment(int treatmentId)
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
 
                 string sql = @"select ph.id as id, ph.date as date, ph.hospital_treatment_procedure_id as hospitalProcedureId 
-                                from hospital_treatment_procedures_histories ph inner join hospital_treatment_procedures p
+                                from hospital_treatment_procedure_histories ph inner join hospital_treatment_procedures p
                                 on p.id = ph.hospital_treatment_procedure_id
                                 where p.hospital_treatment_id = @TreatmentId;";
 
@@ -350,10 +376,35 @@ namespace EmployeeApplication
             using (var connection = new NpgsqlConnection(connectionString))
             {
 
-                string sql = @"select id, date, visit_procedure_id as visitProcedureId from visit_procedures_histories
+                string sql = @"select id, date, visit_procedure_id as visitProcedureId from visit_procedure_histories
                                 where visit_procedure_id = @ProcedureId;";
 
                 return connection.Query<VisitProcedureHistory>(sql, new { ProcedureId = procedureId }).ToList();
+
+
+            }
+        }
+
+        public List<VisitHospitalProcedureHistory> GetVisitHospitalProcedureHistories(VisitHospitalProcedure procedure)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string sql;
+
+                if (procedure.type == "амбулатория")
+                {
+                    sql = @"select id, date, visit_procedure_id as visitHospitalProcedureId from visit_procedure_histories
+                                where visit_procedure_id = @ProcedureId;";
+                }
+                else
+                {
+                    sql = @"select id, date, hospital_treatment_procedure_id as visitHospitalProcedureId from hospital_treatment_procedure_histories 
+                                where hospital_treatment_procedure_id = @ProcedureId;";
+
+                }
+
+                return connection.Query<VisitHospitalProcedureHistory>(sql, new { ProcedureId = procedure.id }).ToList();
+
 
 
             }
@@ -380,8 +431,10 @@ namespace EmployeeApplication
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string sql = @"select id, date, name, result from operations
-                                where hospital_treatment_id = @TreatmentId;";
+                string sql = @"select o.id as id, o.date as date, m.id as medicalServiceId, m.name as medicalService, 
+                                o.result as result from operations o inner join medical_services m
+                                on m.id = o.medical_service_id
+                                where o.hospital_treatment_id = @TreatmentId;";
 
                 return connection.Query<HospitalOperation>(sql, new { TreatmentId = treatmentId}).ToList();
             }
@@ -392,12 +445,12 @@ namespace EmployeeApplication
             using (var connection = new NpgsqlConnection(connectionString))
             {
 
-                string sql = @"select vp.id as id, mp.name as medicalProcedure, mp.id as medicalProcedureId, 
+                string sql = @"select vp.id as id, mp.name as medicalService, mp.id as medicalServiceId, vp.result as result,
                                         vp.comment as comment, vp.visit_id as visitId, vp.count as count, v.date as visitDate,
                                         concat(ind.last_name, ' ', ind.first_name, coalesce(' ' || ind.middle_name, '')) as patient,
                                         (select count(*) from visit_procedures_histories where visit_procedure_id = vp.id) as countСompleted
-                                        from medical_procedures mp inner join visit_procedures vp
-                                        on mp.id = vp.medical_procedure_id
+                                        from medical_services mp inner join visit_procedures vp
+                                        on mp.id = vp.medical_service_id
                                         inner join visits v
                                         on v.id = vp.visit_id
                                         inner join patients p
@@ -412,15 +465,41 @@ namespace EmployeeApplication
             }
         }
 
+        public List<VisitHospitalProcedure> GetVisitHospitalProcedures()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+
+                string sql = @"select * from get_procedures(@WingId);";
+
+                return connection.Query<VisitHospitalProcedure>(sql, new { WingId = UserAuthorization.wingId}).ToList();
+
+
+            }
+        }
+
+        public List<VisitHospitalProcedure> GetVisitHospitalProceduresAll()
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+
+                string sql = @"select * from get_procedures_all();";
+
+                return connection.Query<VisitHospitalProcedure>(sql).ToList();
+
+
+            }
+        }
+
         public List<VisitProcedure> GetCurrentVisitProcedures(int visitId)
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
 
-                string sql = @"select vp.id as id, mp.name as medicalProcedure, mp.id as medicalProcedureId, 
+                string sql = @"select vp.id as id, mp.name as medicalService, mp.id as medicalServiceId, 
                                         vp.comment as comment, vp.visit_id as visitId, vp.count as count
-                                        from medical_procedures mp inner join visit_procedures vp
-                                        on mp.id = vp.medical_procedure_id
+                                        from medical_services mp inner join visit_procedures vp
+                                        on mp.id = vp.medical_service_id
                                         where vp.visit_id = @VisitId";
 
                 return connection.Query<VisitProcedure>(sql, new { VisitId = visitId }).ToList();
@@ -429,14 +508,14 @@ namespace EmployeeApplication
             }
         }
 
-        public List<MedicalProcedure> GetMedicalProcedures()
+        public List<MedicalService> GetMedicalProcedures()
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
 
-                string sql = @"select id, name, code, description from medical_procedures;";
+                string sql = @"select id, name, code, description from medical_services;";
 
-                return connection.Query<MedicalProcedure>(sql).ToList();
+                return connection.Query<MedicalService>(sql).ToList();
 
 
             }
@@ -1150,29 +1229,63 @@ namespace EmployeeApplication
             }
         }
 
-        public bool SaveVisitProcedure(VisitProcedure visitProcedure, List<VisitProcedureHistory> visitProcedureHistories)
+        public bool SaveProcedure(VisitHospitalProcedure procedure, List<VisitHospitalProcedureHistory> procedureHistories)
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 try
                 {
-                    string[] jsonVisitProcedureHistories = visitProcedureHistories.Select(vph =>
+                    string[] jsonProcedureHistories = procedureHistories.Select(ph =>
                     {
                         var jsonObject = new
                         {
-                            date = vph.date
+                            date = ph.date
                         };
                         return JsonSerializer.Serialize(jsonObject);
                     }).ToArray();
 
-                    
-                    string sql = @"call save_visit_procedure_histories(@ID, @VisitProcedureHistories::jsonb, '0')";
+                    string result;                   
+                    string sql;
+                    string tableName;
 
-                    string result = connection.QueryFirstOrDefault<string>(sql, new
+                    if (procedure.type == "амбулатория")
                     {
-                        ID = visitProcedure.id,
-                        VisitProcedureHistories = jsonVisitProcedureHistories
-                    });
+                        string jsonProcedure = JsonSerializer.Serialize(new
+                        {
+                            medicalService = procedure.medicalService,
+                            description = procedure.comment,
+                            result = procedure.result,
+                            count = procedure.count,
+                            isAnalisis = procedure.isAnalisis,
+                            isResearche = procedure.isResearche,
+                        });
+
+                        sql = @"call save_visit_procedure_histories(@ID, @ProcedureHistories::jsonb[], @Procedure::jsonb, '0')";
+
+                        result = connection.QueryFirstOrDefault<string>(sql, new
+                        {
+                            ID = procedure.id,
+                            ProcedureHistories = jsonProcedureHistories,
+                            Procedure = jsonProcedure
+                        });
+                    }
+                    else
+                    {
+                        if (procedure.isAnalisis == true) tableName = "researche";
+                        else tableName = "procedure";
+
+
+                            sql = @"call save_treatment_procedure_histories(@ID, @ProcedureHistories::jsonb[], @ResearcheResult, 
+                                                                        @TableName, '0')";
+
+                        result = connection.QueryFirstOrDefault<string>(sql, new
+                        {
+                            ID = procedure.id,
+                            ProcedureHistories = jsonProcedureHistories,
+                            ResearcheResult = procedure.result,
+                            TableName = tableName
+                        });
+                    }
 
                     if (result == "1")
                     {
@@ -1204,7 +1317,7 @@ namespace EmployeeApplication
                     {
                         var jsonObject = new
                         {
-                            medicalProcedureId = vp.medicalProcedureId,
+                            medicalServiceId = vp.medicalServiceId,
                             comment = vp.comment,
                             count = vp.count
                         };
@@ -1252,20 +1365,22 @@ namespace EmployeeApplication
         }
 
         public bool SaveOrEndTreatment(Treatment treatment, List<HospitalResearche> researches, List<HospitalProcedure> procedures,
-                                        List<HospitalProcedureHistory> procedureHistories, List<WardTraffic> wardTraffics, List<HospitalOperation> operations,
-                                        bool end)
+                                        List<WardTraffic> wardTraffics, List<HospitalOperation> operations, bool end)
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 try
                 {
+                    List<HospitalProcedureHistory> procedureHistories = GetHospitalProcedureHistoriesTreatment(treatment.id);
+
                     string[] jsonResearches = researches.Select(r =>
                     {
                         var jsonObject = new
                         {
                             date = r.date,
-                            name = r.name,
-                            result = r.result
+                            medicalServiceId = r.medicalServiceId,
+                            result = r.result,
+                            isCompleted = r.isCompleted
                         };
                         return JsonSerializer.Serialize(jsonObject);
                     }).ToArray();
@@ -1286,7 +1401,7 @@ namespace EmployeeApplication
                         var jsonObject = new
                         {
                             date = o.date,
-                            name = o.name,
+                            medicalServiceId = o.medicalServiceId,
                             result = o.result
                         };
                         return JsonSerializer.Serialize(jsonObject);
@@ -1307,7 +1422,7 @@ namespace EmployeeApplication
                         var jsonObject = new
                         {
                             date = p.date,
-                            name = p.name,
+                            medicalServiceId = p.medicalServiceId,
                             count = p.count,
                             description = p.description,
                             procedureHistories = jsonProcedureHistories

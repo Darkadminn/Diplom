@@ -6,6 +6,7 @@
     <ActiveDebugProfile>Pixel 7 - API 35 (Android 15.0 — API 35)</ActiveDebugProfile>
     <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
     <DefaultDevice>pixel_7_-_api_35</DefaultDevice>
+    <SelectedDevice>Xiaomi 2207117BPG</SelectedDevice>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetPlatformIdentifier)'=='iOS'">
     <RuntimeIdentifier>ios-arm64</RuntimeIdentifier>

@@ -22,7 +22,7 @@ namespace EmployeeApplication
         DB dB = new DB();
         Visit visit0 = new Visit();
         List<VisitProcedure> procedures = new List<VisitProcedure>();
-        List<MedicalProcedure> medicalProcedures = new List<MedicalProcedure>();
+        List<MedicalService> medicalProcedures = new List<MedicalService>();
         bool treatment;
         public DoctorAddUpdateVisit(Visit visit, bool read)
         {
@@ -32,8 +32,8 @@ namespace EmployeeApplication
             TimeVisit.Text = visit.date.ToString("hh:mm");
             Patient.Text = visit.patient;
 
-            medicalProcedures = dB.GetMedicalProcedures();
-            Procedure.ItemsSource = procedures;
+            medicalProcedures = dB.GetMedicalProcedures().Where(m => !m.isOperation).ToList();
+            Service.ItemsSource = procedures;
 
             DateVisit.IsEnabled = false;
             TimeVisit.IsEnabled = false;
@@ -48,7 +48,7 @@ namespace EmployeeApplication
 
                 procedures = dB.GetCurrentVisitProcedures(visit.id);
 
-                DataGridProcedures.ItemsSource = procedures;
+                DataGridServices.ItemsSource = procedures;
 
                 if(visit.isTreatment == true )
                 {
@@ -59,7 +59,7 @@ namespace EmployeeApplication
                 Objective.IsEnabled = false;
                 Diagnosis.IsEnabled = false;
                 Recommendation.IsEnabled = false;
-                Procedure.IsEnabled = false;
+                Service.IsEnabled = false;
                 Count.IsEnabled = false;
                 Comment.IsEnabled = false;
                 DirectionBool.IsEnabled = false;
@@ -69,7 +69,7 @@ namespace EmployeeApplication
                 ButtonSave.IsEnabled = false;
                 ButtonSave.Visibility = Visibility.Hidden;
 
-                DataGridProcedures.IsEnabled = false;
+                DataGridServices.IsEnabled = false;
 
                 visit0 = visit;
             }
@@ -88,6 +88,24 @@ namespace EmployeeApplication
 
         }
 
+        private void Service_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(Service.SelectedItem != null)
+            {
+                var service = Service.SelectedItem as MedicalService;
+                
+                if(service.isAnalisis == true)
+                {
+                    Count.Value = 1;
+                    Count.IsEnabled = false;
+                }
+                else
+                {
+                    Count.IsEnabled = true;
+                }
+            }
+        }
+
         private void DirectionBool_Checked(object sender, RoutedEventArgs e)
         {
             treatment = true;
@@ -98,13 +116,13 @@ namespace EmployeeApplication
             treatment = false;
         }
 
-        private void DataGridProcedures_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DataGridServices_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(DataGridProcedures.SelectedItem != null)
+            if(DataGridServices.SelectedItem != null)
             {
-                var procedure = DataGridProcedures.SelectedItem as VisitProcedure;
+                var procedure = DataGridServices.SelectedItem as VisitProcedure;
 
-                Procedure.SelectedItem = medicalProcedures.FirstOrDefault(mp => mp.id == procedure.medicalProcedureId);
+                Service.SelectedItem = medicalProcedures.FirstOrDefault(mp => mp.id == procedure.medicalServiceId);
                 Count.Text = procedure.count.ToString();
                 Comment.Text = procedure.comment;
             }
@@ -112,24 +130,24 @@ namespace EmployeeApplication
 
         private void ButtonClickAddProcedure(object sender, RoutedEventArgs e)
         {
-            if(Procedure.SelectedItem != null && !String.IsNullOrEmpty(Count.Text))
+            if(Service.SelectedItem != null && !String.IsNullOrEmpty(Count.Text))
             {
                 int count = int.Parse(Count.Text);
 
                 if(count > 0)
                 {
-                    var procedure = Procedure.SelectedItem as MedicalProcedure;
+                    var procedure = Service.SelectedItem as MedicalService;
                     string comment = Comment.Text;
 
                     procedures.Add(new VisitProcedure
                     {
-                        medicalProcedureId = procedure.id,
-                        medicalProcedure = procedure.name,
+                        medicalServiceId = procedure.id,
+                        medicalService = procedure.name,
                         count = count,
                         comment = comment
                     });
 
-                    DataGridProcedures.Items.Refresh();
+                    DataGridServices.Items.Refresh();
                 }
                 else
                 {
@@ -144,30 +162,30 @@ namespace EmployeeApplication
 
         private void ButtonClickUpdateProcedure(object sender, RoutedEventArgs e)
         {
-            if (DataGridProcedures.SelectedItem != null)
+            if (DataGridServices.SelectedItem != null)
             {
-                if (Procedure.SelectedItem != null && !String.IsNullOrEmpty(Count.Text))
+                if (Service.SelectedItem != null && !String.IsNullOrEmpty(Count.Text))
                 {
                     int count = int.Parse(Count.Text);
 
                     if (count > 0)
                     {
-                        var procedure = Procedure.SelectedItem as MedicalProcedure;
+                        var procedure = Service.SelectedItem as MedicalService;
                         string comment = Comment.Text;
-                        var visitProcedure = DataGridProcedures.SelectedItem as VisitProcedure;
-                        int index = DataGridProcedures.SelectedIndex;
+                        var visitProcedure = DataGridServices.SelectedItem as VisitProcedure;
+                        int index = DataGridServices.SelectedIndex;
 
                         procedures.Remove(visitProcedure);
 
                         procedures.Insert(index, new VisitProcedure
                         {
-                            medicalProcedureId = procedure.id,
-                            medicalProcedure = procedure.name,
+                            medicalServiceId = procedure.id,
+                            medicalService = procedure.name,
                             count = count,
                             comment = comment
                         });
 
-                        DataGridProcedures.Items.Refresh();
+                        DataGridServices.Items.Refresh();
                     }
                     else
                     {
@@ -181,13 +199,13 @@ namespace EmployeeApplication
             }
         }
 
-        private void ButtonClickDeleteProcedure(object sender, RoutedEventArgs e)
+        private void ButtonClickDeleteService(object sender, RoutedEventArgs e)
         {
-            if(DataGridProcedures.SelectedItem != null)
+            if(DataGridServices.SelectedItem != null)
             {
-                var visitProcedure = DataGridProcedures.SelectedItem as VisitProcedure;
+                var visitProcedure = DataGridServices.SelectedItem as VisitProcedure;
                 procedures.Remove(visitProcedure);
-                DataGridProcedures.Items.Refresh();
+                DataGridServices.Items.Refresh();
             }
         }
 
@@ -204,7 +222,7 @@ namespace EmployeeApplication
 
             if (result == true)
             {
-                MessageBox.Show("Данные успешно обновлены", "Успех", MessageBoxButton.OK);
+                MessageBox.Show("Данные успешно сохранены", "Успех", MessageBoxButton.OK);
                 this.DialogResult = true;
                 this.Close();
             }

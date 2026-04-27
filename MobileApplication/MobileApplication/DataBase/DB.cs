@@ -14,15 +14,9 @@ namespace MobileApplication
         //string connectionString = "Host=10.109.137.252;Port=5432;Database=db_medical_institutions;Username=postgres;Password=PostgreSQL";
         //string connectionString = "Host=192.168.0.162;Port=5432;Database=db_medical_institutions;Username=postgres;Password=PostgreSQL";
 
-
-        public NpgsqlConnection GetConnection()
-        {
-            return new NpgsqlConnection(connectionString);
-        }
-
         public void GetUserAuthorization(string login, string password)
         {
-            using (var connection = GetConnection())
+            using (var connection = new NpgsqlConnection(connectionString))
             {
                 string sql = @"select authorization_patient(@Login, @Password)";
 
@@ -71,7 +65,7 @@ namespace MobileApplication
 
         public string AvailablePhoneLogin(string phone, string login)
         {
-            using (var connection = GetConnection())
+            using (var connection = new NpgsqlConnection(connectionString))
             {
                 string sql = @"select available_phone_login_patient(@Phone, @Login)";
 
@@ -84,7 +78,7 @@ namespace MobileApplication
 
         public string AvailableUserPhone(string phone)
         {
-            using (var connection = GetConnection())
+            using (var connection = new NpgsqlConnection(connectionString))
             {
                 string sql = @"select available_phone_user_patient(@Phone)";
 
@@ -94,7 +88,7 @@ namespace MobileApplication
 
         public string InsertUser(string login, string password, string phone)
         {
-            using (var connection = GetConnection())
+            using (var connection = new NpgsqlConnection(connectionString))
             {
                 string sql = @"call insert_user_patient(@Login, @Password, @Phone, '0')";
 
@@ -108,7 +102,7 @@ namespace MobileApplication
 
         public string UpdateUser(string password, string phone)
         {
-            using (var connection = GetConnection())
+            using (var connection = new NpgsqlConnection(connectionString))
             {
                 string sql = @"call update_user_patient(@Password, @Phone, '0')";
 
@@ -122,7 +116,7 @@ namespace MobileApplication
 
         public List<Post> GetPosts()
         {
-            using(var connection = GetConnection())
+            using(var connection = new NpgsqlConnection(connectionString))
             {
                 string sql = @"select * from get_list_posts(@PatientId, @TypeWing, @PolyclinicId)";
 
@@ -136,7 +130,7 @@ namespace MobileApplication
 
         public List<Filter> GetFilters()
         {
-            using (var connection = GetConnection())
+            using (var connection = new NpgsqlConnection(connectionString))
             {
                 string sql = @"select * from get_list_filters(@PostId)";
 
@@ -146,7 +140,7 @@ namespace MobileApplication
 
         public List<Doctor> GetDoctors()
         {
-            using (var connection = GetConnection())
+            using (var connection = new NpgsqlConnection(connectionString))
             {
                 string sql = @"select * from get_doctors(@PatientId, @PostId, @TypeWing, @PolyclinicId)";
 
@@ -162,7 +156,7 @@ namespace MobileApplication
 
         public List<WorkSchedule> GetWorkSchedules(int employeeAssignmentId, int wingId)
         {
-            using (var connection = GetConnection())
+            using (var connection = new NpgsqlConnection(connectionString))
             {
                 string sql = @"select sch.id as id, sch.time_start as timeStart, sch.time_end as timeEnd, sch.week_days as weekDays, c.name as cabinetName 
                                 from departments d inner join cabinets c
@@ -209,8 +203,12 @@ namespace MobileApplication
                                 from individuals ind inner join patients p
                                 on ind.id = p.individual_id
                                 inner join parent_childrens pc
-                                on p.id = pc.children_id
-                                where pc.parent_id = @PatientId";
+                                on ind.id = pc.children_id
+                                inner join individuals ind_par
+                                on ind_par.id = pc.parent_id
+                                inner join patients p_par
+                                on ind_par.id = p_par.individual_id
+                                where p_par.id = @PatientId";
 
                 return connection.Query<Children>(sql, new
                 {
@@ -262,7 +260,7 @@ namespace MobileApplication
                     if (!timeSlotsToCheck.Any())
                         continue;
 
-                    using (var connection = GetConnection())
+                    using (var connection = new NpgsqlConnection(connectionString))
                     {
                         string sql = @"select count(*) from visits v inner join employee_assignments emp_a
                                         on emp_a.id = v.employee_assignment_id 
@@ -380,36 +378,11 @@ namespace MobileApplication
             }
         }
 
-
-
         public List<Visit> GetVisits()
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string sql = @"select v.id as id, concat(ind.last_name, ' ', ind.first_name, coalesce(' ' || ind.middle_name, '')) as fio, 
-                                v.date as date, w.name as wingName, c.name as cabinet, v.status as status, p.name as postName, 
-                                concat(ind_pat.last_name, ' ', ind_pat.first_name, coalesce(' ' || ind_pat.middle_name, '')) as patient
-                                from wings w inner join departments d
-                                on w.id = d.wing_id
-                                inner join cabinets c
-                                on d.id = c.department_id
-                                inner join employee_assignments emp_assig
-                                on c.id = emp_assig.cabinet_id
-                                inner join work_schedules sch
-                                on emp_assig.id = sch.employee_assignment_id
-                                inner join visits v
-                                on emp_assig.id = v.employee_assignment_id
-                                inner join employees emp
-                                on emp.id = emp_assig.employee_id
-                                inner join individuals ind
-                                on emp.individual_id = ind.id
-                                inner join patients pat
-                                on pat.id = v.patient_id
-                                inner join individuals ind_pat
-                                on ind_pat.id = pat.individual_id
-                                inner join posts p
-                                on emp.post_id = p.id
-                                where v.patient_id = @PatientId";
+                string sql = @"select * from get_visits_patient(@PatientId)";
 
                 return connection.Query<Visit>(sql, new { PatientId = UserAuthorization.id}).ToList();
             }
@@ -419,7 +392,9 @@ namespace MobileApplication
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string sql = @"delete from visits where id = @ID";
+                string sql = @"update visits
+                                set status = 'Отменен'::type_status_visits
+                                where id = @ID";
 
                 connection.Execute(sql, new {ID = visitId});
             }

@@ -10,12 +10,13 @@ namespace EmployeeApplication
     public class VisitProcedure
     {
         public int id {  get; set; }
-        public int medicalProcedureId { get; set; }
-        public string medicalProcedure { get; set; }
+        public int medicalServiceId { get; set; }
+        public string medicalService { get; set; }
         public string comment { get; set; }
         public int count { get; set; }
         public int visitId { get; set; }     
         public DateTime visitDate { get; set; }
+        public string result { get; set; }
         public string patient {  get; set; }
         public string employee { get; set; }
         public string post {  get; set; }
